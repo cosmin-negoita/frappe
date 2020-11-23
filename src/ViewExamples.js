@@ -64,7 +64,7 @@ export default function ViewExamples() {
                     </form>
                 </Card>
                 <Card type="box" size="medium" spacing="20" limitHeight={true}>
-                    <SubHeadingText>Create and Account</SubHeadingText>
+                    <SubHeadingText>Create an Account</SubHeadingText>
                     <BigBodyText>Let us know who you are!</BigBodyText>
                     <form>
                         <Container spacing="20">

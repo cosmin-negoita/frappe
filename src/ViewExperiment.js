@@ -81,6 +81,30 @@ export default function ViewExperiment() {
                 </Container>
                 }
             </Card>
+            <Card type="box" headerLabel="Create an Account" size="medium" spacing="30" layout="1">
+                <form>
+                    <Container spacing="20">
+                        <HeadingText>Account Details</HeadingText>
+                        <Input type="text" label="Email Address" placeholder="Type your email..." />
+                        <Container spacing="20" layout="2">
+                            <Input type="password" label="Create Password" />
+                            <Input type="password" label="Confirm Password" />
+                        </Container>
+                        <HeadingText>Profile Details</HeadingText>
+                        <Input type="text" label="Full Name" placeholder="Type your full name..." />
+                        <Container spacing="20" layout="2">
+                            <Input type="text" label="Date of Birth" />
+                            <Select label="Country">
+                                <option>Romania</option>
+                                <option>United States</option>
+                                <option>Other</option>
+                            </Select>
+                        </Container>
+                        <TextArea label="Biography" placeholder="A little bit about you..." rows="4"></TextArea>
+                        <Button>Create Account</Button>
+                    </Container>
+                </form>
+            </Card>
         </Container>
     </>);
 }
