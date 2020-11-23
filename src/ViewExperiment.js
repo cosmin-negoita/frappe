@@ -102,6 +102,7 @@ export default function ViewExperiment() {
                         </Container>
                         <TextArea label="Biography" placeholder="A little bit about you..." rows="4"></TextArea>
                         <Button>Create Account</Button>
+                        <Button type="secondary">Login</Button>
                     </Container>
                 </form>
             </Card>
