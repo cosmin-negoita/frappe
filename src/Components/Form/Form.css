@@ -1,0 +1,81 @@
+/* Form Components */
+@import "../Typography/Typography.css";
+@import "../Reset.css";
+@import "../Colors.css";
+@import "../Spacing.css";
+
+.form-field {
+    display: grid;
+    grid-gap: var(--su-5);
+}
+.input {
+    font-family: 'Heebo', sans-serif;
+    font-size: var(--scale1);
+    line-height: 16px;
+    color: var(--gray-5);
+    background: var(--gray-0);
+    border: 1px solid var(--gray-3);
+    outline: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+.input:hover, .input:focus {
+    border-color: var(--brand);
+}
+.input:focus {
+    box-shadow: 0 0 10px var(--brand-light);
+}
+.input:disabled {
+    color: var(--gray-4);
+    background: var(--gray-1);
+    border-color: var(--gray-2);
+    cursor: not-allowed;
+}
+.input.has-error {
+    border-color: var(--error);
+}
+.input::placeholder {
+    color: var(--gray-4);
+}
+
+/* Input Sizes - Affects padding and font size */
+.input--small {
+    padding: 6px;
+    font-size: var(--scale-1);
+}
+.input--medium {
+    padding: 11px;
+    font-size: var(--scale1);
+}
+.input--large {
+    padding: 16px;
+    font-size: var(--scale2);
+}
+
+/* Select Styling */
+.select {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L5 5L1 1' stroke='%23002148' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+}
+.select:hover {
+    cursor: pointer;
+}
+.select:disabled {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L5 5L1 1' stroke='%23002148' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    cursor: not-allowed;
+}

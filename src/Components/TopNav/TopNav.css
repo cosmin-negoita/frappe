@@ -1,0 +1,37 @@
+/* TopNav Component */
+@import "../Colors.css";
+@import "../Typography/Typography.css";
+@import "../Reset.css";
+@import "../Spacing.css";
+
+.topNav {
+    background: var(--gray-0);
+    box-shadow: 0px 2px 4px var(--shadow-small), 0px 8px 16px var(--shadow-small);
+    padding: var(--su-20) var(--su-50);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+}
+.topNav__menu {
+    justify-content: right;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+    grid-gap: var(--su-10);
+}
+.topNav__menu__item {
+    color: var(--gray-5);
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.topNav__menu__item:hover {
+    background: var(--gray-1);
+}
+.topNav__menu__item__active {
+    color: var(--brand);
+    background: var(--gray-1);
+}

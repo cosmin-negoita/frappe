@@ -1,0 +1,44 @@
+/* Card Component */
+@import "../Colors.css";
+
+/* Card Settings - Affects layout */
+.card {
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Card Types - Affects look and feel */
+.card--box, .card--modal {
+    background: var(--gray-0);
+    box-shadow: 0px 2px 4px var(--shadow-small), 0px 8px 16px var(--shadow-small);
+}
+.card--modal {
+    box-shadow: 0px 8px 16px var(--shadow-large);
+}
+.card--border {
+    background: transparent;
+    border: 1px solid var(--gray-3);
+}
+
+/* Card Elements */
+.card__header { 
+    border-bottom: 1px solid var(--gray-3);
+    padding-top: 15px;
+    padding-bottom: 15px; 
+}
+.card__header--small {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.card__header--medium {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.card__header--large {
+    padding-left: 50px;
+    padding-right: 50px;
+}

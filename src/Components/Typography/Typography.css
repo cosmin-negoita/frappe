@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+/* Typographic Scale: Major Third (1.250) */
+@import "../Colors.css";
+
+/* Font Size Variables */
+:root {
+    --scale-factor: 1.250;
+    --font-base: 14px;
+
+    --scale-1: calc(var(--scale1) / var(--scale-factor));
+    --scale1: 1em;
+    --scale2: calc(var(--scale1) * var(--scale-factor));
+    --scale3: calc(var(--scale2) * var(--scale-factor));
+    --scale4: calc(var(--scale3) * var(--scale-factor));
+    --scale5: calc(var(--scale4) * var(--scale-factor));
+    --scale6: calc(var(--scale5) * var(--scale-factor));
+}
+
+body { font-family: 'Heebo', sans-serif; font-size: var(--font-base); }
+
+/* Set default weight */
+.text--small-body, .text--body, .text--big-body, .text--sub-heading, .text--heading, .text--sub-title, .text--title, .text--label {
+    color: var(--gray-5);
+    font-weight: 400;
+}
+
+/* Set line-heights */
+.text--small-body, .text--body, .text--big-body {
+    line-height: 1.6;
+}
+.text--sub-heading, .text--heading, .text--sub-title, .text--title , .text--label {
+    line-height: 1.3;
+}
+
+/* Set font sizes */
+.text--small-body, .text--label {
+    font-size: var(--scale-1);
+}
+.text--body { 
+    font-size: var(--scale1);
+}
+.text--big-body {
+    font-size: var(--scale2);
+}
+.text--sub-heading {
+    font-size: var(--scale3);
+}
+.text--heading {
+    font-size: var(--scale4);
+}
+.text--sub-title {
+    font-size: var(--scale5);
+}
+.text--title {
+    font-size: var(--scale6);
+}
+
+/* Visual Utilities */
+.text--label {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.text--bold, strong {
+    font-weight: 700;
+}
+.text--italic, i {
+    font-style: italic;
+}
+.text--strike {
+    text-decoration: line-through;
+}
+.text--underline {
+    text-decoration: underline;
+}
+
+/* Alignment Utilities */
+.text--align-center {
+    text-align: center;
+}
+.text--align-right {
+    text-align: right;
+}
