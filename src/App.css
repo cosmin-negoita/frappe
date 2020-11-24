@@ -1,6 +1,4 @@
 @import "./Components/Reset.css";
-@import "./Components/Typography/Typography.css";
-@import "./Components/Colors.css";
 
 body {
   background: var(--gray-1);

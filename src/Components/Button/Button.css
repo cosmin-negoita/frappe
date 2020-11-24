@@ -1,6 +1,5 @@
 /* Button Component */
 @import "../Typography/Typography.css";
-@import "../Colors.css";
 
 /* Button Settings - Affects layout */
 .button {
@@ -31,8 +30,7 @@
 .button--primary {
     background: var(--brand);
     color: var(--gray-0);
-    box-shadow: 0px 2px 4px var(--shadow-small), inset 0px -2px 2px var(--shadow-button), inset 0px -4px 8px var(--shadow-small);
-    font-weight: 700;
+    font-weight: 900;
 }
 .button--primary:hover {
     background: var(--brand-dark);
@@ -49,7 +47,7 @@
 .button--link {
     background: transparent;
     padding: 0;
-    font-weight: 700;
+    font-weight: 900;
     color: var(--brand);
     width: max-content;
 }
@@ -62,7 +60,6 @@
 .button--primary:disabled, .button--secondary:disabled {
     background: var(--gray-2);
     color: var(--gray-4);
-    box-shadow: 0px 2px 4px var(--shadow-small), inset 0px -2px 2px var(--shadow-button), inset 0px -4px 8px var(--shadow-small);
 }
 
 /* Button Sizes - Affects padding and font size */

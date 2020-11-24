@@ -1,7 +1,6 @@
 /* Form Components */
 @import "../Typography/Typography.css";
 @import "../Reset.css";
-@import "../Colors.css";
 @import "../Spacing.css";
 
 .form-field {
@@ -9,11 +8,10 @@
     grid-gap: var(--su-5);
 }
 .input {
-    font-family: 'Heebo', sans-serif;
     font-size: var(--scale1);
     line-height: 16px;
     color: var(--gray-5);
-    background: var(--gray-0);
+    background-color: var(--gray-0);
     border: 1px solid var(--gray-3);
     outline: 0;
     border-radius: 3px;
@@ -31,15 +29,16 @@
     border-color: var(--brand);
 }
 .input:focus {
-    box-shadow: 0 0 10px var(--brand-light);
+    box-shadow: 0 0 0 4px var(--brand-light);
 }
 .input:disabled {
     color: var(--gray-4);
-    background: var(--gray-1);
+    background-color: var(--gray-1);
     border-color: var(--gray-2);
     cursor: not-allowed;
 }
 .input.has-error {
+    background-color: var(--error-bg);
     border-color: var(--error);
 }
 .input::placeholder {

@@ -47,7 +47,7 @@ export default function ViewExamples() {
                     <Container size="medium" spacing="20">
                         <SubHeadingText>This could be an article title that would wrap across two lines</SubHeadingText>
                         <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque vulputate justo.</BodyText>
-                        <Button type="link">Call to action<IconArrowRight color="brand" /></Button>
+                        <Button type="link">Call to action<IconArrowRight color="--brand" /></Button>
                     </Container>
                 </Card>
             </Container>

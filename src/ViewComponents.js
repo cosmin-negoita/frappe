@@ -43,17 +43,17 @@ export default function ViewComponents(){
             <Container spacing="30" layout="2">
                 <Card headerLabel="Buttons" type="box" spacing="30" size="medium">
                     <SubHeadingText>Primary Buttons</SubHeadingText>
-                    <Button size="small"><IconHome color="gray-0" />Call to Action</Button>
+                    <Button size="small"><IconHome color="--gray-0" />Call to Action</Button>
                     <Button><IconHome color="gray-0" />Call to Action</Button>
-                    <Button size="large"><IconHome color="gray-0" />Call to Action</Button>
+                    <Button size="large"><IconHome color="--gray-0" />Call to Action</Button>
                     <SubHeadingText>Secondary Buttons</SubHeadingText>
-                    <Button type="secondary" size="small"><IconHome color="gray-5" />Call to Action</Button>
-                    <Button type="secondary"><IconHome color="gray-5" />Call to Action</Button>
-                    <Button type="secondary" size="large"><IconHome color="gray-5" />Call to Action</Button>
+                    <Button type="secondary" size="small"><IconHome color="--gray-5" />Call to Action</Button>
+                    <Button type="secondary"><IconHome color="--gray-5" />Call to Action</Button>
+                    <Button type="secondary" size="large"><IconHome color="--gray-5" />Call to Action</Button>
                     <SubHeadingText>Disabled Buttons</SubHeadingText>
-                    <Button size="small" disabled><IconHome color="gray-4" />Call to Action</Button>
-                    <Button disabled><IconHome color="gray-4" />Call to Action</Button>
-                    <Button size="large" disabled><IconHome color="gray-4" />Call to Action</Button>
+                    <Button size="small" disabled><IconHome color="--gray-4" />Call to Action</Button>
+                    <Button disabled><IconHome color="--gray-4" />Call to Action</Button>
+                    <Button size="large" disabled><IconHome color="--gray-4" />Call to Action</Button>
                 </Card>
                 <Card type="box" headerLabel="Form Elements" spacing="30" size="medium">
                     <Container spacing="30" layout="2">
@@ -61,7 +61,7 @@ export default function ViewComponents(){
                             <SubHeadingText>Input Text</SubHeadingText>
                             <Input label="Default Text Input" type="text" placeholder="Type here..." />
                             <Input label="Disabled Text Input" type="text" placeholder="Type here..." disabled />
-                            <Input label="Error Text Input" type="text" hasError placeholder="Type here..." />
+                            <Input label="Error Text Input" type="text" isValid={false} placeholder="Type here..." />
                         </Container>
                         <Container spacing="30">
                             <SubHeadingText>Select</SubHeadingText>
@@ -75,7 +75,7 @@ export default function ViewComponents(){
                                 <option value="2">Option 2</option>
                                 <option value="3">Option 3</option>
                             </Select>
-                            <Select label="Error Select" hasError>
+                            <Select label="Error Select" isValid={false}>
                                 <option value="1">Option 1</option>
                                 <option value="2">Option 2</option>
                                 <option value="3">Option 3</option>
@@ -84,8 +84,8 @@ export default function ViewComponents(){
                     </Container>
                     <SubHeadingText>Textarea</SubHeadingText>
                     <TextArea label="Default Textarea" rows="5" placeholder="Type your message here..."></TextArea>
-                    <TextArea label="Default Textarea" rows="5" placeholder="Type your message here..." disabled></TextArea>
-                    <TextArea label="Default Textarea" rows="5" placeholder="Type your message here..." error></TextArea>
+                    <TextArea label="Disabled Textarea" rows="5" placeholder="Type your message here..." disabled></TextArea>
+                    <TextArea label="Error Textarea" rows="5" placeholder="Type your message here..." isValid={false}></TextArea>
                 </Card>
             </Container>
         </Container>

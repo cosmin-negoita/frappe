@@ -8,7 +8,7 @@ export default function Select(props) {
 
     const {className, ...attrs} = props;
     const componentBaseClass = "input";
-    const hasError = props.hasError ? "has-error" : "";
+    const hasError = props.isValid === false ? "has-error" : "";
     const size = props.size ? componentBaseClass + "--size-" + props.size : componentBaseClass + "--medium";
     const classes = clsx(componentBaseClass, "select", hasError, size, className);
 
@@ -18,7 +18,7 @@ export default function Select(props) {
             <select size={props.size} name={props.name} className={classes} value={props.value} onChange={props.onChange} disabled={props.disabled}>
                 {props.children}
             </select>
-            {props.hasError && <SmallBodyText>This is an error</SmallBodyText>}
+            {props.isValid === false && <SmallBodyText>This is an error</SmallBodyText>}
         </div>
         )
 }

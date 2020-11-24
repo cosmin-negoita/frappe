@@ -8,7 +8,7 @@ export default function TextArea(props) {
 
     const {className, ...attrs} = props;
     const componentBaseClass = "input";
-    const hasError = props.hasError ? "has-error" : "";
+    const hasError = props.isValid === false ? "has-error" : "";
     const size = props.size ? componentBaseClass + "--size-" + props.size : componentBaseClass + "--medium";
     const classes = clsx(componentBaseClass, "textarea", size, hasError, className);
 
@@ -18,7 +18,7 @@ export default function TextArea(props) {
             <textarea rows={props.rows} cols={props.cols} name={props.name} className={classes} placeholder={props.placeholder} value={props.value} onChange={props.onChange} disabled={props.disabled}>
                 {props.children}
             </textarea>
-            {props.hasError && <SmallBodyText>This is an error</SmallBodyText>}
+            {props.isValid === false && <SmallBodyText>This is an error</SmallBodyText>}
         </div>
         )
 }
