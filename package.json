@@ -1,6 +1,6 @@
 {
-  "homepage": "https://cosmin-negoita.github.io/frappe/",
   "name": "frappe",
+  "homepage": "http://cosmin-negoita.github.io/frappe/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
