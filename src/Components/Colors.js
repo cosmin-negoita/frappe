@@ -5,11 +5,11 @@ const colors = [
     {"--gray-3": "#D1D9DE"},
     {"--gray-4": "#64747A"},
     {"--gray-5": "#242E33"},
-    {"--brand": "#FF7B5E"},
-    {"--brand-light": "#FFECE8"},
-    {"--brand-dark": "#E15D40"},
-    {"--error": "#E55151"},
-    {"--error-bg": "#FFE5E5"}
+    {"--brand": "#A55EFF"},
+    {"--brand-light": "#FFE1FF"},
+    {"--brand-dark": "#8740E1"},
+    {"--error": "#FF5D8D"},
+    {"--error-bg": "#FFEEF3"}
 ];
 
 colors.map(color => {

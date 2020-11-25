@@ -41,6 +41,9 @@
     background-color: var(--error-bg);
     border-color: var(--error);
 }
+.input.has-error:focus {
+    background-color: var(--gray-0);
+}
 .input::placeholder {
     color: var(--gray-4);
 }

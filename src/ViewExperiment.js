@@ -17,8 +17,12 @@ export default function ViewExperiment() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
-    const [nameValidation, setNameValidation] = useState();
-    const [emailValidation, setEmailValidation] = useState();
+    const [nameValidation, setNameValidation] = useState(null);
+    const [emailValidation, setEmailValidation] = useState(null);
+
+    useEffect(() => {
+        if (nameValidation && emailValidation) setSubscribed(true);
+    }, [nameValidation, emailValidation]);
 
     function handleNameChange(e) {
         setName(e.target.value);
@@ -28,28 +32,11 @@ export default function ViewExperiment() {
     }
     function onFormSubmit(e) {
         e.preventDefault();
-        handleNameValidation();
-        handleEmailValidation();
-    }
-    function handleNameValidation() {
-        if (name !== "") {
-            setNameValidation(true);
-        }
-        else {
-            setNameValidation(false);
-        }
-    }
-    useEffect(() => {
-        if (handleNameValidation === true && handleEmailValidation === true) setSubscribed(true);
-        else setSubscribed(false);
-    });
-    function handleEmailValidation() {
-        if (email.includes("@") && email.includes(".")) {
-            setEmailValidation(true);
-        }
-        else {
-            setEmailValidation(false);
-        }
+        if (name !== "") setNameValidation(true);
+        else setNameValidation(false);
+
+        if (email.includes('@') && email.includes('.')) setEmailValidation(true);
+        else setEmailValidation(false);
     }
     function handleSubscribeReset(e) {
         setSubscribed(false);
@@ -67,6 +54,7 @@ export default function ViewExperiment() {
                 { subscribed === false &&
                 <form onSubmit={onFormSubmit}>
                     <Container spacing="30">
+                        <HeadingText>Subscribe to our newsletter!</HeadingText>
                         <Input type="text" label="Your Name" value={name} isValid={nameValidation} errorMessage="Please tell us your name" onChange={handleNameChange} />
                         <Input type="text" label="Your Email Address" value={email} isValid={emailValidation} errorMessage="Please use a valid email address" onChange={handleEmailChange} />
                         <Button>Subscribe</Button>

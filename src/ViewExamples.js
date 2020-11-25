@@ -23,8 +23,8 @@ export default function ViewExamples() {
                     <HeadingText>Card title here</HeadingText>
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at vulputate justo. Donec tristique est felis, eget hendrerit neque tempus mattis. Ut sapien enim, tincidunt id ex eget, elementum facilisis ex.</BodyText>
                     <Container spacing="20" layout="2">
-                        <Button><IconHome color="gray-0" />Call to action</Button>
-                        <Button type="secondary"><IconHome color="gray-5" />Call to action</Button>
+                        <Button><IconHome color="--gray-0" />Call to action</Button>
+                        <Button type="secondary"><IconHome color="--gray-5" />Call to action</Button>
                     </Container>
                 </Card>
                 <Card type="box" headerLabel="Card Title" size="medium" spacing="20" limitHeight={true}>

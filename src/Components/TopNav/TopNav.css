@@ -4,8 +4,6 @@
 @import "../Spacing.css";
 
 .topNav {
-    position: fixed;
-    width: 100%;
     background: var(--gray-0);
     padding: 0 var(--su-50);
     display: grid;

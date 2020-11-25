@@ -13,7 +13,7 @@ function App() {
         <Route path="/examples">
             <ViewExamples />
         </Route>
-        <Route path="/experiment">
+        <Route path="/experiments">
             <ViewExperiment />
         </Route>
     </>);

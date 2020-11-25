@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect, useRef} from "react";
 
 import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
@@ -11,9 +11,17 @@ import Input from "./Components/Form/Input.js";
 import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
 
-export default function ViewComponents(){
+export default function ViewComponents() {
+    const [topNavHeight, setTopNavHeight] = useState();
+    const componentRef = useRef(null);
+
+    useEffect(() => {
+        const {offsetHeight} = componentRef.current;
+        setTopNavHeight(offsetHeight);
+    });
+
     return (<>
-        <TopNav />
+        <TopNav ref={componentRef} />
         <Container size="large">
             <TitleText>Components</TitleText>
         </Container>
@@ -30,14 +38,14 @@ export default function ViewComponents(){
                     <LabelText>Label Text</LabelText>
                 </Container>
                 <Container spacing="30">
-                    <TitleText><span className="text--bold">Title Text</span></TitleText>
-                    <SubTitleText><span className="text--bold">Sub-title Text</span></SubTitleText>
-                    <HeadingText><span className="text--bold">Heading Text</span></HeadingText>
-                    <SubHeadingText><span className="text--bold">Sub-heading Text</span></SubHeadingText>
-                    <BigBodyText><span className="text--bold">Big Body Text</span></BigBodyText>
-                    <BodyText><span className="text--bold">Body Text</span></BodyText>
-                    <SmallBodyText><span className="text--bold">Small Body Text</span></SmallBodyText>
-                    <LabelText><span className="text--bold">Label Text</span></LabelText>
+                    <TitleText><strong>Title Text</strong></TitleText>
+                    <SubTitleText><strong>Sub-title Text</strong></SubTitleText>
+                    <HeadingText><strong>Heading Text</strong></HeadingText>
+                    <SubHeadingText><strong>Sub-heading Text</strong></SubHeadingText>
+                    <BigBodyText><strong>Big Body Text</strong></BigBodyText>
+                    <BodyText><strong>Body Text</strong></BodyText>
+                    <SmallBodyText><strong>Small Body Text</strong></SmallBodyText>
+                    <LabelText><strong>Label Text</strong></LabelText>
                 </Container>
             </Card>
             <Container spacing="30" layout="2">
