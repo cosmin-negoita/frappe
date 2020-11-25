@@ -1,0 +1,47 @@
+@import '../Reset.css';
+@import '../Spacing.css';
+
+/* MediaObject Settings */
+.media-object {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+/* MediaObject Vertical Alignment - Affects vertical alignment of children */
+.media-object--align-top {
+    align-items: start;
+}
+.media-object--align-center {
+    align-items: center;
+}
+.media-object--align-bottom {
+    align-items: end;
+}
+
+/* MediaObject Order */
+.media-object--inverse > *:nth-child(1) {
+    grid-column: 2;
+}
+.media-object--inverse > *:nth-child(2) {
+    grid-column: 1;
+}
+.media-object--inverse > *:nth-child(1), .media-object--inverse > *:nth-child(2) {
+    grid-row: 1;
+}
+
+/* MediaObject Sizes - Affects spacing between children elements */
+.media-object--spacing-10 {
+    grid-gap: var(--su-10);
+}
+.media-object--spacing-20 {
+    grid-gap: var(--su-20);
+}
+.media-object--spacing-30 {
+    grid-gap: var(--su-30);
+}
+.media-object--spacing-50 {
+    grid-gap: var(--su-10);
+}
+.media-object--spacing-100 {
+    grid-gap: var(--su-100);
+}

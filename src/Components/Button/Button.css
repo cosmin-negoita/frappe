@@ -16,11 +16,11 @@
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
     -webkit-border-radius: 3px;
-    transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
-    -webkit-transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
-    -moz-transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
-    -ms-transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
-    -o-transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
+    transition: all 0.2s ease-in, border-color 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in, border-color 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in, border-color 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in, border-color 0.2s ease-in;
+    -o-transition: all 0.2s ease-in, border-color 0.2s ease-in;
 }
 .button:hover {
     cursor: pointer;
@@ -34,6 +34,7 @@
 }
 .button--primary:hover {
     background: var(--brand-dark);
+    box-shadow: 0 0 0 4px var(--brand-light);
 }
 
 .button--secondary {
@@ -43,6 +44,7 @@
 }
 .button--secondary:hover {
     border-color: var(--brand);
+    box-shadow: 0 0 0 4px var(--brand-light);
 }
 .button--link {
     background: transparent;
@@ -60,6 +62,10 @@
 .button--primary:disabled, .button--secondary:disabled {
     background: var(--gray-2);
     color: var(--gray-4);
+}
+.button:disabled:hover {
+    box-shadow: inherit;
+    cursor: not-allowed;
 }
 
 /* Button Sizes - Affects padding and font size */

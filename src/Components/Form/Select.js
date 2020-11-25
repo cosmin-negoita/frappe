@@ -18,7 +18,7 @@ export default function Select(props) {
             <select size={props.size} name={props.name} className={classes} value={props.value} onChange={props.onChange} disabled={props.disabled}>
                 {props.children}
             </select>
-            {props.isValid === false && <SmallBodyText>This is an error</SmallBodyText>}
+            {props.isValid === false && <SmallBodyText>{props.errorMessage}</SmallBodyText>}
         </div>
         )
 }

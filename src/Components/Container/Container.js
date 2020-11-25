@@ -22,5 +22,5 @@ export default function Container(props) {
     const noTopPadding = props.noTopPadding ? componentBaseClass + "--no-top-padding" : "";
     const classes = clsx(componentBaseClass, size, spacing, layout, noTopPadding, limitHeight, className);
 
-    return <div className={classes} type={props.type} size={props.size} layout={props.layout} style={props.style}>{props.children}</div>
+    return <div className={classes} style={props.style}>{props.children}</div>
 }

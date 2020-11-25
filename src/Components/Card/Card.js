@@ -31,6 +31,6 @@ export default function Card(props) {
         </Container>);
     }
     else {
-        return <Container className={classes} type={props.type} size={props.size} spacing={props.spacing} layout={props.layout} limitHeight={props.limitHeight}>{props.children}</Container>;
+        return <Container className={classes} size={props.size} spacing={props.spacing} layout={props.layout} limitHeight={props.limitHeight}>{props.children}</Container>;
     }
 }

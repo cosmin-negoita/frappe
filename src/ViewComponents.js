@@ -69,7 +69,7 @@ export default function ViewComponents() {
                             <SubHeadingText>Input Text</SubHeadingText>
                             <Input label="Default Text Input" type="text" placeholder="Type here..." />
                             <Input label="Disabled Text Input" type="text" placeholder="Type here..." disabled />
-                            <Input label="Error Text Input" type="text" isValid={false} placeholder="Type here..." />
+                            <Input label="Error Text Input" type="text" isValid={false} placeholder="Type here..." errorMessage="Please type something" />
                         </Container>
                         <Container spacing="30">
                             <SubHeadingText>Select</SubHeadingText>
@@ -83,7 +83,7 @@ export default function ViewComponents() {
                                 <option value="2">Option 2</option>
                                 <option value="3">Option 3</option>
                             </Select>
-                            <Select label="Error Select" isValid={false}>
+                            <Select label="Error Select" isValid={false} errorMessage="Please choose an option">
                                 <option value="1">Option 1</option>
                                 <option value="2">Option 2</option>
                                 <option value="3">Option 3</option>
@@ -93,7 +93,7 @@ export default function ViewComponents() {
                     <SubHeadingText>Textarea</SubHeadingText>
                     <TextArea label="Default Textarea" rows="5" placeholder="Type your message here..."></TextArea>
                     <TextArea label="Disabled Textarea" rows="5" placeholder="Type your message here..." disabled></TextArea>
-                    <TextArea label="Error Textarea" rows="5" placeholder="Type your message here..." isValid={false}></TextArea>
+                    <TextArea label="Error Textarea" rows="5" placeholder="Type your message here..." isValid={false} errorMessage="Please type a message"></TextArea>
                 </Card>
             </Container>
         </Container>

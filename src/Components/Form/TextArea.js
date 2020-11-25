@@ -18,7 +18,7 @@ export default function TextArea(props) {
             <textarea rows={props.rows} cols={props.cols} name={props.name} className={classes} placeholder={props.placeholder} value={props.value} onChange={props.onChange} disabled={props.disabled}>
                 {props.children}
             </textarea>
-            {props.isValid === false && <SmallBodyText>This is an error</SmallBodyText>}
+            {props.isValid === false && <SmallBodyText>{props.errorMessage}</SmallBodyText>}
         </div>
         )
 }
