@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
@@ -16,6 +16,11 @@ import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
 
 export default function ViewExamples() {
+
+    useEffect(() => {
+        document.title = "Frappe - Examples";
+    });
+
     return (<>
         <TopNav />
         <Container size="large">

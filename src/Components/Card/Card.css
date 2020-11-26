@@ -11,12 +11,9 @@
 }
 
 /* Card Types - Affects look and feel */
-.card--box, .card--modal {
+.card--box {
     background: var(--gray-0);
-    box-shadow: 0px 2px 4px var(--shadow-small), 0px 8px 16px var(--shadow-small);
-}
-.card--modal {
-    box-shadow: 0px 8px 16px var(--shadow-large);
+    box-shadow: 0px 4px 8px var(--gray-2);
 }
 .card--border {
     background: transparent;

@@ -9,6 +9,10 @@ import InputText from "./Components/Form/InputText.js";
 
 export default function ViewExperiment() {
 
+    useEffect(() => {
+        document.title = "Frappe - Experiments";
+    });
+
     /* Subscribe Form Functionality */
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

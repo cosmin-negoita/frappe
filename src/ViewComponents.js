@@ -14,16 +14,13 @@ import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
 
 export default function ViewComponents() {
-    const [topNavHeight, setTopNavHeight] = useState();
-    const componentRef = useRef(null);
 
     useEffect(() => {
-        const {offsetHeight} = componentRef.current;
-        setTopNavHeight(offsetHeight);
+        document.title = "Frappe - Components";
     });
 
     return (<>
-        <TopNav ref={componentRef} />
+        <TopNav />
         <Container size="large">
             <TitleText>Components</TitleText>
         </Container>
