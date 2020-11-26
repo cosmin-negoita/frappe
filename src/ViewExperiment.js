@@ -7,7 +7,6 @@ import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
 import {IconHeart, IconArrowRight} from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
-import Input from "./Components/Form/Input.js";
 import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
 
@@ -57,8 +56,8 @@ export default function ViewExperiment() {
                 <form onSubmit={onFormSubmit}>
                     <Container spacing="30">
                         <HeadingText>Subscribe to our newsletter!</HeadingText>
-                        <Input type="text" label="Your Name" value={name} isValid={nameValidation} errorMessage="Please tell us your name" onChange={handleNameChange} />
-                        <Input type="text" label="Your Email Address" value={email} isValid={emailValidation} errorMessage="Please use a valid email address" onChange={handleEmailChange} />
+                        <InputText label="Your Name" value={name} isValid={nameValidation} errorMessage="Please tell us your name" onChange={handleNameChange} />
+                        <InputText label="Your Email Address" value={email} isValid={emailValidation} errorMessage="Please use a valid email address" onChange={handleEmailChange} />
                         <Button>Subscribe</Button>
                     </Container>
                 </form>
