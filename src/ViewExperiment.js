@@ -5,10 +5,7 @@ import Container from "./Components/Container/Container.js";
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
-import {IconHeart, IconArrowRight} from "./Components/Icons/Icon.js";
-import Image from "./Components/Image/Image.js";
-import Select from "./Components/Form/Select.js";
-import TextArea from "./Components/Form/TextArea.js";
+import InputText from "./Components/Form/InputText.js";
 
 export default function ViewExperiment() {
 
