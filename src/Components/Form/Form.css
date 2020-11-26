@@ -81,3 +81,28 @@
     background-position: calc(100% - 10px) center;
     cursor: not-allowed;
 }
+
+/* Input Number settings */
+.form-field div {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+}
+.input--number {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.input--number__minus { 
+    grid-column: 1 / 2;
+}
+.input--number__plus { 
+    grid-column: 3 / 4;
+}
+.input--number__minus, .input--number__plus {
+    z-index: 2;
+    grid-gap: 0;
+    grid-row: 1;
+}

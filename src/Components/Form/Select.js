@@ -9,7 +9,7 @@ export default function Select(props) {
     const {className, ...attrs} = props;
     const componentBaseClass = "input";
     const hasError = props.isValid === false ? "has-error" : "";
-    const size = props.size ? componentBaseClass + "--size-" + props.size : componentBaseClass + "--medium";
+    const size = props.size ? componentBaseClass + "--" + props.size : componentBaseClass + "--medium";
     const classes = clsx(componentBaseClass, "select", hasError, size, className);
 
     return (

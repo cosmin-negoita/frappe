@@ -5,7 +5,7 @@ import Container from "./Components/Container/Container.js";
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
-import {IconHome, IconArrowRight} from "./Components/Icons/Icon.js";
+import {IconHeart, IconArrowRight} from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
 import Input from "./Components/Form/Input.js";
 import Select from "./Components/Form/Select.js";
@@ -44,6 +44,8 @@ export default function ViewExperiment() {
         setEmail("");
     }
 
+    /* Create Profile Functionality */
+
     return (<>
         <TopNav />
         <Container size="large">
@@ -69,7 +71,7 @@ export default function ViewExperiment() {
                 </Container>
                 }
             </Card>
-            <Card type="box" headerLabel="Create an Account" size="medium" spacing="30" layout="1">
+            <Card type="box" headerLabel="Create a profile" size="medium" spacing="30" layout="1">
                 <form>
                     <Container spacing="20">
                         

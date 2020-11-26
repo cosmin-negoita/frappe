@@ -6,10 +6,12 @@ import MediaObject from "./Components/MediaObject/MediaObject.js";
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
-import {IconHome, IconArrowRight} from "./Components/Icons/Icon.js";
+import {IconHeart, IconArrowRight} from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
 import Avatar from "./Components/Avatar/Avatar.js";
-import Input from "./Components/Form/Input.js";
+import InputText from "./Components/Form/InputText.js";
+import InputNumber from "./Components/Form/InputNumber.js";
+import InputPassword from "./Components/Form/InputPassword.js";
 import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
 
@@ -25,8 +27,8 @@ export default function ViewExamples() {
                     <HeadingText>Card title here</HeadingText>
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at vulputate justo. Donec tristique est felis, eget hendrerit neque tempus mattis. Ut sapien enim, tincidunt id ex eget, elementum facilisis ex.</BodyText>
                     <Container spacing="20" layout="2">
-                        <Button><IconHome color="--gray-0" />Call to action</Button>
-                        <Button type="secondary"><IconHome color="--gray-5" />Call to action</Button>
+                        <Button><IconHeart color="--gray-0" />Call to action</Button>
+                        <Button type="secondary"><IconHeart color="--gray-5" />Call to action</Button>
                     </Container>
                 </Card>
                 <Card type="box" headerLabel="Card Title" size="medium" spacing="20" limitHeight={true}>
@@ -90,7 +92,7 @@ export default function ViewExamples() {
                     <Container size="medium" spacing="20">
                         <SubHeadingText>This could be an article title that would wrap across two lines</SubHeadingText>
                         <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque vulputate justo.</BodyText>
-                        <Button type="link">Call to action<IconArrowRight color="--brand" /></Button>
+                        <Button type="link">Read more</Button>
                     </Container>
                 </Card>
             </Container>
@@ -100,8 +102,8 @@ export default function ViewExamples() {
                     <BodyText align="center">Subscribe to our newsletter to get the latest updates about our work.</BodyText>
                     <form>
                         <Container spacing="10">
-                            <Input type="text" placeholder="Your name..." />
-                            <Input type="text" placeholder="Your email..." />
+                            <InputText placeholder="Your name..." />
+                            <InputText placeholder="Your email..." />
                             <Button>Subscribe</Button>
                         </Container>
                     </form>
@@ -111,17 +113,17 @@ export default function ViewExamples() {
                     <BigBodyText>Let us know who you are!</BigBodyText>
                     <form>
                         <Container spacing="20">
-                            <Input type="text" label="Email Address" placeholder="Your email..." />
+                            <InputText label="Email Address" placeholder="Your email..." />
                             <Container spacing="20" layout="2">
-                                <Input type="text" label="Full Name" placeholder="Your name..." />
+                                <InputText label="Full Name" placeholder="Your name..." />
                                 <Select type="text" label="Country" placeholder="Your email...">
                                     <option value="Romania">Romania</option>
                                     <option value="United States">United States</option>
                                     <option value="Canada">Canada</option>
                                 </Select>
                             </Container>
-                            <Input type="password" label="Your Password" placeholder="Your email..." />
-                            <Input type="password" label="Confirm Password" placeholder="Your email..." />
+                            <InputPassword label="Your Password" placeholder="Your email..." />
+                            <InputPassword label="Confirm Password" placeholder="Your email..." />
                             <Button>Create Account</Button>
                         </Container>
                     </form>
