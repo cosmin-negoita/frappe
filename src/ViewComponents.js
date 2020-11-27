@@ -10,6 +10,8 @@ import Image from "./Components/Image/Image.js";
 import InputText from "./Components/Form/InputText.js";
 import InputNumber from "./Components/Form/InputNumber.js";
 import InputPassword from "./Components/Form/InputPassword.js";
+import Checkbox from "./Components/Form/Checkbox.js";
+import RadioButton from "./Components/Form/RadioButton.js";
 import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
 
@@ -91,6 +93,26 @@ export default function ViewComponents() {
                     </Container>
                     <Container spacing="30" layout="3">
                         <Container spacing="20">
+                            <SubHeadingText>Input Number Default</SubHeadingText>
+                            <InputNumber label="Default Number Input" placeholder="Type here..." size="small" />
+                            <InputNumber label="Default Number Input" placeholder="Type here..." />
+                            <InputNumber label="Default Number Input" placeholder="Type here..." size="large" />
+                        </Container>
+                        <Container spacing="20">
+                            <SubHeadingText>Input Number Disabled</SubHeadingText>
+                            <InputNumber label="Disabled Number Input" placeholder="Type here..." size="small" disabled />
+                            <InputNumber label="Disabled Number Input" placeholder="Type here..." disabled />
+                            <InputNumber label="Disabled Number Input" placeholder="Type here..." size="large" disabled />
+                        </Container>
+                        <Container spacing="20">
+                            <SubHeadingText>Input Number Error</SubHeadingText>
+                            <InputNumber label="Error Number Input" isValid={false} placeholder="Type here..." size="small" errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" isValid={false} placeholder="Type here..." errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" isValid={false} placeholder="Type here..." size="large" errorMessage="Please type something" />
+                        </Container>
+                    </Container>
+                    <Container spacing="30" layout="3">
+                        <Container spacing="20">
                             <SubHeadingText>Select Default</SubHeadingText>
                             <Select label="Small Select" size="small">
                                 <option value="1">Option 1</option>
@@ -163,6 +185,20 @@ export default function ViewComponents() {
                             <TextArea label="Error Textarea" rows="3" placeholder="Type your message here..." isValid={false} errorMessage="Please type a message" size="small"></TextArea>
                             <TextArea label="Error Textarea" rows="3" placeholder="Type your message here..." isValid={false} errorMessage="Please type a message"></TextArea>
                             <TextArea label="Error Textarea" rows="3" placeholder="Type your message here..." isValid={false} errorMessage="Please type a message" size="large"></TextArea>
+                        </Container>
+                    </Container>
+                    <Container spacing="30" layout="3">
+                        <Container spacing="20">
+                            <SubHeadingText>Checkbox</SubHeadingText>
+                            <Checkbox>Label</Checkbox>
+                            <Checkbox disabled>Label</Checkbox>
+                            <Checkbox isValid={false}>Label</Checkbox>
+                        </Container>
+                        <Container spacing="20">
+                            <SubHeadingText>Radio Button</SubHeadingText>
+                            <RadioButton name="same">Label</RadioButton>
+                            <RadioButton name="same" disabled>Label</RadioButton>
+                            <RadioButton name="same" isValid={false}>Label</RadioButton>
                         </Container>
                     </Container>
                 </Card>

@@ -9,7 +9,7 @@
     justify-content: center;
     grid-gap: 5px;
     line-height: 16px;
-    border: 0;
+    border: 1px solid transparent;
     outline: 0;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -29,11 +29,13 @@
 /* Button Types - Affects look and feel */
 .button--primary {
     background: var(--brand);
+    border-color: var(--brand);
     color: var(--gray-0);
     font-weight: 900;
 }
 .button--primary:hover {
     background: var(--brand-dark);
+    border-color: var(--brand-dark);
     box-shadow: 0 0 0 4px var(--brand-light);
 }
 
@@ -61,6 +63,7 @@
 }
 .button--primary:disabled, .button--secondary:disabled {
     background: var(--gray-2);
+    border-color: var(--gray-3);
     color: var(--gray-4);
 }
 .button:disabled:hover {
@@ -70,14 +73,14 @@
 
 /* Button Sizes - Affects padding and font size */
 .button--small {
-    padding: 7px;
+    padding: 6px;
     font-size: var(--scale-1);
 }
 .button--medium {
-    padding: 12px;
+    padding: 11px;
     font-size: var(--scale1);
 }
 .button--large {
-    padding: 17px;
+    padding: 16px;
     font-size: var(--scale2);
 }

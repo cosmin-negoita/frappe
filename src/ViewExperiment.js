@@ -6,6 +6,7 @@ import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
 import InputText from "./Components/Form/InputText.js";
+import Checkbox from "./Components/Form/Checkbox.js";
 
 export default function ViewExperiment() {
 
@@ -59,6 +60,7 @@ export default function ViewExperiment() {
                         <HeadingText>Subscribe to our newsletter!</HeadingText>
                         <InputText label="Your Name" value={name} isValid={nameValidation} errorMessage="Please tell us your name" onChange={handleNameChange} />
                         <InputText label="Your Email Address" value={email} isValid={emailValidation} errorMessage="Please use a valid email address" onChange={handleEmailChange} />
+                        <Checkbox>I have read and agree with the Privacy Policy and Terms of Service</Checkbox>
                         <Button>Subscribe</Button>
                     </Container>
                 </form>
