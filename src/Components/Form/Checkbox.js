@@ -13,7 +13,7 @@ export default function Checkbox(props) {
 
     return (
         <label className={classes}>
-            <input className="input" type="checkbox" checked={props.checked} name={props.name} value={props.value} disabled={props.disabled} />
+            <input className="input" type="checkbox" onClick={props.onClick} checked={props.checked} name={props.name} value={props.value} disabled={props.disabled} />
             <span className={checkmarkClasses}></span>
             {props.children}
         </label>

@@ -17,6 +17,16 @@ import TextArea from "./Components/Form/TextArea.js";
 
 export default function ViewComponents() {
 
+    const [numberValue, setNumberValue] = useState(0);
+    function onMinusClick(e) {
+        e.preventDefault();
+        setNumberValue(numberValue - 1);
+    }
+    function onPlusClick(e) {
+        e.preventDefault();
+        setNumberValue(numberValue + 1);
+    }
+
     useEffect(() => {
         document.title = "Frappe - Components";
     });
@@ -80,9 +90,9 @@ export default function ViewComponents() {
                         </Container>
                         <Container spacing="20">
                             <SubHeadingText>Input Text Disabled</SubHeadingText>
-                            <InputText label="Disabled Text Input" placeholder="Type here..." size="small" disabled />
-                            <InputText label="Disabled Text Input" placeholder="Type here..." disabled />
-                            <InputText label="Disabled Text Input" placeholder="Type here..." size="large" disabled />
+                            <InputText label="Disabled Text Input" placeholder="Type here..." size="small" disabled={true} />
+                            <InputText label="Disabled Text Input" placeholder="Type here..." disabled={true} />
+                            <InputText label="Disabled Text Input" placeholder="Type here..." size="large" disabled={true} />
                         </Container>
                         <Container spacing="20">
                             <SubHeadingText>Input Text Error</SubHeadingText>
@@ -94,21 +104,21 @@ export default function ViewComponents() {
                     <Container spacing="30" layout="3">
                         <Container spacing="20">
                             <SubHeadingText>Input Number Default</SubHeadingText>
-                            <InputNumber label="Default Number Input" placeholder="Type here..." size="small" />
-                            <InputNumber label="Default Number Input" placeholder="Type here..." />
-                            <InputNumber label="Default Number Input" placeholder="Type here..." size="large" />
+                            <InputNumber label="Default Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="small" />
+                            <InputNumber label="Default Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} />
+                            <InputNumber label="Default Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="large" />
                         </Container>
                         <Container spacing="20">
                             <SubHeadingText>Input Number Disabled</SubHeadingText>
-                            <InputNumber label="Disabled Number Input" placeholder="Type here..." size="small" disabled />
-                            <InputNumber label="Disabled Number Input" placeholder="Type here..." disabled />
-                            <InputNumber label="Disabled Number Input" placeholder="Type here..." size="large" disabled />
+                            <InputNumber label="Disabled Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="small" disabled={true} />
+                            <InputNumber label="Disabled Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} disabled={true} />
+                            <InputNumber label="Disabled Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="large" disabled={true} />
                         </Container>
                         <Container spacing="20">
                             <SubHeadingText>Input Number Error</SubHeadingText>
-                            <InputNumber label="Error Number Input" isValid={false} placeholder="Type here..." size="small" errorMessage="Please type something" />
-                            <InputNumber label="Error Number Input" isValid={false} placeholder="Type here..." errorMessage="Please type something" />
-                            <InputNumber label="Error Number Input" isValid={false} placeholder="Type here..." size="large" errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} size="small" errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} size="large" errorMessage="Please type something" />
                         </Container>
                     </Container>
                     <Container spacing="30" layout="3">

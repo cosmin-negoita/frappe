@@ -10,7 +10,7 @@ export default function Select(props) {
     const componentBaseClass = "input";
     const hasError = props.isValid === false ? "has-error" : "";
     const size = props.size ? componentBaseClass + "--" + props.size : componentBaseClass + "--medium";
-    const classes = clsx(componentBaseClass, "select", hasError, size, className);
+    const classes = clsx(componentBaseClass, "input--select", hasError, size, className);
 
     return (
         <div className="form-field">

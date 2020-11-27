@@ -58,13 +58,14 @@
     font-size: var(--scale1);
 }
 .input--large {
-    padding: 16px;
+    padding: 13px;
     font-size: var(--scale2);
 }
 
 /* Select Styling */
-.select {
-    position: relative;
+.input--select {
+    overflow: visible;
+    line-height: 22px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -72,10 +73,10 @@
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
 }
-.select:hover {
+.input--select:hover {
     cursor: pointer;
 }
-.select:disabled {
+.input--select:disabled {
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L5 5L1 1' stroke='%23002148' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
@@ -188,4 +189,9 @@
 }
 .radio-button input:checked ~ .radio-button__checkmark {
     background-image: none;
+    background: var(--gray-0);
+    box-shadow: inset 0 0 0 4px var(--brand);
+}
+.radio-button input:checked:hover ~ .radio-button__checkmark {
+    box-shadow: 0 0 0 4px var(--brand-light), inset 0 0 0 4px var(--brand);
 }

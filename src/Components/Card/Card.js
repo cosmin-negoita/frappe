@@ -23,7 +23,7 @@ export default function Card(props) {
 
     if (props.headerLabel){
         return (
-        <Container className={classes} limitHeight={props.limitHeight}>
+        <Container id={props.id} className={classes} limitHeight={props.limitHeight}>
             <div className={headerClasses}>{props.headerLabel}</div>
             <Container size={props.size} spacing={props.spacing} layout={props.layout} >
                 {props.children}
