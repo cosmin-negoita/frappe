@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/frappe/static/css/main.427f5954.chunk.css",
-    "main.js": "/frappe/static/js/main.0145c4c9.chunk.js",
-    "main.js.map": "/frappe/static/js/main.0145c4c9.chunk.js.map",
+    "main.css": "/frappe/static/css/main.26c9ce86.chunk.css",
+    "main.js": "/frappe/static/js/main.dc6e6daf.chunk.js",
+    "main.js.map": "/frappe/static/js/main.dc6e6daf.chunk.js.map",
     "runtime-main.js": "/frappe/static/js/runtime-main.7c90c9fd.js",
     "runtime-main.js.map": "/frappe/static/js/runtime-main.7c90c9fd.js.map",
     "static/js/2.006253c6.chunk.js": "/frappe/static/js/2.006253c6.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.59705d15.chunk.js": "/frappe/static/js/3.59705d15.chunk.js",
     "static/js/3.59705d15.chunk.js.map": "/frappe/static/js/3.59705d15.chunk.js.map",
     "index.html": "/frappe/index.html",
-    "static/css/main.427f5954.chunk.css.map": "/frappe/static/css/main.427f5954.chunk.css.map",
+    "static/css/main.26c9ce86.chunk.css.map": "/frappe/static/css/main.26c9ce86.chunk.css.map",
     "static/js/2.006253c6.chunk.js.LICENSE.txt": "/frappe/static/js/2.006253c6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7c90c9fd.js",
     "static/js/2.006253c6.chunk.js",
-    "static/css/main.427f5954.chunk.css",
-    "static/js/main.0145c4c9.chunk.js"
+    "static/css/main.26c9ce86.chunk.css",
+    "static/js/main.dc6e6daf.chunk.js"
   ]
 }
