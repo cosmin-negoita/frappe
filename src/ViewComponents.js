@@ -14,6 +14,7 @@ import Checkbox from "./Components/Form/Checkbox.js";
 import RadioButton from "./Components/Form/RadioButton.js";
 import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
+import TabNav from "./Components/TabNav/TabNav.js";
 
 export default function ViewComponents() {
 
@@ -35,6 +36,44 @@ export default function ViewComponents() {
         <TopNav />
         <Container size="large">
             <TitleText>Components</TitleText>
+        </Container>
+        <Container size="large" layout="3" spacing="50" noTopPadding>
+            <Container spacing="30">
+                <SubHeadingText>Card Box</SubHeadingText>
+                <Card size="small" type="box">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card size="medium" type="box">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card size="large" type="box">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+            </Container>
+            <Container spacing="30">
+                <SubHeadingText>Card Box with Header</SubHeadingText>
+                <Card headerLabel="Card Heading" size="small" type="box">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card headerLabel="Card Heading" size="medium" type="box">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card headerLabel="Card Heading" size="large" type="box">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+            </Container>
+            <Container spacing="30">
+                <SubHeadingText>Card Border</SubHeadingText>
+                <Card size="small" type="border">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card size="medium" type="border">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card size="large" type="border">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+            </Container>
         </Container>
         <Container size="large" spacing="30" noTopPadding >
             <Card headerLabel="Typography" type="box" spacing="30" size="medium" layout="2">
@@ -213,6 +252,24 @@ export default function ViewComponents() {
                     </Container>
                 </Card>
             </Container>
+            <Card type="box" size="medium" spacing="30" headerLabel="Tab Navigation" layout="2">
+                <Container spacing="30">
+                    <SubHeadingText>Tab Navigation Equal Tab Widths</SubHeadingText>
+                    <TabNav marginBottom="20">
+                        <BodyText label="Tab 1">This is just placeholder content</BodyText>
+                        <BodyText label="Tab 2">This is just placeholder content and this time it's longer</BodyText>
+                        <BodyText label="Tab 3">This is just placeholder content and this time it's even longer so you can notice it changing</BodyText>
+                    </TabNav>
+                </Container>
+                <Container spacing="30">
+                    <SubHeadingText>Tab Navigation Max Content Tabs</SubHeadingText>
+                    <TabNav maxContent={true} marginBottom="20">
+                        <BodyText label="Tab 1">This is just placeholder content</BodyText>
+                        <BodyText label="Tab 2">This is just placeholder content and this time it's longer</BodyText>
+                        <BodyText label="Tab 3">This is just placeholder content and this time it's even longer so you can notice it changing</BodyText>
+                    </TabNav>
+                </Container>
+            </Card>
         </Container>
     </>);
 }

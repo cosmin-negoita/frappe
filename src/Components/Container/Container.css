@@ -29,7 +29,7 @@
     grid-gap: var(--su-30);
 }
 .container--spacing-50 {
-    grid-gap: var(--su-10);
+    grid-gap: var(--su-50);
 }
 .container--spacing-100 {
     grid-gap: var(--su-100);
