@@ -6,7 +6,7 @@ import {SmallBodyText} from "../Typography/Typography.js";
 
 export default function TextArea(props) {
 
-    const {className, ...attrs} = props;
+    const {className} = props;
     const componentBaseClass = "input";
     const hasError = props.isValid === false ? "has-error" : "";
     const size = props.size ? componentBaseClass + "--" + props.size : componentBaseClass + "--medium";

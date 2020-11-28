@@ -167,12 +167,12 @@
     border-color: var(--brand);
 }
 .checkbox input:disabled ~ .checkbox__checkmark, .radio-button input:disabled ~ .radio-button__checkmark {
-    background: var(--gray-2);
-    border-color: var(--gray-3);
+    background: var(--gray-1);
+    border-color: var(--gray-2);
     color: var(--gray-4);
 }
 .checkbox input:disabled:hover ~ .checkbox__checkmark, .radio-button input:disabled:hover ~ .radio-button__checkmark {
-    border-color: var(--gray-3);
+    border-color: var(--gray-2);
     box-shadow: none;
     cursor: not-allowed;
 }

@@ -23,7 +23,7 @@ export default function Card(props) {
 
     if (props.headerLabel){
         return (
-        <Container id={props.id} className={classes} limitHeight={props.limitHeight}>
+        <Container id={props.id} className={classes} limitHeight={props.limitHeight} style={props.style}>
             <div className={headerClasses}>{props.headerLabel}</div>
             <Container size={props.size} spacing={props.spacing} layout={props.layout} >
                 {props.children}
@@ -31,6 +31,6 @@ export default function Card(props) {
         </Container>);
     }
     else {
-        return <Container className={classes} size={props.size} spacing={props.spacing} layout={props.layout} limitHeight={props.limitHeight}>{props.children}</Container>;
+        return <Container className={classes} size={props.size} spacing={props.spacing} layout={props.layout} limitHeight={props.limitHeight} style={props.style}>{props.children}</Container>;
     }
 }

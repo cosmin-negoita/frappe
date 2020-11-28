@@ -62,8 +62,8 @@
     padding: 0;
 }
 .button--primary:disabled, .button--secondary:disabled {
-    background: var(--gray-2);
-    border-color: var(--gray-3);
+    background: var(--gray-1);
+    border-color: var(--gray-2);
     color: var(--gray-4);
 }
 .button:disabled:hover {

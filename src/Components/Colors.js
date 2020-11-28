@@ -1,13 +1,13 @@
 const colors = [
     {"--gray-0": "#FFFFFF"},
-    {"--gray-1": "#F7F3F1"},
-    {"--gray-2": "#F1E9E5"},
-    {"--gray-3": "#E1D8D3"},
-    {"--gray-4": "#907B71"},
-    {"--gray-5": "#4E382D"},
-    {"--brand": "#EB8348"},
-    {"--brand-light": "#FFE9DC"},
-    {"--brand-dark": "#B46538"},
+    {"--gray-1": "#F3F5FA"},
+    {"--gray-2": "#DAE0EB"},
+    {"--gray-3": "#C4CCDB"},
+    {"--gray-4": "#7F8CA6"},
+    {"--gray-5": "#2D384E"},
+    {"--brand": "#6C7BFF"},
+    {"--brand-light": "#E9EBFF"},
+    {"--brand-dark": "#4B5BE1"},
     {"--error": "#FF5D8D"},
     {"--error-bg": "#FFEEF3"}
 ];
