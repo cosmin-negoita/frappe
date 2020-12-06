@@ -1,30 +1,57 @@
 import React, {useState} from "react";
-import clsx from "clsx";
-import "./Form.css";
+import styled from "styled-components";
+
+import {StyledFormField, FormElementAppearance} from "./FormElementAppearance.js";
 import "../Typography/Typography.css";
 import {SmallBodyText} from "../Typography/Typography.js";
 import Button from "../Button/Button.js";
 import {IconPlus, IconMinus} from "../Icons/Icon.js";
 
+const StyledNumberDiv = styled.div`
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    grid-template-rows: 1fr;
+
+    & .minus-button, & .plus-button {
+        z-index: 2;
+        grid-gap: 0;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-row: 1;
+    }
+    & .minus-button {
+        grid-column: 1 / 2;
+    }
+    & .plus-button {
+        grid-column: 3 / 4;
+    }
+`;
+
+const StyledInputNumber = styled.input.attrs(props => ({
+    type: "number"
+}))`
+    ${FormElementAppearance}
+    grid-column: 1 / 4;
+    grid-row: 1;
+    text-align: center;
+    appearance: none;
+    z-index: 1;
+`;
+
 export default function Input(props) {
-
-    const {className, ...attrs} = props;
-    const componentBaseClass = "input";
-    const hasError = props.isValid === false ? "has-error" : "";
-    const size = props.size ? componentBaseClass + "--" + props.size : componentBaseClass + "--medium";
-    const classes = clsx(componentBaseClass, "input--number", hasError, size, className);
-
     const color = props.disabled === true ? "--gray-4" : "--gray-0";
+    const size = props.size || "normal";
 
     return (
-        <div className="form-field">
+        <StyledFormField>
             {props.label && <label className="text--label">{props.label}</label>}
-            <div>
-                <Button size={props.size} onClick={props.onMinusClick} className="input--number__minus" disabled={props.disabled}><IconMinus color={color} /></Button>
-                <input size={props.size} type="number" name={props.name} className={classes} value={props.value} disabled={props.disabled} />
-                <Button size={props.size} onClick={props.onPlusClick} className="input--number__plus" disabled={props.disabled}><IconPlus color={color} /></Button>
-            </div>
-            {props.isValid === false && <SmallBodyText>{props.errorMessage}</SmallBodyText>}
-        </div>
+            <StyledNumberDiv>
+                <Button size={size} onClick={props.onMinusClick} className="minus-button" disabled={props.disabled}><IconMinus color={color} /></Button>
+                <StyledInputNumber size={size} isValid={props.isValid} name={props.name} className={props.className} value={props.value} disabled={props.disabled} />
+                <Button size={size} onClick={props.onPlusClick} className="plus-button" disabled={props.disabled}><IconPlus color={color} /></Button>
+            </StyledNumberDiv>
+            {props.isValid === false && <SmallBodyText style={{color: "var(--error)"}}>{props.errorMessage}</SmallBodyText>}
+        </StyledFormField>
     )
 }

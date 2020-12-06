@@ -5,7 +5,7 @@ import Container from "./Components/Container/Container.js";
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
-import {IconHeart, IconArrowRight} from "./Components/Icons/Icon.js";
+import {IconHeart, IconArrowRight, IconArrowLeft, IconPlus, IconMinus, IconChevronUp, IconChevronDown, IconChevronLeft, IconChevronRight, IconCheckmark} from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
 import InputText from "./Components/Form/InputText.js";
 import InputNumber from "./Components/Form/InputNumber.js";
@@ -34,49 +34,61 @@ export default function ViewComponents() {
 
     return (<>
         <TopNav />
-        <Container size="large">
+        <Container size="50">
             <TitleText>Components</TitleText>
         </Container>
-        <Container size="large" layout="3" spacing="50" noTopPadding>
+        <Container size="50" layout="3" spacing="50" noTopPadding>
             <Container spacing="30">
                 <SubHeadingText>Card Box</SubHeadingText>
-                <Card size="small" type="box">
+                <Card size="10" type="box">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
-                <Card size="medium" type="box">
+                <Card size="30" type="box">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
-                <Card size="large" type="box">
+                <Card size="50" type="box">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
             </Container>
             <Container spacing="30">
                 <SubHeadingText>Card Box with Header</SubHeadingText>
-                <Card headerLabel="Card Heading" size="small" type="box">
+                <Card headerLabel="Card Heading" size="10" type="box">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
-                <Card headerLabel="Card Heading" size="medium" type="box">
+                <Card headerLabel="Card Heading" size="30" type="box">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
-                <Card headerLabel="Card Heading" size="large" type="box">
+                <Card headerLabel="Card Heading" size="50" type="box">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
             </Container>
             <Container spacing="30">
                 <SubHeadingText>Card Border</SubHeadingText>
-                <Card size="small" type="border">
+                <Card size="10" type="border">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
-                <Card size="medium" type="border">
+                <Card size="30" type="border">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
-                <Card size="large" type="border">
+                <Card size="50" type="border">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
             </Container>
         </Container>
-        <Container size="large" spacing="30" noTopPadding >
-            <Card headerLabel="Typography" type="box" spacing="30" size="medium" layout="2">
+        <Container size="50" spacing="30" noTopPadding >
+            <Card headerLabel="Icons" type="box" size="30" spacing="30" layout="max-content">
+                <IconHeart color="--gray-5"/>
+                <IconPlus color="--gray-5"/>
+                <IconMinus color="--gray-5"/>
+                <IconArrowLeft color="--gray-5"/>
+                <IconArrowRight color="--gray-5"/>
+                <IconChevronUp color="--gray-5"/>
+                <IconChevronDown color="--gray-5"/>
+                <IconChevronLeft color="--gray-5"/>
+                <IconChevronRight color="--gray-5"/>
+                <IconCheckmark color="--gray-5"/>
+            </Card>
+            <Card headerLabel="Typography" type="box" spacing="30" size="30" layout="2">
                 <Container spacing="30">
                     <TitleText>Title Text</TitleText>
                     <SubTitleText>Sub-title Text</SubTitleText>
@@ -99,7 +111,7 @@ export default function ViewComponents() {
                 </Container>
             </Card>
             <Container spacing="30">
-                <Card headerLabel="Buttons" type="box" spacing="30" size="medium" layout="3">
+                <Card headerLabel="Buttons" type="box" spacing="30" size="30" layout="3">
                     <Container spacing="20">
                         <SubHeadingText>Primary Buttons</SubHeadingText>
                         <Button size="small"><IconHeart color="--gray-0" />Call to Action</Button>
@@ -119,7 +131,7 @@ export default function ViewComponents() {
                         <Button size="large" disabled><IconHeart color="--gray-4" />Call to Action</Button>
                     </Container>
                 </Card>
-                <Card type="box" headerLabel="Form Elements" spacing="30" size="medium">
+                <Card type="box" headerLabel="Form Elements" spacing="30" size="30">
                     <Container spacing="30" layout="3">
                         <Container spacing="20">
                             <SubHeadingText>Input Text Default</SubHeadingText>
@@ -236,23 +248,33 @@ export default function ViewComponents() {
                             <TextArea label="Error Textarea" rows="3" placeholder="Type your message here..." isValid={false} errorMessage="Please type a message" size="large"></TextArea>
                         </Container>
                     </Container>
-                    <Container spacing="30" layout="3">
+                    <Container spacing="30" layout="4">
                         <Container spacing="20">
-                            <SubHeadingText>Checkbox</SubHeadingText>
+                            <SubHeadingText>Checkbox Off</SubHeadingText>
                             <Checkbox>Label</Checkbox>
                             <Checkbox disabled>Label</Checkbox>
                             <Checkbox isValid={false}>Label</Checkbox>
                         </Container>
                         <Container spacing="20">
-                            <SubHeadingText>Radio Button</SubHeadingText>
+                            <SubHeadingText>Checkbox On</SubHeadingText>
+                            <Checkbox checked="checked">Label</Checkbox>
+                            <Checkbox checked="checked" disabled>Label</Checkbox>
+                        </Container>
+                        <Container spacing="20">
+                            <SubHeadingText>Radio Button Off</SubHeadingText>
                             <RadioButton name="same">Label</RadioButton>
                             <RadioButton name="same" disabled>Label</RadioButton>
                             <RadioButton name="same" isValid={false}>Label</RadioButton>
                         </Container>
+                        <Container spacing="20">
+                            <SubHeadingText>Radio Button On</SubHeadingText>
+                            <RadioButton name="same1" checked="checked">Label</RadioButton>
+                            <RadioButton name="same2" checked="checked" disabled>Label</RadioButton>
+                        </Container>
                     </Container>
                 </Card>
             </Container>
-            <Card type="box" size="medium" spacing="30" headerLabel="Tab Navigation" layout="2">
+            <Card type="box" size="30" spacing="30" headerLabel="Tab Navigation" layout="2">
                 <Container spacing="30">
                     <SubHeadingText>Tab Navigation Equal Tab Widths</SubHeadingText>
                     <TabNav marginBottom="20">

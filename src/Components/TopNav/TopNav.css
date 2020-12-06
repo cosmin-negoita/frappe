@@ -1,7 +1,6 @@
 /* TopNav Component */
 @import "../Typography/Typography.css";
 @import "../Reset.css";
-@import "../Spacing.css";
 
 .topNav {
     background: var(--gray-0);

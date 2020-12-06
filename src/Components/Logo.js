@@ -16,11 +16,11 @@ export default function Logo() {
             <path d="M106.488 9C106.488 8.44772 106.936 8 107.488 8H114.834C115.386 8 115.834 8.44772 115.834 9V10.1979C115.834 11.3025 114.938 12.1979 113.834 12.1979H111.553V13.973H114.762C115.314 13.973 115.762 14.4207 115.762 14.973V16.955C115.762 17.5073 115.314 17.955 114.762 17.955H111.553V19.8021H115C115.552 19.8021 116 20.2498 116 20.8021V22C116 23.1046 115.105 24 114 24H107.488C106.936 24 106.488 23.5523 106.488 23V9Z" fill="#2D384E"/>
             <defs>
             <linearGradient id="paint0_linear" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#E9EBFF"/>
+            <stop stopColor="#E9EBFF"/>
             <stop offset="1" stop-color="#ADB6FF"/>
             </linearGradient>
             <linearGradient id="paint1_linear" x1="16.0002" y1="12.8" x2="16.0002" y2="28.8" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#6CA7FF"/>
+            <stop stopColor="#6CA7FF"/>
             <stop offset="1" stop-color="#6C7BFF"/>
             </linearGradient>
             </defs>

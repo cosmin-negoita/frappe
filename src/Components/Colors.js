@@ -9,7 +9,8 @@ const colors = [
     {"--brand-light": "#E9EBFF"},
     {"--brand-dark": "#4B5BE1"},
     {"--error": "#FF5D8D"},
-    {"--error-bg": "#FFEEF3"}
+    {"--error-bg": "#FFEEF3"},
+    {"--transparent": "transparent"}
 ];
 
 colors.map(color => {

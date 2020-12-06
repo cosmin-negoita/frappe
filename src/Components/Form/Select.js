@@ -1,24 +1,59 @@
 import React, {useState} from "react";
-import clsx from "clsx";
-import "./Form.css";
+import styled, {css} from "styled-components";
+import {StyledFormField, FormElementAppearance} from "./FormElementAppearance.js";
 import "../Typography/Typography.css";
 import {SmallBodyText} from "../Typography/Typography.js";
+import {IconChevronDown} from "../Icons/Icon.js";
+
+const StyledSelectDiv = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    align-items: center;
+
+    & svg {
+        grid-column: 2;
+        grid-row: 1;
+        z-index: 2;
+        justify-self: center;
+        pointer-events: none;
+    }
+`;
+
+const StyledSelect = styled.select.attrs(props => ({
+    size: props.size || "normal"
+}))`
+    ${FormElementAppearance}
+    overflow: visible;
+    line-height: 22px;
+    appearance: none;
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 0 4px var(--brand-light);
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+    &:disabled:hover {
+        box-shadow: none;
+    }
+`;
 
 export default function Select(props) {
-
-    const {className, ...attrs} = props;
-    const componentBaseClass = "input";
-    const hasError = props.isValid === false ? "has-error" : "";
-    const size = props.size ? componentBaseClass + "--" + props.size : componentBaseClass + "--medium";
-    const classes = clsx(componentBaseClass, "input--select", hasError, size, className);
+    const chevronColor = props.disabled ? "--gray-4" : "--gray-5";
 
     return (
-        <div className="form-field">
+        <StyledFormField>
             {props.label && <label className="text--label">{props.label}</label>}
-            <select size={props.size} name={props.name} className={classes} value={props.value} onChange={props.onChange} disabled={props.disabled}>
-                {props.children}
-            </select>
+            <StyledSelectDiv>
+                <IconChevronDown color={chevronColor} />
+                <StyledSelect size={props.size} name={props.name} className={props.className} value={props.value} onChange={props.onChange} isValid={props.isValid} disabled={props.disabled}>
+                    {props.children}
+                </StyledSelect>
+            </StyledSelectDiv>
             {props.isValid === false && <SmallBodyText>{props.errorMessage}</SmallBodyText>}
-        </div>
+        </StyledFormField>
         )
 }

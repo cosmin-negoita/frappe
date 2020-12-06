@@ -1,1 +1,2 @@
-
+body, input, select, textarea, button { font-family: 'Quicksand', sans-serif; font-size: var(--font-base); }
+body { background: var(--gray-1); }

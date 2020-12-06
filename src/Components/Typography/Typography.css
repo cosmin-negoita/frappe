@@ -16,8 +16,6 @@
     --scale6: calc(var(--scale5) * var(--scale-factor));
 }
 
-body, .input { font-family: 'Quicksand', sans-serif; font-size: var(--font-base); }
-
 /* Set default weight */
 .text--small-body, .text--body, .text--big-body, .text--sub-heading, .text--heading, .text--sub-title, .text--title, .text--label {
     color: var(--gray-5);

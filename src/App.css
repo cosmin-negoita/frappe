@@ -1,8 +1,0 @@
-@import "./Components/Reset.css";
-
-body {
-  background: var(--gray-1);
-}
-.ctnr {
-  padding: 100px;
-}

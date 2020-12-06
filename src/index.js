@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "./Components/Colors.js";
+import "./Components/Spacing.js";
+import "./Components/Reset.css";
+import "./index.css";
 
 ReactDOM.render(
   <BrowserRouter basename="/frappe">

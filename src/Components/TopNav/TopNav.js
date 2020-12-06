@@ -14,6 +14,7 @@ const TopNav = React.forwardRef((props, ref) => {
                 <NavLink className="topNav__menu__item" exact to="/" activeClassName="topNav__menu__item__active">Components</NavLink>
                 <NavLink className="topNav__menu__item" exact to="/examples" activeClassName="topNav__menu__item__active">Card Examples</NavLink>
                 <NavLink className="topNav__menu__item" exact to="/experiments" activeClassName="topNav__menu__item__active">Experiments</NavLink>
+                <NavLink className="topNav__menu__item" exact to="/dashboard" activeClassName="topNav__menu__item__active">Dashboard</NavLink>
             </div>
         </nav>
     );

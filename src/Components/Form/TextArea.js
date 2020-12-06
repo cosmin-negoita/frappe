@@ -1,24 +1,24 @@
 import React, {useState} from "react";
-import clsx from "clsx";
-import "./Form.css";
+import styled, {css} from "styled-components";
+import {StyledFormField, FormElementAppearance} from "./FormElementAppearance.js";
 import "../Typography/Typography.css";
 import {SmallBodyText} from "../Typography/Typography.js";
 
+const StyledTextarea = styled.textarea.attrs(props => ({
+    size: props.size || "normal"
+}))`
+    ${FormElementAppearance}
+`;
+
 export default function TextArea(props) {
 
-    const {className} = props;
-    const componentBaseClass = "input";
-    const hasError = props.isValid === false ? "has-error" : "";
-    const size = props.size ? componentBaseClass + "--" + props.size : componentBaseClass + "--medium";
-    const classes = clsx(componentBaseClass, "textarea", size, hasError, className);
-
     return (
-        <div className="form-field">
+        <StyledFormField>
             {props.label && <label className="text--label">{props.label}</label>}
-            <textarea rows={props.rows} cols={props.cols} name={props.name} className={classes} placeholder={props.placeholder} value={props.value} onChange={props.onChange} disabled={props.disabled}>
+            <StyledTextarea rows={props.rows} cols={props.cols} name={props.name} size={props.size} className={props.className} placeholder={props.placeholder} value={props.value} onChange={props.onChange} disabled={props.disabled} isValid={props.isValid}>
                 {props.children}
-            </textarea>
-            {props.isValid === false && <SmallBodyText>{props.errorMessage}</SmallBodyText>}
-        </div>
+            </StyledTextarea>
+            {props.isValid === false && <SmallBodyText style={{color: "var(--error)"}}>{props.errorMessage}</SmallBodyText>}
+        </StyledFormField>
         )
 }

@@ -6,7 +6,7 @@ import MediaObject from "./Components/MediaObject/MediaObject.js";
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
-import {IconHeart, IconArrowRight} from "./Components/Icons/Icon.js";
+import {IconHeart, IconChevronRight} from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
 import Avatar from "./Components/Avatar/Avatar.js";
 import InputText from "./Components/Form/InputText.js";
@@ -23,12 +23,12 @@ export default function ViewExamples() {
 
     return (<>
         <TopNav />
-        <Container size="large">
+        <Container size="50">
             <TitleText>Examples</TitleText>
         </Container>
-        <Container size="large" spacing="30" layout="3" noTopPadding >
+        <Container size="50" spacing="30" layout="3" noTopPadding >
             <Container spacing="30">
-                <Card type="box" size="medium" spacing="20" limitHeight={true}>
+                <Card type="box" size="30" spacing="20" limitHeight={true}>
                     <HeadingText>Card title here</HeadingText>
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at vulputate justo. Donec tristique est felis, eget hendrerit neque tempus mattis. Ut sapien enim, tincidunt id ex eget, elementum facilisis ex.</BodyText>
                     <Container spacing="20" layout="2">
@@ -36,16 +36,16 @@ export default function ViewExamples() {
                         <Button type="secondary"><IconHeart color="--gray-5" />Call to action</Button>
                     </Container>
                 </Card>
-                <Card type="box" headerLabel="Card Title" size="medium" spacing="20" limitHeight={true}>
+                <Card type="box" headerLabel="Card Title" size="30" spacing="20" limitHeight={true}>
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at vulputate justo. Donec tristique est felis, eget hendrerit neque tempus mattis. Ut sapien enim, tincidunt id ex eget, elementum facilisis ex.</BodyText>
                     <Button>Call to action</Button>
                 </Card>
-                <Card type="border" size="medium" spacing="20" limitHeight={true}>
+                <Card type="border" size="30" spacing="20" limitHeight={true}>
                     <SubHeadingText align="center">Card Title</SubHeadingText>
                     <BodyText align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at vulputate justo. Donec tristique est felis, eget hendrerit neque tempus mattis. Ut sapien enim, tincidunt id ex eget, elementum facilisis ex.</BodyText>
                     <Button>Call to action</Button>
                 </Card>
-                <Card type="box" size="medium" spacing="20">
+                <Card type="box" size="30" spacing="20">
                     <MediaObject mediaSize="128px" spacing="20" align="center">
                         <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
                         <Container spacing="10">
@@ -54,7 +54,7 @@ export default function ViewExamples() {
                         </Container>
                     </MediaObject>
                 </Card>
-                <Card type="box" size="medium" spacing="20">
+                <Card type="box" size="30" spacing="20">
                     <MediaObject inverse={true} mediaSize="128px" spacing="20" align="center">
                         <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
                         <Container spacing="10">
@@ -65,11 +65,11 @@ export default function ViewExamples() {
                 </Card>
             </Container>
             <Container spacing="30">
-                <Card headerLabel="Card With Image" type="box" size="medium" spacing="20">
+                <Card headerLabel="Card With Image" type="box" size="30" spacing="20">
                     <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque vulputate justo.</BodyText>
                 </Card>
-                <Card headerLabel="Activity" type="box" size="medium" spacing="20">
+                <Card headerLabel="Activity" type="box" size="30" spacing="20">
                     <MediaObject mediaSize="32px" spacing="10" align="center">
                         <Avatar src="https://lupsa.ro/wp-content/uploads/2019/11/portrait-square-03.jpg" size="32" />
                         <Container spacing="5">
@@ -94,15 +94,15 @@ export default function ViewExamples() {
                 </Card>
                 <Card type="box">
                     <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
-                    <Container size="medium" spacing="20">
+                    <Container size="30" spacing="20">
                         <SubHeadingText>This could be an article title that would wrap across two lines</SubHeadingText>
                         <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque vulputate justo.</BodyText>
-                        <Button type="link">Read more</Button>
+                        <Button type="secondary" size="small">Read more<IconChevronRight color="--gray-5" /></Button>
                     </Container>
                 </Card>
             </Container>
             <Container spacing="30">
-                <Card type="box" size="medium" spacing="20" limitHeight={true}>
+                <Card type="box" size="30" spacing="20" limitHeight={true}>
                     <SubHeadingText align="center">Subscribe to Newsletter</SubHeadingText>
                     <BodyText align="center">Subscribe to our newsletter to get the latest updates about our work.</BodyText>
                     <form>
@@ -113,7 +113,7 @@ export default function ViewExamples() {
                         </Container>
                     </form>
                 </Card>
-                <Card type="box" size="medium" spacing="20" limitHeight={true}>
+                <Card type="box" size="30" spacing="20" limitHeight={true}>
                     <SubHeadingText>Create an Account</SubHeadingText>
                     <BigBodyText>Let us know who you are!</BigBodyText>
                     <form>

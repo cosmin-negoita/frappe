@@ -79,11 +79,11 @@ export default function ViewExperiment() {
 
     return (<>
         <TopNav />
-        <Container size="large">
+        <Container size="50">
             <TitleText>Experiment</TitleText>
         </Container>
-        <Container size="large" spacing="30" layout="3" noTopPadding >
-            <Card type="box" headerLabel="Simple Form" size="medium" spacing="30" layout="1">
+        <Container size="50" spacing="30" layout="3" noTopPadding >
+            <Card type="box" headerLabel="Simple Form" size="30" spacing="30" layout="1">
                 { subscribed === false &&
                 <form onSubmit={onFormSubmit}>
                     <Container spacing="30">
@@ -103,7 +103,7 @@ export default function ViewExperiment() {
                 </Container>
                 }
             </Card>
-            <Card type="box" headerLabel="Adding Things" size="medium" spacing="30" limitHeight={true}>
+            <Card type="box" headerLabel="Adding Things" size="30" spacing="30" limitHeight={true}>
                 <form>
                     <Container spacing="20">
                         <InputNumber value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} />
@@ -122,7 +122,7 @@ export default function ViewExperiment() {
                     </Container>
                 </Container>
             </Card>
-            <Card type="box" spacing="10" size="medium" limitHeight={true}>
+            <Card type="box" spacing="10" size="30" limitHeight={true}>
                 <SubHeadingText>Group Details</SubHeadingText>
                 <TabNav spacing="20" maxContent={true} marginBottom="30">
                     <Container label="Overview">

@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-import {Link, Route, Switch} from "react-router-dom";
-import './App.css';
+import React from "react";
+import {Route} from "react-router-dom";
 import ViewExamples from "./ViewExamples.js";
 import ViewComponents from "./ViewComponents.js";
 import ViewExperiment from "./ViewExperiment.js";
+import ViewDashboard from "./ViewDashboard.js";
 
 function App() {
     return (<>
@@ -15,6 +15,9 @@ function App() {
         </Route>
         <Route path="/experiments">
             <ViewExperiment />
+        </Route>
+        <Route path="/dashboard">
+            <ViewDashboard />
         </Route>
     </>);
 }
