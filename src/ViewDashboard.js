@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
-import MediaObject from "./Components/MediaObject/MediaObject.js";
+
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
@@ -22,7 +22,7 @@ export default function ViewDashboard() {
 
     return (<>
         <TopNav />
-        <Container size="50" spacing="10" layout="max-content">
+        <Container size="50" spacing="10" cols="max-content">
             <Button>This is a button</Button>
             <Button>This is a button</Button>
             <Button>This is a button</Button>

@@ -37,7 +37,7 @@ export default function ViewComponents() {
         <Container size="50">
             <TitleText>Components</TitleText>
         </Container>
-        <Container size="50" layout="3" spacing="50" noTopPadding>
+        <Container size="50" cols="3" spacing="50" noTopPadding>
             <Container spacing="30">
                 <SubHeadingText>Card Box</SubHeadingText>
                 <Card size="10" type="box">
@@ -76,7 +76,7 @@ export default function ViewComponents() {
             </Container>
         </Container>
         <Container size="50" spacing="30" noTopPadding >
-            <Card headerLabel="Icons" type="box" size="30" spacing="30" layout="max-content">
+            <Card headerLabel="Icons" type="box" size="30" spacing="30" cols="max-content">
                 <IconHeart color="--gray-5"/>
                 <IconPlus color="--gray-5"/>
                 <IconMinus color="--gray-5"/>
@@ -88,7 +88,7 @@ export default function ViewComponents() {
                 <IconChevronRight color="--gray-5"/>
                 <IconCheckmark color="--gray-5"/>
             </Card>
-            <Card headerLabel="Typography" type="box" spacing="30" size="30" layout="2">
+            <Card headerLabel="Typography" type="box" spacing="30" size="30" cols="2">
                 <Container spacing="30">
                     <TitleText>Title Text</TitleText>
                     <SubTitleText>Sub-title Text</SubTitleText>
@@ -111,7 +111,7 @@ export default function ViewComponents() {
                 </Container>
             </Card>
             <Container spacing="30">
-                <Card headerLabel="Buttons" type="box" spacing="30" size="30" layout="3">
+                <Card headerLabel="Buttons" type="box" spacing="30" size="30" cols="3">
                     <Container spacing="20">
                         <SubHeadingText>Primary Buttons</SubHeadingText>
                         <Button size="small"><IconHeart color="--gray-0" />Call to Action</Button>
@@ -132,7 +132,7 @@ export default function ViewComponents() {
                     </Container>
                 </Card>
                 <Card type="box" headerLabel="Form Elements" spacing="30" size="30">
-                    <Container spacing="30" layout="3">
+                    <Container spacing="30" cols="3">
                         <Container spacing="20">
                             <SubHeadingText>Input Text Default</SubHeadingText>
                             <InputText label="Default Text Input" placeholder="Type here..." size="small" />
@@ -152,7 +152,7 @@ export default function ViewComponents() {
                             <InputText label="Error Text Input" isValid={false} placeholder="Type here..." size="large" errorMessage="Please type something" />
                         </Container>
                     </Container>
-                    <Container spacing="30" layout="3">
+                    <Container spacing="30" cols="3">
                         <Container spacing="20">
                             <SubHeadingText>Input Number Default</SubHeadingText>
                             <InputNumber label="Default Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="small" />
@@ -172,7 +172,7 @@ export default function ViewComponents() {
                             <InputNumber label="Error Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} size="large" errorMessage="Please type something" />
                         </Container>
                     </Container>
-                    <Container spacing="30" layout="3">
+                    <Container spacing="30" cols="3">
                         <Container spacing="20">
                             <SubHeadingText>Select Default</SubHeadingText>
                             <Select label="Small Select" size="small">
@@ -228,7 +228,7 @@ export default function ViewComponents() {
                             </Select>
                         </Container>
                     </Container>
-                    <Container spacing="30" layout="3">
+                    <Container spacing="30" cols="3">
                         <Container spacing="20">
                             <SubHeadingText>Textarea Default</SubHeadingText>
                             <TextArea label="Default Textarea" rows="3" placeholder="Type your message here..." size="small"></TextArea>
@@ -248,7 +248,7 @@ export default function ViewComponents() {
                             <TextArea label="Error Textarea" rows="3" placeholder="Type your message here..." isValid={false} errorMessage="Please type a message" size="large"></TextArea>
                         </Container>
                     </Container>
-                    <Container spacing="30" layout="4">
+                    <Container spacing="30" cols="4">
                         <Container spacing="20">
                             <SubHeadingText>Checkbox Off</SubHeadingText>
                             <Checkbox>Label</Checkbox>
@@ -274,7 +274,7 @@ export default function ViewComponents() {
                     </Container>
                 </Card>
             </Container>
-            <Card type="box" size="30" spacing="30" headerLabel="Tab Navigation" layout="2">
+            <Card type="box" size="30" spacing="30" headerLabel="Tab Navigation" cols="2">
                 <Container spacing="30">
                     <SubHeadingText>Tab Navigation Equal Tab Widths</SubHeadingText>
                     <TabNav marginBottom="20">

@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledImage = styled.img`
     width: ${props => props.width ? props.width : "100%"};
     height: ${props => props.height ? props.height : "auto"};
-    border-radius: ${props => props.radius ? props.radius : "0"};
+    border-radius: ${props => props.radius ? props.radius : "3px"};
     overflow: hidden;
 `;
 

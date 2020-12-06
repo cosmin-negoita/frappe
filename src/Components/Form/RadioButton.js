@@ -61,7 +61,7 @@ const StyledCheckmark = styled.div.attrs(props =>({
 export default function RadioButton(props) {
     return (
         <StyledLabel className={props.className} >
-            <StyledInputRadio defaultChecked={props.checked} name={props.name} value={props.value} disabled={props.disabled} />
+            <StyledInputRadio checked={props.checked} onChange={props.onChange} name={props.name} value={props.value} disabled={props.disabled} />
             <StyledCheckmark></StyledCheckmark>
             {props.children}
         </StyledLabel>

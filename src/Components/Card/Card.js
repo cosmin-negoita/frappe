@@ -30,13 +30,13 @@ export default function Card(props) {
         return (
             <StyledContainer className={props.className} type={props.type} limitHeight={props.limitHeight}>
                 <StyledHeader size={props.size}>{props.headerLabel}</StyledHeader>
-                <Container size={props.size} spacing={props.spacing} layout={props.layout} >
+                <Container size={props.size} spacing={props.spacing} cols={props.cols} >
                     {props.children}
                 </Container>
             </StyledContainer>
         );
     }
     else {
-        return <StyledContainer className={props.className} type={props.type} size={props.size} spacing={props.spacing} layout={props.layout} limitHeight={props.limitHeight}>{props.children}</StyledContainer>;
+        return <StyledContainer className={props.className} type={props.type} size={props.size} spacing={props.spacing} cols={props.cols} limitHeight={props.limitHeight}>{props.children}</StyledContainer>;
     }
 }

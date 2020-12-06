@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 
 import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
-import MediaObject from "./Components/MediaObject/MediaObject.js";
+
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
@@ -26,12 +26,12 @@ export default function ViewExamples() {
         <Container size="50">
             <TitleText>Examples</TitleText>
         </Container>
-        <Container size="50" spacing="30" layout="3" noTopPadding >
+        <Container size="50" spacing="30" cols="3" noTopPadding >
             <Container spacing="30">
                 <Card type="box" size="30" spacing="20" limitHeight={true}>
                     <HeadingText>Card title here</HeadingText>
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at vulputate justo. Donec tristique est felis, eget hendrerit neque tempus mattis. Ut sapien enim, tincidunt id ex eget, elementum facilisis ex.</BodyText>
-                    <Container spacing="20" layout="2">
+                    <Container spacing="20" cols="2">
                         <Button><IconHeart color="--gray-0" />Call to action</Button>
                         <Button type="secondary"><IconHeart color="--gray-5" />Call to action</Button>
                     </Container>
@@ -46,22 +46,22 @@ export default function ViewExamples() {
                     <Button>Call to action</Button>
                 </Card>
                 <Card type="box" size="30" spacing="20">
-                    <MediaObject mediaSize="128px" spacing="20" align="center">
-                        <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
+                    <Container layout="1fr 160px" alignItems="center" spacing="20">
                         <Container spacing="10">
                             <SubHeadingText>This is a title</SubHeadingText>
                             <BodyText>This is a short description of the title above.</BodyText>
                         </Container>
-                    </MediaObject>
+                        <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
+                    </Container>
                 </Card>
                 <Card type="box" size="30" spacing="20">
-                    <MediaObject inverse={true} mediaSize="128px" spacing="20" align="center">
+                    <Container layout="160px 1fr" alignItems="center" spacing="20">
                         <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
                         <Container spacing="10">
                             <SubHeadingText>This is a title</SubHeadingText>
                             <BodyText>This is a short description of the title above.</BodyText>
                         </Container>
-                    </MediaObject>
+                    </Container>
                 </Card>
             </Container>
             <Container spacing="30">
@@ -70,27 +70,27 @@ export default function ViewExamples() {
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque vulputate justo.</BodyText>
                 </Card>
                 <Card headerLabel="Activity" type="box" size="30" spacing="20">
-                    <MediaObject mediaSize="32px" spacing="10" align="center">
-                        <Avatar src="https://lupsa.ro/wp-content/uploads/2019/11/portrait-square-03.jpg" size="32" />
-                        <Container spacing="5">
+                    <Container layout="39px 1fr" spacing="10">
+                        <Avatar src="https://lupsa.ro/wp-content/uploads/2019/11/portrait-square-03.jpg" />
+                        <Container>
                             <BodyText><strong>Alex Sosa</strong> liked your profile</BodyText>
                             <SmallBodyText>2 minutes ago</SmallBodyText>
                         </Container>
-                    </MediaObject>
-                    <MediaObject mediaSize="32px" spacing="10" align="center">
-                        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSskkzHf6voJSeDyPjH2MKa3CNaqYF6PHLdg&usqp=CAU" size="32" />
-                        <Container spacing="5">
+                    </Container>
+                    <Container layout="39px 1fr" spacing="10">
+                        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSskkzHf6voJSeDyPjH2MKa3CNaqYF6PHLdg&usqp=CAU" />
+                        <Container>
                             <BodyText><strong>Maryam Fraser</strong> left a comment on your profile</BodyText>
                             <SmallBodyText>1 hour ago</SmallBodyText>
                         </Container>
-                    </MediaObject>
-                    <MediaObject mediaSize="32px" spacing="10" align="center">
-                        <Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_small.jpg" size="32" />
-                        <Container spacing="5">
+                    </Container>
+                    <Container layout="39px 1fr" spacing="10">
+                        <Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_small.jpg" />
+                        <Container>
                             <BodyText><strong>Jordan Maxime</strong> requested your friendship</BodyText>
                             <SmallBodyText>1 day ago</SmallBodyText>
                         </Container>
-                    </MediaObject>
+                    </Container>
                 </Card>
                 <Card type="box">
                     <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
@@ -119,7 +119,7 @@ export default function ViewExamples() {
                     <form>
                         <Container spacing="20">
                             <InputText label="Email Address" placeholder="Your email..." />
-                            <Container spacing="20" layout="2">
+                            <Container spacing="20" cols="2">
                                 <InputText label="Full Name" placeholder="Your name..." />
                                 <Select type="text" label="Country" placeholder="Your email...">
                                     <option value="Romania">Romania</option>
