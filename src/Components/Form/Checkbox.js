@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {FormElementAppearance} from "./FormElementAppearance.js";
 import "../Typography/Typography.css";
-import {IconCheckmark} from "../Icons/Icon.js";
+import Icon from "../Icons/Icon.js";
 
 const StyledLabel = styled.label`
     position: relative;
@@ -67,7 +67,7 @@ export default function Checkbox(props) {
     return (
         <StyledLabel>
             <StyledInputCheckbox className={props.className} onClick={props.onClick} defaultChecked={props.checked} name={props.name} value={props.value} disabled={props.disabled} />
-            <StyledCheckmark isValid={props.isValid} defaultChecked={props.checked}><IconCheckmark color={checkmarkColor}/></StyledCheckmark>
+            <StyledCheckmark isValid={props.isValid} defaultChecked={props.checked}><Icon type="checkmark" color={checkmarkColor}/></StyledCheckmark>
             {props.children}
         </StyledLabel>
     );

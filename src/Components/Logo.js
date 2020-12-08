@@ -17,11 +17,11 @@ export default function Logo() {
             <defs>
             <linearGradient id="paint0_linear" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
             <stop stopColor="#E9EBFF"/>
-            <stop offset="1" stop-color="#ADB6FF"/>
+            <stop offset="1" stopColor="#ADB6FF"/>
             </linearGradient>
             <linearGradient id="paint1_linear" x1="16.0002" y1="12.8" x2="16.0002" y2="28.8" gradientUnits="userSpaceOnUse">
             <stop stopColor="#6CA7FF"/>
-            <stop offset="1" stop-color="#6C7BFF"/>
+            <stop offset="1" stopColor="#6C7BFF"/>
             </linearGradient>
             </defs>
         </svg>

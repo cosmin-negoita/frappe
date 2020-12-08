@@ -5,7 +5,7 @@ import Container from "./Components/Container/Container.js";
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
-import {IconHeart, IconArrowRight, IconArrowLeft, IconPlus, IconMinus, IconChevronUp, IconChevronDown, IconChevronLeft, IconChevronRight, IconCheckmark} from "./Components/Icons/Icon.js";
+import Icon from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
 import InputText from "./Components/Form/InputText.js";
 import InputNumber from "./Components/Form/InputNumber.js";
@@ -37,7 +37,7 @@ export default function ViewComponents() {
         <Container size="50">
             <TitleText>Components</TitleText>
         </Container>
-        <Container size="50" cols="3" spacing="50" noTopPadding>
+        <Container size="50" cols="4" spacing="50" noTopPadding>
             <Container spacing="30">
                 <SubHeadingText>Card Box</SubHeadingText>
                 <Card size="10" type="box">
@@ -74,19 +74,39 @@ export default function ViewComponents() {
                     <BodyText>Content goes right here</BodyText>
                 </Card>
             </Container>
+            <Container spacing="30">
+                <SubHeadingText>Card Popout</SubHeadingText>
+                <Card type="popout" size="50" spacing="30">
+                    <BodyText>This is a pop out used for modals, sidebars, etc.</BodyText>
+                </Card>
+            </Container>
         </Container>
         <Container size="50" spacing="30" noTopPadding >
-            <Card headerLabel="Icons" type="box" size="30" spacing="30" cols="max-content">
-                <IconHeart color="--gray-5"/>
-                <IconPlus color="--gray-5"/>
-                <IconMinus color="--gray-5"/>
-                <IconArrowLeft color="--gray-5"/>
-                <IconArrowRight color="--gray-5"/>
-                <IconChevronUp color="--gray-5"/>
-                <IconChevronDown color="--gray-5"/>
-                <IconChevronLeft color="--gray-5"/>
-                <IconChevronRight color="--gray-5"/>
-                <IconCheckmark color="--gray-5"/>
+            <Card headerLabel="Icons" type="box" size="30" spacing="30">
+                <Container spacing="30" cols="max-content">
+                    <Icon type="heart" color="--gray-5"/>
+                    <Icon type="plus" color="--gray-5"/>
+                    <Icon type="minus" color="--gray-5"/>
+                    <Icon type="arrow-left" color="--gray-5"/>
+                    <Icon type="arrow-right" color="--gray-5"/>
+                    <Icon type="chevron-up" color="--gray-5"/>
+                    <Icon type="chevron-down" color="--gray-5"/>
+                    <Icon type="chevron-left" color="--gray-5"/>
+                    <Icon type="chevron-right" color="--gray-5"/>
+                    <Icon type="checkmark" color="--gray-5"/>
+                </Container>
+                <Container spacing="30" cols="max-content">
+                    <Icon isContained={true} containerSize="48px" type="heart" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="plus" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="minus" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="arrow-left" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="arrow-right" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="chevron-up" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="chevron-down" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="chevron-left" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="chevron-right" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="checkmark" color="--gray-5"/>
+                </Container>
             </Card>
             <Card headerLabel="Typography" type="box" spacing="30" size="30" cols="2">
                 <Container spacing="30">
@@ -114,21 +134,21 @@ export default function ViewComponents() {
                 <Card headerLabel="Buttons" type="box" spacing="30" size="30" cols="3">
                     <Container spacing="20">
                         <SubHeadingText>Primary Buttons</SubHeadingText>
-                        <Button size="small"><IconHeart color="--gray-0" />Call to Action</Button>
-                        <Button><IconHeart color="gray-0" />Call to Action</Button>
-                        <Button size="large"><IconHeart color="--gray-0" />Call to Action</Button>
+                        <Button size="small"><Icon type="heart" color="--gray-0" />Call to Action</Button>
+                        <Button><Icon type="heart" color="gray-0" />Call to Action</Button>
+                        <Button size="large"><Icon type="heart" color="--gray-0" />Call to Action</Button>
                     </Container>
                     <Container spacing="20">
                         <SubHeadingText>Secondary Buttons</SubHeadingText>
-                        <Button type="secondary" size="small"><IconHeart color="--gray-5" />Call to Action</Button>
-                        <Button type="secondary"><IconHeart color="--gray-5" />Call to Action</Button>
-                        <Button type="secondary" size="large"><IconHeart color="--gray-5" />Call to Action</Button>
+                        <Button type="secondary" size="small"><Icon type="heart" color="--gray-5" />Call to Action</Button>
+                        <Button type="secondary"><Icon type="heart" color="--gray-5" />Call to Action</Button>
+                        <Button type="secondary" size="large"><Icon type="heart" color="--gray-5" />Call to Action</Button>
                     </Container>
                     <Container spacing="20">
                         <SubHeadingText>Disabled Buttons</SubHeadingText>
-                        <Button size="small" disabled><IconHeart color="--gray-4" />Call to Action</Button>
-                        <Button disabled><IconHeart color="--gray-4" />Call to Action</Button>
-                        <Button size="large" disabled><IconHeart color="--gray-4" />Call to Action</Button>
+                        <Button size="small" disabled><Icon type="heart" color="--gray-4" />Call to Action</Button>
+                        <Button disabled><Icon type="heart" color="--gray-4" />Call to Action</Button>
+                        <Button size="large" disabled><Icon type="heart" color="--gray-4" />Call to Action</Button>
                     </Container>
                 </Card>
                 <Card type="box" headerLabel="Form Elements" spacing="30" size="30">

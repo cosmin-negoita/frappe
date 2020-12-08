@@ -12,10 +12,10 @@ const StyledHeader = styled.div`
 `;
 
 const StyledContainer = styled(Container)`
-    background: ${props => props.type === "box" ? "var(--gray-0)" : "transparent"};
+    background: ${props => props.type === "box" || props.type === "popout" ? "var(--gray-0)" : "transparent"};
     border: ${props => props.type === "border" ? "1px solid var(--gray-3)" : "none"};
-    box-shadow: ${props => props.type === "box" ? "0 4px 8px var(--gray-2)" : "none"};
-    border-radius: var(--radius-outer);
+    box-shadow: ${props => props.type === "popout" ? "0 0 32px var(--gray-2), 0 0 8px var(--gray-2)" : (props.type === "box" ? "0 4px 8px var(--gray-2)" : "none")};
+    border-radius: ${props => props.radius ? props.radius : "var(--radius-outer)"};
     overflow: hidden;
 `;
 
@@ -28,15 +28,15 @@ const StyledContainer = styled(Container)`
 export default function Card(props) {
     if (props.headerLabel) {
         return (
-            <StyledContainer className={props.className} type={props.type} limitHeight={props.limitHeight}>
+            <StyledContainer className={props.className} type={props.type} limitHeight={props.limitHeight} radius={props.radius} spaceBottom={props.spaceBottom}>
                 <StyledHeader size={props.size}>{props.headerLabel}</StyledHeader>
-                <Container size={props.size} spacing={props.spacing} cols={props.cols} >
+                <Container size={props.size} spacing={props.spacing} layout={props.layout} alignItems={props.alignItems} cols={props.cols} >
                     {props.children}
                 </Container>
             </StyledContainer>
         );
     }
     else {
-        return <StyledContainer className={props.className} type={props.type} size={props.size} spacing={props.spacing} cols={props.cols} limitHeight={props.limitHeight}>{props.children}</StyledContainer>;
+        return <StyledContainer className={props.className} type={props.type} size={props.size} spaceBottom={props.spaceBottom} radius={props.radius} spacing={props.spacing} layout={props.layout} alignItems={props.alignItems} cols={props.cols} limitHeight={props.limitHeight}>{props.children}</StyledContainer>;
     }
 }

@@ -7,6 +7,7 @@ import "./Components/Colors.js";
 import "./Components/Spacing.js";
 import "./Components/Reset.css";
 import "./index.css";
+import "./Components/Typography/Typography.css";
 
 ReactDOM.render(
   <BrowserRouter basename="/frappe">

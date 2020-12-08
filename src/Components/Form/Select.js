@@ -3,14 +3,14 @@ import styled, {css} from "styled-components";
 import {StyledFormField, FormElementAppearance} from "./FormElementAppearance.js";
 import "../Typography/Typography.css";
 import {SmallBodyText} from "../Typography/Typography.js";
-import {IconChevronDown} from "../Icons/Icon.js";
+import Icon from "../Icons/Icon.js";
 
 const StyledSelectDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr 40px;
     align-items: center;
 
-    & svg {
+    & div {
         grid-column: 2;
         grid-row: 1;
         z-index: 2;
@@ -48,7 +48,7 @@ export default function Select(props) {
         <StyledFormField>
             {props.label && <label className="text--label">{props.label}</label>}
             <StyledSelectDiv>
-                <IconChevronDown color={chevronColor} />
+                <Icon type="chevron-down" color={chevronColor} />
                 <StyledSelect size={props.size} name={props.name} className={props.className} value={props.value} onChange={props.onChange} isValid={props.isValid} disabled={props.disabled}>
                     {props.children}
                 </StyledSelect>

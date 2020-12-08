@@ -35,6 +35,7 @@ const StyledTabButton = styled.button.attrs(props => ({
     &.active {
         color: var(--gray-5);
         border-color: var(--brand);
+        box-shadow: inset 0 -4px 0 var(--brand-light);
     }
 `;
 

@@ -1,19 +1,17 @@
 import React, {useEffect} from "react";
+import styled, {css} from "styled-components";
 
 import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
-
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
-import {IconHeart, IconChevronRight} from "./Components/Icons/Icon.js";
+import Icon from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
 import Avatar from "./Components/Avatar/Avatar.js";
 import InputText from "./Components/Form/InputText.js";
-import InputNumber from "./Components/Form/InputNumber.js";
 import InputPassword from "./Components/Form/InputPassword.js";
 import Select from "./Components/Form/Select.js";
-import TextArea from "./Components/Form/TextArea.js";
 
 export default function ViewExamples() {
 
@@ -26,14 +24,14 @@ export default function ViewExamples() {
         <Container size="50">
             <TitleText>Examples</TitleText>
         </Container>
-        <Container size="50" spacing="30" cols="3" noTopPadding >
+        <Container size="50" spacing="30" cols="3" noTopPadding>
             <Container spacing="30">
                 <Card type="box" size="30" spacing="20" limitHeight={true}>
                     <HeadingText>Card title here</HeadingText>
                     <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at vulputate justo. Donec tristique est felis, eget hendrerit neque tempus mattis. Ut sapien enim, tincidunt id ex eget, elementum facilisis ex.</BodyText>
                     <Container spacing="20" cols="2">
-                        <Button><IconHeart color="--gray-0" />Call to action</Button>
-                        <Button type="secondary"><IconHeart color="--gray-5" />Call to action</Button>
+                        <Button><Icon type="heart" color="--gray-0" />Call to action</Button>
+                        <Button type="secondary"><Icon type="heart" color="--gray-5" />Call to action</Button>
                     </Container>
                 </Card>
                 <Card type="box" headerLabel="Card Title" size="30" spacing="20" limitHeight={true}>
@@ -97,7 +95,7 @@ export default function ViewExamples() {
                     <Container size="30" spacing="20">
                         <SubHeadingText>This could be an article title that would wrap across two lines</SubHeadingText>
                         <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque vulputate justo.</BodyText>
-                        <Button type="secondary" size="small">Read more<IconChevronRight color="--gray-5" /></Button>
+                        <Button type="secondary" size="small">Read more<Icon type="chevron-right" color="--gray-5" /></Button>
                     </Container>
                 </Card>
             </Container>

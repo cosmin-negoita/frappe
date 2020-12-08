@@ -5,7 +5,7 @@ import {StyledFormField, FormElementAppearance} from "./FormElementAppearance.js
 import "../Typography/Typography.css";
 import {SmallBodyText} from "../Typography/Typography.js";
 import Button from "../Button/Button.js";
-import {IconPlus, IconMinus} from "../Icons/Icon.js";
+import Icon from "../Icons/Icon.js";
 
 const StyledNumberDiv = styled.div`
     display: grid;
@@ -47,9 +47,9 @@ export default function Input(props) {
         <StyledFormField>
             {props.label && <label className="text--label">{props.label}</label>}
             <StyledNumberDiv>
-                <Button size={size} onClick={props.onMinusClick} className="minus-button" disabled={props.disabled}><IconMinus color={color} /></Button>
+                <Button size={size} onClick={props.onMinusClick} className="minus-button" disabled={props.disabled}><Icon type="minus" color={color} /></Button>
                 <StyledInputNumber size={size} isValid={props.isValid} name={props.name} className={props.className} value={props.value} disabled={props.disabled} />
-                <Button size={size} onClick={props.onPlusClick} className="plus-button" disabled={props.disabled}><IconPlus color={color} /></Button>
+                <Button size={size} onClick={props.onPlusClick} className="plus-button" disabled={props.disabled}><Icon type="plus" color={color} /></Button>
             </StyledNumberDiv>
             {props.isValid === false && <SmallBodyText style={{color: "var(--error)"}}>{props.errorMessage}</SmallBodyText>}
         </StyledFormField>

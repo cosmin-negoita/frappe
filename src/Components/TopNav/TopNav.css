@@ -3,12 +3,14 @@
 @import "../Reset.css";
 
 .topNav {
+    position: relative;
     background: var(--gray-0);
     padding: 0 var(--su-50);
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
     box-shadow: 0px 4px 8px var(--gray-2);
+    z-index: 99;
 }
 .topNav__menu {
     justify-content: right;
