@@ -135,7 +135,7 @@ export default function ViewComponents() {
                     <Container spacing="20">
                         <SubHeadingText>Primary Buttons</SubHeadingText>
                         <Button size="small"><Icon type="heart" color="--gray-0" />Call to Action</Button>
-                        <Button><Icon type="heart" color="gray-0" />Call to Action</Button>
+                        <Button><Icon type="heart" color="--gray-0" />Call to Action</Button>
                         <Button size="large"><Icon type="heart" color="--gray-0" />Call to Action</Button>
                     </Container>
                     <Container spacing="20">
