@@ -1,5 +1,5 @@
 html, body { height: 100; }
 
-body, input, select, textarea, button { font-family: 'Quicksand', sans-serif; font-size: var(--font-base); }
+body, input, select, textarea, button { font-family: 'Quicksand', sans-serif; font-size: var(--font-base); color: var(--gray-5); }
 body { background: var(--gray-1); }
 strong { font-weight: 700; }

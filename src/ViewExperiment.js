@@ -64,6 +64,8 @@ export default function ViewExperiment() {
     const [deviceSize, setDeviceSize] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [quizname, setQuizname] = useState("");
+    const [ownedDevices, setOwnedDevices] = useState([]);
+    const [decision, setDecision] = useState("");
 
     function handleDeviceChange(e) {
         setDevice(e.target.value);
@@ -79,12 +81,20 @@ export default function ViewExperiment() {
         e.preventDefault();
         setQuizname(e.target.value);
     }
+    function updateOwnedDevices(e) {
+        setOwnedDevices([...ownedDevices, e.target.value]);
+    }
+    function handleDecisionChange(e) {
+        setDecision(e.target.value);
+    }
     function resetQuiz(e) {
         e.preventDefault();
         setSubmitted(false);
         setDevice("");
         setDeviceSize("");
         setQuizname("");
+        setOwnedDevices([]);
+        setDecision("");
     }
 
     return (<>
@@ -128,6 +138,30 @@ export default function ViewExperiment() {
                                     <RadioButton name="device" value="Samsung Galaxy" onChange={handleDeviceChange} checked={device === "Samsung Galaxy"}>Smasung Galaxy</RadioButton>
                                 </Container>
                             </Card>
+                            {device === "iPhone" && 
+                                <Card type="border" size="10" spacing="10">
+                                    <BodyText><strong>Which iPhones did you own?</strong></BodyText>
+                                    <Container cols="4" spacing="20">
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone 4">iPhone 4</Checkbox>
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone 5">iPhone 5</Checkbox>
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone 6">iPhone 6</Checkbox>
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone 7">iPhone 7</Checkbox>
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone 8">iPhone 8</Checkbox>
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone X">iPhone X</Checkbox>
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone 11">iPhone 11</Checkbox>
+                                        <Checkbox onClick={updateOwnedDevices} value="iPhone 12">iPhone 12</Checkbox>
+                                    </Container>
+                                </Card>
+                            }
+                            {device === "Samsung Galaxy" && 
+                                <Card type="border" size="10" spacing="10">
+                                    <BodyText><strong>What made you take this bad decision?</strong></BodyText>
+                                    <Container cols="max-content" cols="max-content" spacing="20">
+                                        <RadioButton name="decision" onChange={handleDecisionChange} value="I was drunk">I was drunk</RadioButton>
+                                        <RadioButton name="decision" onChange={handleDecisionChange} value="I don't care about performance">I don't care about performance</RadioButton>
+                                    </Container>
+                                </Card>
+                            }
                             <Card type="border" size="10" spacing="10">
                                 <BodyText><strong>What phone size do you prefer?</strong></BodyText>
                                 <Container cols="max-content" spacing="20">
@@ -142,12 +176,23 @@ export default function ViewExperiment() {
                 }
                 {submitted &&
                     <Container spacing="20">
-                        <SubHeadingText>Thanks for your time, {quizname}!</SubHeadingText>
-                        <BodyText>Here are your answers:</BodyText>
-                        <Container cols="2">
-                            <BodyText>Preffered device:<br/><strong>{device}</strong></BodyText>
-                            <BodyText>Preffered size:<br/><strong>{deviceSize}</strong></BodyText>
+                        <Container spacing="10">
+                            <SubHeadingText>Thanks for your time, {quizname}!</SubHeadingText>
+                            <BigBodyText>Here are your answers:</BigBodyText>
                         </Container>
+                        <Container cols="2" spacing="20">
+                            <BodyText>Preferred device:<br/><strong>{device}</strong></BodyText>
+                            <BodyText>Preferred size:<br/><strong>{deviceSize}</strong></BodyText>
+                        </Container>
+                        {device === "iPhone" && <BodyText>Previously owned:<br/><strong>
+                            {ownedDevices.map((device, index) => {
+                                if (index < ownedDevices.length - 1) return device + ", "
+                                else return device;
+                            })}
+                        </strong></BodyText>}
+                        {device === "Samsung Galaxy" &&
+                            <BodyText>Reason for buying a Samsung:<br/><strong>{decision}</strong></BodyText>
+                        }
                         <Button onClick={resetQuiz}>Reset quiz</Button>
                     </Container>
                 }

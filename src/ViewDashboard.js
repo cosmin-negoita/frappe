@@ -31,10 +31,13 @@ export default function ViewDashboard() {
                         <Button type="secondary" size="small">Logout</Button>
                     </Container>
                     <Divider />
-                    <SidebarMenuItem isActive={true} size="50" icon="heart"><BigBodyText>Dashboard</BigBodyText></SidebarMenuItem>
-                    <SidebarMenuItem size="50" icon="heart"><BigBodyText>Articles</BigBodyText></SidebarMenuItem>
-                    <SidebarMenuItem size="50" icon="heart"><BigBodyText>Readers</BigBodyText></SidebarMenuItem>
-                    <SidebarMenuItem size="50" icon="heart"><BigBodyText>Settings</BigBodyText></SidebarMenuItem>
+                    <Container spacing="10" size="50" noHorizontalPadding={true}>
+                        <SidebarMenuItem isActive={true} size="50" icon="home" iconSize="20"><BigBodyText>Dashboard</BigBodyText></SidebarMenuItem>
+                        <SidebarMenuItem size="50" icon="articles" iconSize="20"><BigBodyText>Articles</BigBodyText></SidebarMenuItem>
+                        <SidebarMenuItem size="50" icon="comment" iconSize="20"><BigBodyText>Comments</BigBodyText></SidebarMenuItem>
+                        <SidebarMenuItem size="50" icon="users" iconSize="20"><BigBodyText>Readers</BigBodyText></SidebarMenuItem>
+                        <SidebarMenuItem size="50" icon="settings" iconSize="20"><BigBodyText>Settings</BigBodyText></SidebarMenuItem>
+                    </Container>
                 </Card>
                 <Container className="scrollable" spacing="30" size="50" spaceBottom={true}>
                     <Container>
@@ -42,24 +45,24 @@ export default function ViewDashboard() {
                     </Container>
                     <Container spacing="30" cols="3">
                         <Card type="box" layout="47px 1fr" alignItems="center" size="30" spacing="10">
-                            <Icon type="heart" color="--gray-5" isContained={true} containerSize="48px" size="24px" />
+                            <Icon type="globe" color="--gray-5" isContained={true} containerSize="48px" size="24px" />
                             <Container spacing="5">
                                 <LabelText>Total Visits</LabelText>
                                 <SubHeadingText>25,489</SubHeadingText>
                             </Container>
                         </Card>
                         <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
-                            <Icon type="heart" color="--gray-5" isContained={true} containerSize="48px" size="24px" />
+                            <Icon type="eye" color="--gray-5" isContained={true} containerSize="48px" size="24px" />
                             <Container spacing="5">
-                                <LabelText>Returning visits</LabelText>
-                                <SubHeadingText>3,659</SubHeadingText>
+                                <LabelText>Total Reads</LabelText>
+                                <SubHeadingText>17,829</SubHeadingText>
                             </Container>
                         </Card>
                         <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
-                            <Icon type="heart" color="--gray-5" isContained={true} containerSize="48px" size="24px" />
+                            <Icon type="users" color="--gray-5" isContained={true} containerSize="48px" size="24px" />
                             <Container spacing="5">
-                                <LabelText>One Time Visits</LabelText>
-                                <SubHeadingText>21,830</SubHeadingText>
+                                <LabelText>Total Readers</LabelText>
+                                <SubHeadingText>754</SubHeadingText>
                             </Container>
                         </Card>
                     </Container>

@@ -18,7 +18,6 @@
 
 /* Set default weight */
 .text--small-body, .text--body, .text--big-body, .text--sub-heading, .text--heading, .text--sub-title, .text--title, .text--label {
-    color: var(--gray-5);
     font-weight: 500;
 }
 

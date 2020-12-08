@@ -94,6 +94,11 @@ export default function ViewComponents() {
                     <Icon type="chevron-left" color="--gray-5"/>
                     <Icon type="chevron-right" color="--gray-5"/>
                     <Icon type="checkmark" color="--gray-5"/>
+                    <Icon type="home" color="--gray-5"/>
+                    <Icon type="globe" color="--gray-5"/>
+                    <Icon type="users" color="--gray-5"/>
+                    <Icon type="comment" color="--gray-5"/>
+                    <Icon type="eye" color="--gray-5"/>
                 </Container>
                 <Container spacing="30" cols="max-content">
                     <Icon isContained={true} containerSize="48px" type="heart" color="--gray-5"/>
@@ -106,6 +111,11 @@ export default function ViewComponents() {
                     <Icon isContained={true} containerSize="48px" type="chevron-left" color="--gray-5"/>
                     <Icon isContained={true} containerSize="48px" type="chevron-right" color="--gray-5"/>
                     <Icon isContained={true} containerSize="48px" type="checkmark" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="home" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="globe" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="users" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="comment" color="--gray-5"/>
+                    <Icon isContained={true} containerSize="48px" type="eye" color="--gray-5"/>
                 </Container>
             </Card>
             <Card headerLabel="Typography" type="box" spacing="30" size="30" cols="2">

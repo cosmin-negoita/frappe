@@ -62,7 +62,7 @@ export default function RadioButton(props) {
     return (
         <StyledLabel className={props.className} >
             <StyledInputRadio checked={props.checked} onChange={props.onChange} name={props.name} value={props.value} disabled={props.disabled} />
-            <StyledCheckmark></StyledCheckmark>
+            <StyledCheckmark isValid={props.isValid}></StyledCheckmark>
             {props.children}
         </StyledLabel>
     );
