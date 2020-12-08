@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/frappe/static/css/main.dc8f0bda.chunk.css",
-    "main.js": "/frappe/static/js/main.a5a4f3f8.chunk.js",
-    "main.js.map": "/frappe/static/js/main.a5a4f3f8.chunk.js.map",
+    "main.css": "/frappe/static/css/main.9672820e.chunk.css",
+    "main.js": "/frappe/static/js/main.ed446922.chunk.js",
+    "main.js.map": "/frappe/static/js/main.ed446922.chunk.js.map",
     "runtime-main.js": "/frappe/static/js/runtime-main.4222b66e.js",
     "runtime-main.js.map": "/frappe/static/js/runtime-main.4222b66e.js.map",
-    "static/js/2.df8f1a03.chunk.js": "/frappe/static/js/2.df8f1a03.chunk.js",
-    "static/js/2.df8f1a03.chunk.js.map": "/frappe/static/js/2.df8f1a03.chunk.js.map",
+    "static/js/2.03dd2c73.chunk.js": "/frappe/static/js/2.03dd2c73.chunk.js",
+    "static/js/2.03dd2c73.chunk.js.map": "/frappe/static/js/2.03dd2c73.chunk.js.map",
     "static/js/3.33e09461.chunk.js": "/frappe/static/js/3.33e09461.chunk.js",
     "static/js/3.33e09461.chunk.js.map": "/frappe/static/js/3.33e09461.chunk.js.map",
     "index.html": "/frappe/index.html",
-    "static/css/main.dc8f0bda.chunk.css.map": "/frappe/static/css/main.dc8f0bda.chunk.css.map",
-    "static/js/2.df8f1a03.chunk.js.LICENSE.txt": "/frappe/static/js/2.df8f1a03.chunk.js.LICENSE.txt"
+    "static/css/main.9672820e.chunk.css.map": "/frappe/static/css/main.9672820e.chunk.css.map",
+    "static/js/2.03dd2c73.chunk.js.LICENSE.txt": "/frappe/static/js/2.03dd2c73.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4222b66e.js",
-    "static/js/2.df8f1a03.chunk.js",
-    "static/css/main.dc8f0bda.chunk.css",
-    "static/js/main.a5a4f3f8.chunk.js"
+    "static/js/2.03dd2c73.chunk.js",
+    "static/css/main.9672820e.chunk.css",
+    "static/js/main.ed446922.chunk.js"
   ]
 }
