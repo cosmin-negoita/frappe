@@ -11,6 +11,7 @@ import InputText from "./Components/Form/InputText.js";
 import InputNumber from "./Components/Form/InputNumber.js";
 import InputPassword from "./Components/Form/InputPassword.js";
 import Checkbox from "./Components/Form/Checkbox.js";
+import Toggle from "./Components/Form/Toggle.js";
 import RadioButton from "./Components/Form/RadioButton.js";
 import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
@@ -278,7 +279,7 @@ export default function ViewComponents() {
                             <TextArea label="Error Textarea" rows="3" placeholder="Type your message here..." isValid={false} errorMessage="Please type a message" size="large"></TextArea>
                         </Container>
                     </Container>
-                    <Container spacing="30" cols="4">
+                    <Container spacing="30" cols="5">
                         <Container spacing="20">
                             <SubHeadingText>Checkbox Off</SubHeadingText>
                             <Checkbox>Label</Checkbox>
@@ -300,6 +301,10 @@ export default function ViewComponents() {
                             <SubHeadingText>Radio Button On</SubHeadingText>
                             <RadioButton name="same1" checked="checked">Label</RadioButton>
                             <RadioButton name="same2" checked="checked" disabled>Label</RadioButton>
+                        </Container>
+                        <Container spacing="20">
+                            <SubHeadingText>Toggle</SubHeadingText>
+                            <Toggle name="same1">Label</Toggle>
                         </Container>
                     </Container>
                 </Card>

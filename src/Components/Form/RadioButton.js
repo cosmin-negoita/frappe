@@ -41,12 +41,14 @@ const StyledCheckmark = styled.div.attrs(props =>({
     justify-items: center;
     cursor: pointer;
     border-radius: 10px;
+    pointer-events: none;
 
     ${StyledInputRadio}:hover ~ & {
         border-color: var(--brand);
         box-shadow: 0 0 0 4px var(--brand-light); 
     }
     ${StyledInputRadio}:checked ~ & {
+        baackground-color: var(--gray-0);
         border-color: var(--brand);
         box-shadow: inset 0 0 0 4px var(--brand);
     }

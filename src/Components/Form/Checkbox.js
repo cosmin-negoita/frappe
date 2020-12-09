@@ -17,8 +17,7 @@ const StyledLabel = styled.label`
     color: var(--gray-5);
 `;
 const StyledInputCheckbox = styled.input.attrs(props => ({
-    type: "checkbox",
-    size: props.size || "normal"
+    type: "checkbox"
 }))`
     position: absolute;
     top: 0;
@@ -41,6 +40,7 @@ const StyledCheckmark = styled.div.attrs(props =>({
     align-items: center;
     justify-items: center;
     cursor: pointer;
+    pointer-events: none;
 
     ${StyledInputCheckbox}:hover ~ & {
         border-color: var(--brand);

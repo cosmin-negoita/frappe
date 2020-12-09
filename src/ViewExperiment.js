@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import styled from "styled-components";
 
 import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
@@ -6,12 +7,32 @@ import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
 import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
 import InputText from "./Components/Form/InputText.js";
+import InputNumber from "./Components/Form/InputNumber.js";
+import Toggle from "./Components/Form/Toggle.js";
 import RadioButton from "./Components/Form/RadioButton.js";
 import TextArea from "./Components/Form/TextArea.js";
 import Checkbox from "./Components/Form/Checkbox.js";
 import TabNav from "./Components/TabNav/TabNav.js";
 import Avatar from "./Components/Avatar/Avatar.js";
 import "./Components/Typography/Typography.css";
+import Divider from "./Components/Divider.js";
+
+const CustomizedElement = styled.div`
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 20px;
+    font-size: var(--scale1);
+    line-height: 1.5;
+    width: ${props => props.size}px;
+    height: ${props => props.size}px;
+    border-radius: 50%;
+    border: ${props => props.borderWidth}px solid var(--brand);
+    ${props => props.addShadow && `
+        box-shadow: 0 0 0 ${props.shadowWidth}px var(--brand-light);
+    `}
+`;
 
 export default function ViewExperiment() {
 
@@ -97,12 +118,62 @@ export default function ViewExperiment() {
         setDecision("");
     }
 
+    // Customizer
+    const [customizerLabel, setCustomizerLabel] = useState("Label");
+    const [circleSize, setCircleSize] = useState(160);
+    const [borderWidth, setBorderWidth] = useState(2);
+    const [addShadow, setAddShadow] = useState(false);
+    const [shadowWidth, setShadowWidth] = useState(8);
+
+    function updateCustomizerLabel(e) {
+        setCustomizerLabel(e.target.value);
+    }
+    function handleSizeMinusClick() {
+        setCircleSize(circleSize - 10);
+    }
+    function handleSizePlusClick() {
+        setCircleSize(circleSize + 10);
+    }
+    function handleBorderMinusClick() {
+        setBorderWidth(borderWidth - 2);
+    }
+    function handleBorderPlusClick() {
+        setBorderWidth(borderWidth + 2);
+    }
+    function handleAddShadow() {
+        setAddShadow(!addShadow);
+    }
+    function handleShadowMinusClick() {
+        setShadowWidth(shadowWidth - 2);
+    }
+    function handleShadowPlusClick() {
+        setShadowWidth(shadowWidth + 2);
+    }
+
     return (<>
         <TopNav />
         <Container size="50">
             <TitleText>Experiment</TitleText>
         </Container>
-        <Container size="50" spacing="30" cols="3" noTopPadding >
+        <Container size="50" noTopPadding>
+            <Card type="box" layout="300px 1px 1fr" alignItems="center">
+                <Container size="30" spacing="20">
+                    <SubHeadingText>Customizer</SubHeadingText>
+                    <InputText label="Label" value={customizerLabel} onChange={updateCustomizerLabel} />
+                    <InputNumber size="small" label="Circle Size" value={circleSize} onMinusClick={handleSizeMinusClick} onPlusClick={handleSizePlusClick} />
+                    <InputNumber size="small" label="Border Weight" value={borderWidth} onMinusClick={handleBorderMinusClick} onPlusClick={handleBorderPlusClick} />
+                    <Toggle defaultChecked={addShadow} onClick={handleAddShadow}>Add outer border</Toggle>
+                    {addShadow &&
+                        <InputNumber size="small" label="Outer Border Weight" value={shadowWidth} onMinusClick={handleShadowMinusClick} onPlusClick={handleShadowPlusClick} />
+                    }
+                </Container>
+                <Divider height="100%" />
+                <Container cols="1" alignItems="center" justifyItems="center">
+                    <CustomizedElement size={circleSize} borderWidth={borderWidth} addShadow={addShadow} shadowWidth={shadowWidth}>{customizerLabel}</CustomizedElement>
+                </Container>
+            </Card>
+        </Container>
+        <Container size="50" spacing="30" cols="3" noTopPadding>
             <Card type="box" headerLabel="Simple Form" size="30" spacing="30" cols="1">
                 { subscribed === false &&
                 <form onSubmit={onFormSubmit}>
