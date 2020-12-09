@@ -71,7 +71,7 @@ export default function ViewDashboard() {
                             <Card type="box" size="30" spacing="20">
                                 <Container layout="1fr max-content">
                                     <SubHeadingText>Top Readers</SubHeadingText>
-                                    <Button type="secondary" size="small">View all <Icon type="chevron-right" color="--gray-5"/></Button>
+                                    <Button type="secondary" size="small" rightIcon="chevron-right">View all</Button>
                                 </Container>
                                 <Container spacing="10">
                                     <Container layout="32px 32px 1fr max-content" alignItems="center" spacing="10">
@@ -113,7 +113,7 @@ export default function ViewDashboard() {
                             <Card type="box" size="30" spacing="20">
                                 <Container layout="1fr max-content">
                                     <SubHeadingText>Latest Readers</SubHeadingText>
-                                    <Button type="secondary" size="small">View all <Icon type="chevron-right" color="--gray-5"/></Button>
+                                    <Button type="secondary" size="small" rightIcon="chevron-right">View all</Button>
                                 </Container>
                                 <Container spacing="10">
                                     <Container layout="32px 1fr" alignItems="center" spacing="10">
@@ -146,7 +146,7 @@ export default function ViewDashboard() {
                         <Card type="box" size="30" spacing="20">
                             <Container layout="1fr max-content">
                                 <SubHeadingText>Most Read This Week</SubHeadingText>
-                                <Button type="secondary" size="small">View all <Icon type="chevron-right" color="--gray-5"/></Button>
+                                <Button type="secondary" size="small" rightIcon="chevron-right">View all</Button>
                             </Container>
                             <Container spacing="20">
                                 <Container layout="100px 1fr" alignItems="center" spacing="20">

@@ -145,21 +145,21 @@ export default function ViewComponents() {
                 <Card headerLabel="Buttons" type="box" spacing="30" size="30" cols="3">
                     <Container spacing="20">
                         <SubHeadingText>Primary Buttons</SubHeadingText>
-                        <Button size="small"><Icon type="heart" color="--gray-0" />Call to Action</Button>
-                        <Button><Icon type="heart" color="--gray-0" />Call to Action</Button>
-                        <Button size="large"><Icon type="heart" color="--gray-0" />Call to Action</Button>
+                        <Button size="small" leftIcon="home">Call to Action</Button>
+                        <Button leftIcon="home">Call to Action</Button>
+                        <Button size="large" leftIcon="home">Call to Action</Button>
                     </Container>
                     <Container spacing="20">
                         <SubHeadingText>Secondary Buttons</SubHeadingText>
-                        <Button type="secondary" size="small"><Icon type="heart" color="--gray-5" />Call to Action</Button>
-                        <Button type="secondary"><Icon type="heart" color="--gray-5" />Call to Action</Button>
-                        <Button type="secondary" size="large"><Icon type="heart" color="--gray-5" />Call to Action</Button>
+                        <Button type="secondary" size="small" leftIcon="heart">Call to Action</Button>
+                        <Button type="secondary" leftIcon="heart">Call to Action</Button>
+                        <Button type="secondary" size="large" leftIcon="heart">Call to Action</Button>
                     </Container>
                     <Container spacing="20">
                         <SubHeadingText>Disabled Buttons</SubHeadingText>
-                        <Button size="small" disabled><Icon type="heart" color="--gray-4" />Call to Action</Button>
-                        <Button disabled><Icon type="heart" color="--gray-4" />Call to Action</Button>
-                        <Button size="large" disabled><Icon type="heart" color="--gray-4" />Call to Action</Button>
+                        <Button size="small" leftIcon="home" disabled>Call to Action</Button>
+                        <Button leftIcon="home" disabled>Call to Action</Button>
+                        <Button size="large" leftIcon="home" disabled>Call to Action</Button>
                     </Container>
                 </Card>
                 <Card type="box" headerLabel="Form Elements" spacing="30" size="30">

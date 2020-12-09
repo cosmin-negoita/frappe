@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import Icon from "../Icons/Icon.js";
 
-const StyledButton = styled.button`
+const StyledButton = styled.button.attrs(props => ({
+    childrenNo: props.childrenNo
+}))`
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: max-content max-content;
     justify-content: center;
-    grid-gap: 5px;
+    grid-template-columns: ${props => props.rightIcon ? (props.leftIcon ? "max-content max-content max-content" : "max-content max-content") : (props.leftIcon ? "max-content max-content" : "max-content")};
+    grid-gap: ${props => props.rightIcon ||  props.leftIcon ? "5px" : "0"};
     line-height: 16px;
     outline: 0;
     border-radius: var(--radius-inner);
@@ -30,5 +33,14 @@ const StyledButton = styled.button`
 // Button Sizes: small, normal (default), large
 
 export default function Button(props) {
-    return <StyledButton className={props.className} type={props.type || "primary"} size={props.size || "normal"} onClick={props.onClick} disabled={props.disabled}>{props.children}</StyledButton>
+    const type = props.type || "primary";
+    const size = props.size || "normal";
+    const iconColor = props.disabled ? "--gray-4" : (type === "primary" ? "--gray-0" : "--gray-5");
+    return (
+        <StyledButton className={props.className} type={type} size={size} onClick={props.onClick} leftIcon={props.leftIcon} rightIcon={props.rightIcon} disabled={props.disabled}>
+            {props.leftIcon && <Icon type={props.leftIcon} color={iconColor} /> }
+            {props.children}
+            {props.rightIcon && <Icon type={props.rightIcon} color={iconColor} /> }
+        </StyledButton>
+    )
 }
