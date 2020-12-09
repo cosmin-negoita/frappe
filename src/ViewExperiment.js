@@ -16,6 +16,8 @@ import TabNav from "./Components/TabNav/TabNav.js";
 import Avatar from "./Components/Avatar/Avatar.js";
 import "./Components/Typography/Typography.css";
 import Divider from "./Components/Divider.js";
+import ProgressBar from "./Components/ProgressBar/ProgressBar.js";
+import Image from "./Components/Image/Image.js";
 
 const CustomizedElement = styled.div`
     display: grid;
@@ -150,13 +152,55 @@ export default function ViewExperiment() {
         setShadowWidth(shadowWidth + 2);
     }
 
+    // Onboarding Experiment
+    const slides = [
+        {title: "Welcome, friend!", description: "This is an amazing slide. The following are even more amazing, tho.", image: "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"},
+        {title: "Your workspace", description: "Your workspace is the place where you can see everything.", image: "https://images.unsplash.com/photo-1590935217281-8f102120d683?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"},
+        {title: "Tracking your work", description: "Tracking your work is very easy to do within the Tracker section", image: "https://images.unsplash.com/photo-1590935216595-f9fc9b65179d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"},
+        {title: "Ready to go!", description: "That's all you need to know before diving into the product. Have fun!", image: "https://images.unsplash.com/photo-1524635962361-d7f8ae9c79b1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"}
+    ];
+    const totalProgress = slides.length;
+    const progressStep = 100 / totalProgress;
+    const [progress, setProgress] = useState(1);
+    const [progressBar, setProgressBar] = useState(progressStep);
+
+    function handleProgressChange(operator) {
+        if (operator === "prev") {
+            setProgressBar(progressBar - progressStep);
+            setProgress(progress - 1);
+        }
+        else {
+            setProgressBar(progressBar + progressStep);
+            setProgress(progress + 1);
+        }
+    }
+
+
     return (<>
         <TopNav />
         <Container size="50">
             <TitleText>Experiment</TitleText>
         </Container>
-        <Container size="50" noTopPadding>
-            <Card type="box" layout="300px 1px 1fr" alignItems="center">
+        <Container size="50" layout="1fr 2fr" spacing="30" noTopPadding>
+            <Card type="box">
+                <Container size="30" spacing="10">
+                    <SubHeadingText align="center">Onboarding</SubHeadingText>
+                </Container>
+                <ProgressBar progress={progressBar} />
+                <Container size="30" spacing="20">
+                    <Container spacing="20">
+                        <BigBodyText align="center">{slides[progress-1].title}</BigBodyText>
+                        <Image src={slides[progress-1].image} />
+                        <BodyText align="center">{slides[progress-1].description}</BodyText>
+                    </Container>
+                    <Container layout="repeat(auto-fit, minmax(0, 1fr))" spacing="10">
+                        {progress > 1 && <Button type="secondary" leftIcon="chevron-left" onClick={() => handleProgressChange("prev")}>Back</Button>}
+                        {progress < totalProgress && <Button rightIcon="chevron-right" onClick={() => handleProgressChange("next")}>Next</Button> }
+                        {progress === totalProgress && <Button leftIcon="home">Go to dashboard</Button>}
+                    </Container>
+                </Container>
+            </Card>
+            <Card type="box" layout="300px 1px 1fr" alignItems="center" limitHeight>
                 <Container size="30" spacing="20">
                     <SubHeadingText>Customizer</SubHeadingText>
                     <InputText label="Label" value={customizerLabel} onChange={updateCustomizerLabel} />
