@@ -123,16 +123,29 @@ export default function ViewExperiment() {
     }
 
     // Customizer
+
     const [transformPie, setTransformPie] = useState(false);
     const [innerRadius, setInnerRadius] = useState(0);
     const [padAngle, setPadAngle] = useState(0);
     const [cornerRadius, setCornerRadius] = useState(0);
 
     const [chartData, setChartData] = useState([
-        {x: "JS", y: 50},
-        {x: "HTML", y: 30},
-        {x: "CSS", y: 20}
+        {x: "JS", y: 10},
+        {x: "HTML", y: 10},
+        {x: "CSS", y: 10}
     ]);
+
+    function handleCustomizerReset() {
+        setTransformPie(false);
+        setInnerRadius(0);
+        setPadAngle(0);
+        setCornerRadius(0);
+        setChartData([
+            {x: "JS", y: 10},
+            {x: "HTML", y: 10},
+            {x: "CSS", y: 10}
+        ]);
+    }
 
     function handleInnerRadiusClick(action) {
         if (action === "minus") setInnerRadius(innerRadius - 10);
@@ -222,7 +235,7 @@ export default function ViewExperiment() {
                     <Container size="30" spacing="20" alignSelf="start">
                         <Container layout="1fr max-content">
                             <SubHeadingText>Pie Customizer</SubHeadingText>
-                            <Button type="secondary" size="small" leftIcon="reset">Reset</Button>
+                            <Button type="secondary" size="small" leftIcon="reset" onClick={handleCustomizerReset}>Reset</Button>
                         </Container>
                         <Container cols="3" spacing="10">
                             <InputNumber min="0" label={chartData[0].x} value={chartData[0].y} onChange={(e) => onNumberChange(0, e)} onMinusClick={() => handleNumberClick(0, "minus")} onPlusClick={() => handleNumberClick(0, "plus")}/>
@@ -236,7 +249,7 @@ export default function ViewExperiment() {
                         {padAngle > 0 &&
                             <InputNumber min="0" size="small" label="Corner Radius" value={cornerRadius}  onMinusClick={() => handleCornerRadiusClick("minus")} onPlusClick={() => handleCornerRadiusClick("plus")} />
                         }
-                        <Toggle defaultChecked={transformPie} onClick={handleTransformPie}>Transform to semi-pie</Toggle>
+                        <Toggle checked={transformPie} onClick={handleTransformPie}>Transform to semi-pie</Toggle>
                     </Container>
                     <Divider height="100%" />
                     <Container cols="1" alignItems="center" size="30" justifyItems="center">

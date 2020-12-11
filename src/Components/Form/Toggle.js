@@ -67,8 +67,8 @@ const StyledKnob = styled.div.attrs(props =>({
 export default function Checkbox(props) {
     return (
         <StyledLabel>
-            <StyledInputCheckbox className={props.className} onClick={props.onClick} defaultChecked={props.checked} name={props.name} value={props.value} />
-            <StyledKnob isValid={props.isValid} defaultChecked={props.checked}></StyledKnob>
+            <StyledInputCheckbox className={props.className} onClick={props.onClick} checked={props.checked} name={props.name} value={props.value} />
+            <StyledKnob isValid={props.isValid} checked={props.checked}></StyledKnob>
             {props.children}
         </StyledLabel>
     );
