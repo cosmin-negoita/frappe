@@ -154,10 +154,10 @@ export default function ViewExperiment() {
 
     // Onboarding Experiment
     const slides = [
-        {title: "Welcome, friend!", description: "This is an amazing slide. The following are even more amazing, tho.", image: "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"},
-        {title: "Your workspace", description: "Your workspace is the place where you can see everything.", image: "https://images.unsplash.com/photo-1590935217281-8f102120d683?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"},
-        {title: "Tracking your work", description: "Tracking your work is very easy to do within the Tracker section", image: "https://images.unsplash.com/photo-1590935216595-f9fc9b65179d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"},
-        {title: "Ready to go!", description: "That's all you need to know before diving into the product. Have fun!", image: "https://images.unsplash.com/photo-1524635962361-d7f8ae9c79b1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YXBwbGljYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"}
+        {title: "Welcome, friend!", description: "This is an amazing slide. The following are even more amazing, tho.", image: "https://cdn.dribbble.com/users/77765/screenshots/10951401/media/5c956f65919694b130dab49791a9cbaf.png?compress=1&resize=1600x1200"},
+        {title: "Your workspace", description: "Your workspace is the place where you can see everything related to your work.", image: "https://cdn.dribbble.com/users/77765/screenshots/9638890/media/ee89368c5359ed1445bfd8edc60fbb57.png?compress=1&resize=1600x1200"},
+        {title: "Tracking your work", description: "Tracking your work is very easy to do within the Tracker section", image: "https://cdn.dribbble.com/users/77765/screenshots/9627931/media/795137ca56e6115a77e211a72c3f63f2.png?compress=1&resize=1600x1200"},
+        {title: "Ready to go!", description: "That's all you need to know before diving into the product. Have fun!", image: "https://cdn.dribbble.com/users/77765/screenshots/9441180/media/1a26c146e29865f4e9fbfcd6a2a11c61.png?compress=1&resize=1600x1200"}
     ];
     const totalProgress = slides.length;
     const progressStep = 100 / totalProgress;
@@ -175,7 +175,6 @@ export default function ViewExperiment() {
         }
     }
 
-
     return (<>
         <TopNav />
         <Container size="50">
@@ -183,15 +182,14 @@ export default function ViewExperiment() {
         </Container>
         <Container size="50" layout="1fr 2fr" spacing="30" noTopPadding>
             <Card type="box">
-                <Container size="30" spacing="10">
-                    <SubHeadingText align="center">Onboarding</SubHeadingText>
+                <Container size="5" noBottomPadding>
+                    <ProgressBar height="8px" progress={progressBar} radius="4px" />
                 </Container>
-                <ProgressBar progress={progressBar} />
-                <Container size="30" spacing="20">
-                    <Container spacing="20">
-                        <BigBodyText align="center">{slides[progress-1].title}</BigBodyText>
+                <Container size="30" spacing="30">
+                    <SubHeadingText align="center">{slides[progress-1].title}</SubHeadingText>
+                    <Container spacing="30">
                         <Image src={slides[progress-1].image} />
-                        <BodyText align="center">{slides[progress-1].description}</BodyText>
+                        <BigBodyText align="center">{slides[progress-1].description}</BigBodyText>
                     </Container>
                     <Container layout="repeat(auto-fit, minmax(0, 1fr))" spacing="10">
                         {progress > 1 && <Button type="secondary" leftIcon="chevron-left" onClick={() => handleProgressChange("prev")}>Back</Button>}

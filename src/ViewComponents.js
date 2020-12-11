@@ -4,7 +4,7 @@ import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
 import Card from "./Components/Card/Card.js";
 import Button from "./Components/Button/Button.js";
-import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText} from "./Components/Typography/Typography.js";
+import {LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText, LinkText} from "./Components/Typography/Typography.js";
 import Icon from "./Components/Icons/Icon.js";
 import Image from "./Components/Image/Image.js";
 import InputText from "./Components/Form/InputText.js";
@@ -16,6 +16,10 @@ import RadioButton from "./Components/Form/RadioButton.js";
 import Select from "./Components/Form/Select.js";
 import TextArea from "./Components/Form/TextArea.js";
 import TabNav from "./Components/TabNav/TabNav.js";
+import {VictoryBar, VictoryChart, VictoryAxis, VictoryStack, VictoryPie, VictoryArea, VictoryLine, VictoryScatter} from "victory";
+import DataVizTheme from "./Components/DataVizTheme.js";
+import Divider from "./Components/Divider.js";
+import ChartResizer from "./Components/Charts/ChartResizer.js";
 
 export default function ViewComponents() {
 
@@ -33,12 +37,58 @@ export default function ViewComponents() {
         document.title = "Frappe - Components";
     });
 
+    const data = [
+        {quarter: 1, earnings: 200},
+        {quarter: 2, earnings: 400},
+        {quarter: 3, earnings: 200},
+        {quarter: 4, earnings: 600}
+      ];
+    const data2 = [
+        {quarter: 1, earnings: 100},
+        {quarter: 2, earnings: 200},
+        {quarter: 3, earnings: 100},
+        {quarter: 4, earnings: 300}
+    ];
+    const data3 = [
+        {x: "label", y: 5000},
+        {x: "another", y: 3000},
+        {x: "final", y: 1500}
+    ];
+    const data4 = [
+        { x: 1, y: 3, y0: 0 },
+        { x: 2, y: 1, y0: 0 },
+        { x: 3, y: 5, y0: 0 },
+        { x: 4, y: 4, y0: 0 },
+        { x: 5, y: 6, y0: 0 }
+    ];
+    const data5 = [
+        { x: 1, y: 2, y0: 0 },
+        { x: 2, y: 4, y0: 0 },
+        { x: 3, y: 2, y0: 0 },
+        { x: 4, y: 5, y0: 0 },
+        { x: 5, y: 4, y0: 0 }
+    ];
+    const data6 = [
+        { x: 2, y: 2, amount: 1 },
+        { x: 3, y: 3, amount: 3 },
+        { x: 4, y: 5, amount: 6 },
+        { x: 5, y: 3, amount: 4 },
+        { x: 6, y: 4, amount: 2 }
+    ];
+    const data7 = [
+        { x: 2, y: 3, amount: 3 },
+        { x: 3, y: 2, amount: 1 },
+        { x: 4, y: 3, amount: 4 },
+        { x: 5, y: 4, amount: 2 },
+        { x: 6, y: 5, amount: 6 }
+    ];
+
     return (<>
         <TopNav />
         <Container size="50">
             <TitleText>Components</TitleText>
         </Container>
-        <Container size="50" cols="4" spacing="50" noTopPadding>
+        <Container size="50" cols="5" spacing="50" noTopPadding>
             <Container spacing="30">
                 <SubHeadingText>Card Box</SubHeadingText>
                 <Card size="10" type="box">
@@ -72,6 +122,18 @@ export default function ViewComponents() {
                     <BodyText>Content goes right here</BodyText>
                 </Card>
                 <Card size="50" type="border">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+            </Container>
+            <Container spacing="30">
+                <SubHeadingText>Card Border</SubHeadingText>
+                <Card size="10" type="border" headerLabel="Header Label">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card size="30" type="border" headerLabel="Header Label">
+                    <BodyText>Content goes right here</BodyText>
+                </Card>
+                <Card size="50" type="border" headerLabel="Header Label">
                     <BodyText>Content goes right here</BodyText>
                 </Card>
             </Container>
@@ -325,6 +387,94 @@ export default function ViewComponents() {
                         <BodyText label="Tab 2">This is just placeholder content and this time it's longer</BodyText>
                         <BodyText label="Tab 3">This is just placeholder content and this time it's even longer so you can notice it changing</BodyText>
                     </TabNav>
+                </Container>
+            </Card>
+            <Card headerLabel="Data Visualization" type="box" spacing="30" size="30">
+                <Container>
+                    <BodyText>Data visualization is built using the amazing <LinkText href="https://formidable.com/open-source/victory/" target="_blank">Victory library</LinkText></BodyText>
+                </Container>
+                <Divider />
+                <Container spacing="30" cols="3">
+                    <ChartResizer domainPadding={40}>
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4]}
+                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+                            fixLabelOverlap={true}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                            tickFormat={(x) => (`$${x / 1000}k`)}
+                        />
+                        <VictoryStack>
+                            <VictoryBar
+                                data={data}
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                            />
+                            <VictoryBar
+                                data={data2}
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                                padding="0"
+                            />
+                        </VictoryStack>
+                    </ChartResizer>
+                    <VictoryPie labels={[]} cornerRadius="5" padAngle={1} theme={DataVizTheme} innerRadius={100} data={data3} />
+                    <ChartResizer>
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                        />
+                        <VictoryStack>
+                            <VictoryArea interpolation="cardinal" padding="0" data={data4} />
+                        </VictoryStack>
+                    </ChartResizer>
+                    <ChartResizer>
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                        />
+                        <VictoryStack>
+                            <VictoryLine style={{data: {strokeWidth: 4}}} interpolation="cardinal" padding="0" data={data4} />
+                            <VictoryLine style={{data: {strokeWidth: 4}}} interpolation="cardinal" padding="0" data={data5} />
+                        </VictoryStack>
+                    </ChartResizer>
+                    <ChartResizer>
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4, 5, 6]}
+                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5", "Quarter 6"]}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                        />
+                        <VictoryStack>
+                            <VictoryScatter padding="0" data={data6} />
+                            <VictoryScatter padding="0" data={data7} />
+                        </VictoryStack>
+                    </ChartResizer>
+                    <ChartResizer>
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4, 5, 6]}
+                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5", "Quarter 6"]}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                        />
+                        <VictoryStack>
+                            <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} padding="0" data={data6} />
+                            <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} padding="0" data={data7} />
+                        </VictoryStack>
+                    </ChartResizer>
                 </Container>
             </Card>
         </Container>

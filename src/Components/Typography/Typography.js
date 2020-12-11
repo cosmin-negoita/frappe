@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import clsx from "clsx";
 import "./Typography.css";
 import "../Reset.css";
@@ -67,6 +68,18 @@ export function TitleText(props) {
     return <h1 className={classes} {...attr}>{props.children}</h1>
 }
 
+export const LinkText = styled.a`
+    color: var(--brand);
+    text-decoration: none;
+    box-shadow: 0 1px 0 var(--brand-light);
+    transition: box-shadow 0.2s ease-in, color 0.2s ease-in;
+
+    &:hover {
+        color: var(--gray-5);
+        box-shadow: 0 4px 0 var(--brand-light);
+    }
+`;
+
 export default {
-    LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText
+    LabelText, SmallBodyText, BodyText, BigBodyText, SubHeadingText, HeadingText, SubTitleText, TitleText, LinkText
 }

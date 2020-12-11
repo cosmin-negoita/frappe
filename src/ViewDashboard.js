@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 
 import TopNav from "./Components/TopNav/TopNav.js";
 import Container from "./Components/Container/Container.js";
@@ -13,12 +13,34 @@ import Icon from "./Components/Icons/Icon.js";
 import Divider from "./Components/Divider.js";
 import Image from "./Components/Image/Image.js";
 import SidebarMenuItem from "./Components/SidebarMenu/SidebarMenu.js";
+import {VictoryBar, VictoryChart, VictoryAxis, VictoryStack, VictoryPie, VictoryArea, VictoryLine, VictoryScatter, VictoryContainer} from "victory";
+import DataVizTheme from "./Components/DataVizTheme.js";
+import ChartResizer from "./Components/Charts/ChartResizer.js";
 
 export default function ViewDashboard() {
 
     useEffect(() => {
         document.title = "Frappe - Dashboard";
     });
+
+    const data = [
+        { x: 1, y: 154 },
+        { x: 2, y: 289 },
+        { x: 3, y: 214 },
+        { x: 4, y: 309 },
+        { x: 5, y: 125 },
+        { x: 6, y: 265 },
+        { x: 7, y: 342 }
+    ];
+    const data2 = [
+        { x: 1, y: 25 },
+        { x: 2, y: 46 },
+        { x: 3, y: 38 },
+        { x: 4, y: 67 },
+        { x: 5, y: 43 },
+        { x: 6, y: 98 },
+        { x: 7, y: 43 }
+    ];
 
     return (<>
         <StyledPage>
@@ -67,6 +89,25 @@ export default function ViewDashboard() {
                                 </Container>
                             </Card>
                         </Container>
+                        <Card type="box" size="30" spacing="30">
+                            <Container layout="1fr max-content">
+                                <SubHeadingText>Week Activity</SubHeadingText>
+                                <Button type="secondary" size="small" rightIcon="chevron-right">View all</Button>
+                            </Container>
+                            <ChartResizer>
+                                <VictoryAxis
+                                    tickValues={[1, 2, 3, 4, 5, 6, 7]}
+                                    tickFormat={["Mon 7", "Tue 8", "Wed 9", "Thu 10", "Fri 11", "Sat 12", "Sun 13"]}
+                                />
+                                <VictoryAxis
+                                    dependentAxis
+                                />
+                                <VictoryStack>
+                                    <VictoryArea interpolation="cardinal" padding="0" data={data2} />
+                                    <VictoryArea interpolation="cardinal" padding="0" data={data} />
+                                </VictoryStack>
+                            </ChartResizer>
+                        </Card>
                         <Container spacing="30" cols="2">
                             <Card type="box" size="30" spacing="20">
                                 <Container layout="1fr max-content">

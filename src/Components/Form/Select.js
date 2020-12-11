@@ -53,7 +53,7 @@ export default function Select(props) {
                     {props.children}
                 </StyledSelect>
             </StyledSelectDiv>
-            {props.isValid === false && <SmallBodyText>{props.errorMessage}</SmallBodyText>}
+            {props.isValid === false && <SmallBodyText style={{color: "var(--error)"}}>{props.errorMessage}</SmallBodyText>}
         </StyledFormField>
         )
 }
