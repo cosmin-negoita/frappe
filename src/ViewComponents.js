@@ -32,6 +32,9 @@ export default function ViewComponents() {
         e.preventDefault();
         setNumberValue(numberValue + 1);
     }
+    function onNumberChange(e) {
+        setNumberValue(e.target.value);
+    }
 
     useEffect(() => {
         document.title = "Frappe - Components";
@@ -248,21 +251,21 @@ export default function ViewComponents() {
                     <Container spacing="30" cols="3">
                         <Container spacing="20">
                             <SubHeadingText>Input Number Default</SubHeadingText>
-                            <InputNumber label="Default Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="small" />
-                            <InputNumber label="Default Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} />
-                            <InputNumber label="Default Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="large" />
+                            <InputNumber label="Default Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="small" />
+                            <InputNumber label="Default Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick} />
+                            <InputNumber label="Default Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="large" />
                         </Container>
                         <Container spacing="20">
                             <SubHeadingText>Input Number Disabled</SubHeadingText>
-                            <InputNumber label="Disabled Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="small" disabled={true} />
-                            <InputNumber label="Disabled Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} disabled={true} />
-                            <InputNumber label="Disabled Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="large" disabled={true} />
+                            <InputNumber label="Disabled Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="small" disabled={true} />
+                            <InputNumber label="Disabled Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick} disabled={true} />
+                            <InputNumber label="Disabled Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick} size="large" disabled={true} />
                         </Container>
                         <Container spacing="20">
                             <SubHeadingText>Input Number Error</SubHeadingText>
-                            <InputNumber label="Error Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} size="small" errorMessage="Please type something" />
-                            <InputNumber label="Error Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} errorMessage="Please type something" />
-                            <InputNumber label="Error Number Input" value={numberValue} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} size="large" errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} size="small" errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} errorMessage="Please type something" />
+                            <InputNumber label="Error Number Input" value={numberValue} onChange={onNumberChange} onMinusClick={onMinusClick} onPlusClick={onPlusClick}  isValid={false} size="large" errorMessage="Please type something" />
                         </Container>
                     </Container>
                     <Container spacing="30" cols="3">

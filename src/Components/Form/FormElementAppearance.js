@@ -34,8 +34,8 @@ const FormElementAppearance = css`
         box-shadow: 0 0 0 4px var(--brand-light);
     }
     &:disabled {
-        color: var(--gray-4);
-        background-color: var(--gray-1);
+        color: var(--gray-3);
+        background-color: var(--gray-0);
         border-color: var(--gray-2);
         cursor: not-allowed;
     }

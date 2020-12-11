@@ -32,24 +32,32 @@ const StyledInputNumber = styled.input.attrs(props => ({
     type: "number"
 }))`
     ${FormElementAppearance}
+    width: 100%;
     grid-column: 1 / 4;
     grid-row: 1;
     text-align: center;
     appearance: none;
+    -moz-appearance: textfield;
+    margin: 0;
     z-index: 1;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 `;
 
 export default function Input(props) {
-    const color = props.disabled === true ? "--gray-4" : "--gray-0";
     const size = props.size || "normal";
 
     return (
         <StyledFormField>
             {props.label && <label className="text--label">{props.label}</label>}
             <StyledNumberDiv>
-                <Button size={size} onClick={props.onMinusClick} className="minus-button" disabled={props.disabled}><Icon type="minus" color={color} /></Button>
-                <StyledInputNumber size={size} isValid={props.isValid} name={props.name} className={props.className} value={props.value} disabled={props.disabled} />
-                <Button size={size} onClick={props.onPlusClick} className="plus-button" disabled={props.disabled}><Icon type="plus" color={color} /></Button>
+                <Button size={size} onClick={props.onMinusClick} className="minus-button" disabled={props.disabled || props.value <= props.min} leftIcon="minus"></Button>
+                <StyledInputNumber size={size} isValid={props.isValid} name={props.name} min={props.min} max={props.max} className={props.className} value={props.value} onChange={props.onChange} disabled={props.disabled} />
+                <Button size={size} onClick={props.onPlusClick} className="plus-button" disabled={props.disabled || props.value >= props.max} leftIcon="plus"></Button>
             </StyledNumberDiv>
             {props.isValid === false && <SmallBodyText style={{color: "var(--error)"}}>{props.errorMessage}</SmallBodyText>}
         </StyledFormField>

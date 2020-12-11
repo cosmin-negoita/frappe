@@ -26,7 +26,7 @@ export default function ChartResizer(props) {
         debounce(handleResize(), 500);
         window.addEventListener("resize", debounce(handleResize, 500));
         return () => window.removeEventListener("resize", debounce(handleResize, 500));
-    }, [containerRef, width]);
+    }, [containerRef]);
 
     return (
         <div ref={containerRef} style={{minWidth: "100%"}}>

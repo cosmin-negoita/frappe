@@ -24,13 +24,13 @@ export default function ViewDashboard() {
     });
 
     const data = [
-        { x: 1, y: 154 },
-        { x: 2, y: 289 },
-        { x: 3, y: 214 },
-        { x: 4, y: 309 },
-        { x: 5, y: 125 },
-        { x: 6, y: 265 },
-        { x: 7, y: 342 }
+        { x: 1, y: 154},
+        { x: 2, y: 289},
+        { x: 3, y: 214},
+        { x: 4, y: 309},
+        { x: 5, y: 125},
+        { x: 6, y: 265},
+        { x: 7, y: 342}
     ];
     const data2 = [
         { x: 1, y: 25 },
@@ -94,7 +94,7 @@ export default function ViewDashboard() {
                                 <SubHeadingText>Week Activity</SubHeadingText>
                                 <Button type="secondary" size="small" rightIcon="chevron-right">View all</Button>
                             </Container>
-                            <ChartResizer>
+                            <ChartResizer maxDomain={{y: 400}}>
                                 <VictoryAxis
                                     tickValues={[1, 2, 3, 4, 5, 6, 7]}
                                     tickFormat={["Mon 7", "Tue 8", "Wed 9", "Thu 10", "Fri 11", "Sat 12", "Sun 13"]}
@@ -103,8 +103,8 @@ export default function ViewDashboard() {
                                     dependentAxis
                                 />
                                 <VictoryStack>
-                                    <VictoryArea interpolation="cardinal" padding="0" data={data2} />
-                                    <VictoryArea interpolation="cardinal" padding="0" data={data} />
+                                    <VictoryArea interpolation="basis" padding="0" data={data2} />
+                                    <VictoryArea interpolation="basis" padding="0" data={data} />
                                 </VictoryStack>
                             </ChartResizer>
                         </Card>

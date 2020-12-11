@@ -18,6 +18,8 @@ import "./Components/Typography/Typography.css";
 import Divider from "./Components/Divider.js";
 import ProgressBar from "./Components/ProgressBar/ProgressBar.js";
 import Image from "./Components/Image/Image.js";
+import {VictoryPie} from "victory";
+import DataVizTheme from "./Components/DataVizTheme.js";
 
 const CustomizedElement = styled.div`
     display: grid;
@@ -175,6 +177,34 @@ export default function ViewExperiment() {
         }
     }
 
+    // Chart Experiment
+    const [chartData, setChartData] = useState([
+        {x: "JS", y: 50},
+        {x: "HTML", y: 30},
+        {x: "CSS", y: 20}
+    ]);
+
+    function handleNumberClick(index, action) {
+        const newChart = chartData.map((item, no) => {
+            let prevVal = item.y;
+            if (no === index) {
+                if (action === "minus") return Object.assign({}, item, {y: prevVal - 10})
+                else return Object.assign({}, item, {y: prevVal + 10})
+            }
+            return item
+        });
+        setChartData(newChart);
+    }
+    function onNumberChange(index, e) {
+        const newChart = chartData.map((item, no) => {
+            if (no === index) {
+                return Object.assign({}, item, {y: parseInt(e.target.value)})
+            }
+            return item
+        });
+        setChartData(newChart);
+    }
+
     return (<>
         <TopNav />
         <Container size="50">
@@ -198,24 +228,97 @@ export default function ViewExperiment() {
                     </Container>
                 </Container>
             </Card>
-            <Card type="box" layout="300px 1px 1fr" alignItems="center" limitHeight>
-                <Container size="30" spacing="20">
-                    <SubHeadingText>Customizer</SubHeadingText>
-                    <InputText label="Label" value={customizerLabel} onChange={updateCustomizerLabel} />
-                    <InputNumber size="small" label="Circle Size" value={circleSize} onMinusClick={handleSizeMinusClick} onPlusClick={handleSizePlusClick} />
-                    <InputNumber size="small" label="Border Weight" value={borderWidth} onMinusClick={handleBorderMinusClick} onPlusClick={handleBorderPlusClick} />
-                    <Toggle defaultChecked={addShadow} onClick={handleAddShadow}>Add outer border</Toggle>
-                    {addShadow &&
-                        <InputNumber size="small" label="Outer Border Weight" value={shadowWidth} onMinusClick={handleShadowMinusClick} onPlusClick={handleShadowPlusClick} />
-                    }
-                </Container>
-                <Divider height="100%" />
-                <Container cols="1" alignItems="center" justifyItems="center">
-                    <CustomizedElement size={circleSize} borderWidth={borderWidth} addShadow={addShadow} shadowWidth={shadowWidth}>{customizerLabel}</CustomizedElement>
-                </Container>
-            </Card>
+            <Container spacing="30">
+                <Card type="box" layout="300px 1px 1fr" alignItems="center" limitHeight>
+                    <Container size="30" spacing="20">
+                        <SubHeadingText>Customizer</SubHeadingText>
+                        <InputText label="Label" value={customizerLabel} onChange={updateCustomizerLabel} />
+                        <InputNumber min="80" size="small" label="Circle Size" value={circleSize} onMinusClick={handleSizeMinusClick} onPlusClick={handleSizePlusClick} />
+                        <InputNumber min="0" size="small" label="Border Weight" value={borderWidth} onMinusClick={handleBorderMinusClick} onPlusClick={handleBorderPlusClick} />
+                        <Toggle defaultChecked={addShadow} onClick={handleAddShadow}>Add outer border</Toggle>
+                        {addShadow &&
+                            <InputNumber min="0" size="small" label="Outer Border Weight" value={shadowWidth} onMinusClick={handleShadowMinusClick} onPlusClick={handleShadowPlusClick} />
+                        }
+                    </Container>
+                    <Divider height="100%" />
+                    <Container cols="1" alignItems="center" justifyItems="center">
+                        <CustomizedElement size={circleSize} borderWidth={borderWidth} addShadow={addShadow} shadowWidth={shadowWidth}>{customizerLabel}</CustomizedElement>
+                    </Container>
+                </Card>
+                <Card type="box" spacing="10" size="30" limitHeight={true}>
+                    <SubHeadingText>Group Details</SubHeadingText>
+                    <TabNav spacing="20" maxContent={true} marginBottom="30">
+                        <Container label="Overview">
+                            <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse erat quam, porttitor in sollicitudin ac, condimentum eget justo.</BodyText>
+                        </Container>
+                        <Container label="Members">
+                            <Container cols="2" spacing="20">
+                                <Container layout="32px 1fr" alignItems="center" spacing="10">
+                                    <Avatar src="https://lupsa.ro/wp-content/uploads/2019/11/portrait-square-03.jpg" size="32" />
+                                    <Container>
+                                        <BodyText><strong>Alex Sosa</strong></BodyText>
+                                        <SmallBodyText>35 Posts</SmallBodyText>
+                                    </Container>
+                                </Container>
+                                <Container layout="32px 1fr" alignItems="center" spacing="10">
+                                    <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSskkzHf6voJSeDyPjH2MKa3CNaqYF6PHLdg&usqp=CAU" size="32" />
+                                    <Container>
+                                        <BodyText><strong>Maryam Fraser</strong></BodyText>
+                                        <SmallBodyText>12 Posts</SmallBodyText>
+                                    </Container>
+                                </Container>
+                                <Container layout="32px 1fr" alignItems="center" spacing="10">
+                                    <Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_small.jpg" size="32" />
+                                    <Container>
+                                        <BodyText><strong>Jordan Maxime</strong></BodyText>
+                                        <SmallBodyText>9 Posts</SmallBodyText>
+                                    </Container>
+                                </Container>
+                                <Container layout="32px 1fr" alignItems="center" spacing="10">
+                                    <Avatar src="https://lupsa.ro/wp-content/uploads/2019/11/portrait-square-03.jpg" size="32" />
+                                    <Container>
+                                        <BodyText><strong>Alex Sosa</strong></BodyText>
+                                        <SmallBodyText>59 Posts</SmallBodyText>
+                                    </Container>
+                                </Container>
+                                <Container layout="32px 1fr" alignItems="center" spacing="10">
+                                    <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSskkzHf6voJSeDyPjH2MKa3CNaqYF6PHLdg&usqp=CAU" size="32" />
+                                    <Container>
+                                        <BodyText><strong>Maryam Fraser</strong></BodyText>
+                                        <SmallBodyText>8 Posts</SmallBodyText>
+                                    </Container>
+                                </Container>
+                                <Container layout="32px 1fr" alignItems="center" spacing="10">
+                                    <Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_small.jpg" size="32" />
+                                    <Container>
+                                        <BodyText><strong>Jordan Maxime</strong></BodyText>
+                                        <SmallBodyText>9 Posts</SmallBodyText>
+                                    </Container>
+                                </Container>
+                            </Container>
+                        </Container>
+                        <Container label="Join" spacing="20">
+                            <BodyText>Hey <strong>Cosmin</strong>, if you want to join this group, write a short application below and the group owner will notify you of their decision via an automated email.</BodyText>
+                            <form>
+                                <Container spacing="20">
+                                    <TextArea rows="3" placeholder="Why do you want to join this group?" />
+                                    <Button>Apply for joining</Button>
+                                </Container>
+                            </form>
+                        </Container>
+                    </TabNav>
+                </Card>
+            </Container>
         </Container>
         <Container size="50" spacing="30" cols="3" noTopPadding>
+            <Card type="box" size="30" spacing="30" limitHeight>
+                <VictoryPie labels={[]} cornerRadius="5" padAngle={2} height={150} padding={0} theme={DataVizTheme} innerRadius={50} data={chartData} />
+                <Container cols="3" spacing="10">
+                    <InputNumber min="0" label={chartData[0].x} value={chartData[0].y} onChange={(e) => onNumberChange(0, e)} onMinusClick={() => handleNumberClick(0, "minus")} onPlusClick={() => handleNumberClick(0, "plus")}/>
+                    <InputNumber min="0" label={chartData[1].x} value={chartData[1].y} onChange={(e) => onNumberChange(1, e)} onMinusClick={() => handleNumberClick(1, "minus")} onPlusClick={() => handleNumberClick(1, "plus")} />
+                    <InputNumber min="0" label={chartData[2].x} value={chartData[2].y} onChange={(e) => onNumberChange(2, e)} onMinusClick={() => handleNumberClick(2, "minus")} onPlusClick={() => handleNumberClick(2, "plus")} />
+                </Container>
+            </Card>
             <Card type="box" headerLabel="Simple Form" size="30" spacing="30" cols="1">
                 { subscribed === false &&
                 <form onSubmit={onFormSubmit}>
@@ -309,69 +412,6 @@ export default function ViewExperiment() {
                         <Button onClick={resetQuiz}>Reset quiz</Button>
                     </Container>
                 }
-            </Card>
-            <Card type="box" spacing="10" size="30" limitHeight={true}>
-                <SubHeadingText>Group Details</SubHeadingText>
-                <TabNav spacing="20" maxContent={true} marginBottom="30">
-                    <Container label="Overview">
-                        <BodyText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse erat quam, porttitor in sollicitudin ac, condimentum eget justo.</BodyText>
-                    </Container>
-                    <Container label="Members">
-                        <Container cols="2" spacing="20">
-                            <Container layout="32px 1fr" alignItems="center" spacing="10">
-                                <Avatar src="https://lupsa.ro/wp-content/uploads/2019/11/portrait-square-03.jpg" size="32" />
-                                <Container>
-                                    <BodyText><strong>Alex Sosa</strong></BodyText>
-                                    <SmallBodyText>35 Posts</SmallBodyText>
-                                </Container>
-                            </Container>
-                            <Container layout="32px 1fr" alignItems="center" spacing="10">
-                                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSskkzHf6voJSeDyPjH2MKa3CNaqYF6PHLdg&usqp=CAU" size="32" />
-                                <Container>
-                                    <BodyText><strong>Maryam Fraser</strong></BodyText>
-                                    <SmallBodyText>12 Posts</SmallBodyText>
-                                </Container>
-                            </Container>
-                            <Container layout="32px 1fr" alignItems="center" spacing="10">
-                                <Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_small.jpg" size="32" />
-                                <Container>
-                                    <BodyText><strong>Jordan Maxime</strong></BodyText>
-                                    <SmallBodyText>9 Posts</SmallBodyText>
-                                </Container>
-                            </Container>
-                            <Container layout="32px 1fr" alignItems="center" spacing="10">
-                                <Avatar src="https://lupsa.ro/wp-content/uploads/2019/11/portrait-square-03.jpg" size="32" />
-                                <Container>
-                                    <BodyText><strong>Alex Sosa</strong></BodyText>
-                                    <SmallBodyText>59 Posts</SmallBodyText>
-                                </Container>
-                            </Container>
-                            <Container layout="32px 1fr" alignItems="center" spacing="10">
-                                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSskkzHf6voJSeDyPjH2MKa3CNaqYF6PHLdg&usqp=CAU" size="32" />
-                                <Container>
-                                    <BodyText><strong>Maryam Fraser</strong></BodyText>
-                                    <SmallBodyText>8 Posts</SmallBodyText>
-                                </Container>
-                            </Container>
-                            <Container layout="32px 1fr" alignItems="center" spacing="10">
-                                <Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_small.jpg" size="32" />
-                                <Container>
-                                    <BodyText><strong>Jordan Maxime</strong></BodyText>
-                                    <SmallBodyText>9 Posts</SmallBodyText>
-                                </Container>
-                            </Container>
-                        </Container>
-                    </Container>
-                    <Container label="Join" spacing="20">
-                        <BodyText>Hey <strong>Cosmin</strong>, if you want to join this group, write a short application below and the group owner will notify you of their decision via an automated email.</BodyText>
-                        <form>
-                            <Container spacing="20">
-                                <TextArea rows="3" placeholder="Why do you want to join this group?" />
-                                <Button>Apply for joining</Button>
-                            </Container>
-                        </form>
-                    </Container>
-                </TabNav>
             </Card>
         </Container>
     </>);
