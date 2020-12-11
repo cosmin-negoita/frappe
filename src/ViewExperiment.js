@@ -123,35 +123,52 @@ export default function ViewExperiment() {
     }
 
     // Customizer
-    const [customizerLabel, setCustomizerLabel] = useState("Label");
-    const [circleSize, setCircleSize] = useState(160);
-    const [borderWidth, setBorderWidth] = useState(2);
-    const [addShadow, setAddShadow] = useState(false);
-    const [shadowWidth, setShadowWidth] = useState(8);
+    const [transformPie, setTransformPie] = useState(false);
+    const [innerRadius, setInnerRadius] = useState(0);
+    const [padAngle, setPadAngle] = useState(0);
+    const [cornerRadius, setCornerRadius] = useState(0);
 
-    function updateCustomizerLabel(e) {
-        setCustomizerLabel(e.target.value);
+    const [chartData, setChartData] = useState([
+        {x: "JS", y: 50},
+        {x: "HTML", y: 30},
+        {x: "CSS", y: 20}
+    ]);
+
+    function handleInnerRadiusClick(action) {
+        if (action === "minus") setInnerRadius(innerRadius - 10);
+        if (action === "plus") setInnerRadius(innerRadius + 10);
     }
-    function handleSizeMinusClick() {
-        setCircleSize(circleSize - 10);
+    function handleCornerRadiusClick(action) {
+        if (action === "minus") setCornerRadius(cornerRadius - 5);
+        if (action === "plus") setCornerRadius(cornerRadius + 5);
     }
-    function handleSizePlusClick() {
-        setCircleSize(circleSize + 10);
+    function handlePadAngleClick(action) {
+        if (action === "minus") setPadAngle(padAngle - 5);
+        if (action === "plus") setPadAngle(padAngle + 5);
     }
-    function handleBorderMinusClick() {
-        setBorderWidth(borderWidth - 2);
+    function handleTransformPie() {
+        setTransformPie(!transformPie);
     }
-    function handleBorderPlusClick() {
-        setBorderWidth(borderWidth + 2);
+
+    function handleNumberClick(index, action) {
+        const newChart = chartData.map((item, no) => {
+            let prevVal = item.y;
+            if (no === index) {
+                if (action === "minus") return Object.assign({}, item, {y: prevVal - 10})
+                else return Object.assign({}, item, {y: prevVal + 10})
+            }
+            return item
+        });
+        setChartData(newChart);
     }
-    function handleAddShadow() {
-        setAddShadow(!addShadow);
-    }
-    function handleShadowMinusClick() {
-        setShadowWidth(shadowWidth - 2);
-    }
-    function handleShadowPlusClick() {
-        setShadowWidth(shadowWidth + 2);
+    function onNumberChange(index, e) {
+        const newChart = chartData.map((item, no) => {
+            if (no === index) {
+                return Object.assign({}, item, {y: parseInt(e.target.value)})
+            }
+            return item
+        });
+        setChartData(newChart);
     }
 
     // Onboarding Experiment
@@ -175,34 +192,6 @@ export default function ViewExperiment() {
             setProgressBar(progressBar + progressStep);
             setProgress(progress + 1);
         }
-    }
-
-    // Chart Experiment
-    const [chartData, setChartData] = useState([
-        {x: "JS", y: 50},
-        {x: "HTML", y: 30},
-        {x: "CSS", y: 20}
-    ]);
-
-    function handleNumberClick(index, action) {
-        const newChart = chartData.map((item, no) => {
-            let prevVal = item.y;
-            if (no === index) {
-                if (action === "minus") return Object.assign({}, item, {y: prevVal - 10})
-                else return Object.assign({}, item, {y: prevVal + 10})
-            }
-            return item
-        });
-        setChartData(newChart);
-    }
-    function onNumberChange(index, e) {
-        const newChart = chartData.map((item, no) => {
-            if (no === index) {
-                return Object.assign({}, item, {y: parseInt(e.target.value)})
-            }
-            return item
-        });
-        setChartData(newChart);
     }
 
     return (<>
@@ -229,20 +218,29 @@ export default function ViewExperiment() {
                 </Container>
             </Card>
             <Container spacing="30">
-                <Card type="box" layout="300px 1px 1fr" alignItems="center" limitHeight>
-                    <Container size="30" spacing="20">
-                        <SubHeadingText>Customizer</SubHeadingText>
-                        <InputText label="Label" value={customizerLabel} onChange={updateCustomizerLabel} />
-                        <InputNumber min="80" size="small" label="Circle Size" value={circleSize} onMinusClick={handleSizeMinusClick} onPlusClick={handleSizePlusClick} />
-                        <InputNumber min="0" size="small" label="Border Weight" value={borderWidth} onMinusClick={handleBorderMinusClick} onPlusClick={handleBorderPlusClick} />
-                        <Toggle defaultChecked={addShadow} onClick={handleAddShadow}>Add outer border</Toggle>
-                        {addShadow &&
-                            <InputNumber min="0" size="small" label="Outer Border Weight" value={shadowWidth} onMinusClick={handleShadowMinusClick} onPlusClick={handleShadowPlusClick} />
+                <Card type="box" layout="1fr 1px 1fr" alignItems="center" limitHeight>
+                    <Container size="30" spacing="20" alignSelf="start">
+                        <Container layout="1fr max-content">
+                            <SubHeadingText>Pie Customizer</SubHeadingText>
+                            <Button type="secondary" size="small" leftIcon="reset">Reset</Button>
+                        </Container>
+                        <Container cols="3" spacing="10">
+                            <InputNumber min="0" label={chartData[0].x} value={chartData[0].y} onChange={(e) => onNumberChange(0, e)} onMinusClick={() => handleNumberClick(0, "minus")} onPlusClick={() => handleNumberClick(0, "plus")}/>
+                            <InputNumber min="0" label={chartData[1].x} value={chartData[1].y} onChange={(e) => onNumberChange(1, e)} onMinusClick={() => handleNumberClick(1, "minus")} onPlusClick={() => handleNumberClick(1, "plus")} />
+                            <InputNumber min="0" label={chartData[2].x} value={chartData[2].y} onChange={(e) => onNumberChange(2, e)} onMinusClick={() => handleNumberClick(2, "minus")} onPlusClick={() => handleNumberClick(2, "plus")} />
+                        </Container>
+                        <InputNumber min="0" max="90" size="small" label="Inner Radius" value={innerRadius} onMinusClick={() => handleInnerRadiusClick("minus")} onPlusClick={() => handleInnerRadiusClick("plus")} />
+                        {innerRadius > 0 &&
+                            <InputNumber min="0" max="20" size="small" label="Pad Angle" value={padAngle} onMinusClick={() => handlePadAngleClick("minus")} onPlusClick={() => handlePadAngleClick("plus")} />
                         }
+                        {padAngle > 0 &&
+                            <InputNumber min="0" size="small" label="Corner Radius" value={cornerRadius}  onMinusClick={() => handleCornerRadiusClick("minus")} onPlusClick={() => handleCornerRadiusClick("plus")} />
+                        }
+                        <Toggle defaultChecked={transformPie} onClick={handleTransformPie}>Transform to semi-pie</Toggle>
                     </Container>
                     <Divider height="100%" />
-                    <Container cols="1" alignItems="center" justifyItems="center">
-                        <CustomizedElement size={circleSize} borderWidth={borderWidth} addShadow={addShadow} shadowWidth={shadowWidth}>{customizerLabel}</CustomizedElement>
+                    <Container cols="1" alignItems="center" size="30" justifyItems="center">
+                        <VictoryPie animate={{duration: 500}} labels={["JS", "HTML", "CSS"]} cornerRadius={cornerRadius} padAngle={padAngle} height={300} padding={50} startAngle={transformPie ? -90 : 0} endAngle={transformPie ? 90 : 360} theme={DataVizTheme} innerRadius={innerRadius} data={chartData} />
                     </Container>
                 </Card>
                 <Card type="box" spacing="10" size="30" limitHeight={true}>
@@ -311,14 +309,6 @@ export default function ViewExperiment() {
             </Container>
         </Container>
         <Container size="50" spacing="30" cols="3" noTopPadding>
-            <Card type="box" size="30" spacing="30" limitHeight>
-                <VictoryPie labels={[]} cornerRadius="5" padAngle={2} height={150} padding={0} theme={DataVizTheme} innerRadius={50} data={chartData} />
-                <Container cols="3" spacing="10">
-                    <InputNumber min="0" label={chartData[0].x} value={chartData[0].y} onChange={(e) => onNumberChange(0, e)} onMinusClick={() => handleNumberClick(0, "minus")} onPlusClick={() => handleNumberClick(0, "plus")}/>
-                    <InputNumber min="0" label={chartData[1].x} value={chartData[1].y} onChange={(e) => onNumberChange(1, e)} onMinusClick={() => handleNumberClick(1, "minus")} onPlusClick={() => handleNumberClick(1, "plus")} />
-                    <InputNumber min="0" label={chartData[2].x} value={chartData[2].y} onChange={(e) => onNumberChange(2, e)} onMinusClick={() => handleNumberClick(2, "minus")} onPlusClick={() => handleNumberClick(2, "plus")} />
-                </Container>
-            </Card>
             <Card type="box" headerLabel="Simple Form" size="30" spacing="30" cols="1">
                 { subscribed === false &&
                 <form onSubmit={onFormSubmit}>

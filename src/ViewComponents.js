@@ -436,7 +436,7 @@ export default function ViewComponents() {
                             dependentAxis
                         />
                         <VictoryStack>
-                            <VictoryArea interpolation="cardinal" padding="0" data={data4} />
+                            <VictoryArea interpolation="cardinal" data={data4} />
                         </VictoryStack>
                     </ChartResizer>
                     <ChartResizer>
@@ -448,8 +448,8 @@ export default function ViewComponents() {
                             dependentAxis
                         />
                         <VictoryStack>
-                            <VictoryLine style={{data: {strokeWidth: 4}}} interpolation="cardinal" padding="0" data={data4} />
-                            <VictoryLine style={{data: {strokeWidth: 4}}} interpolation="cardinal" padding="0" data={data5} />
+                            <VictoryLine style={{data: {strokeWidth: 4}}} interpolation="cardinal" data={data4} />
+                            <VictoryLine style={{data: {strokeWidth: 4}}} interpolation="cardinal" data={data5} />
                         </VictoryStack>
                     </ChartResizer>
                     <ChartResizer>
@@ -461,8 +461,8 @@ export default function ViewComponents() {
                             dependentAxis
                         />
                         <VictoryStack>
-                            <VictoryScatter padding="0" data={data6} />
-                            <VictoryScatter padding="0" data={data7} />
+                            <VictoryScatter data={data6} />
+                            <VictoryScatter data={data7} />
                         </VictoryStack>
                     </ChartResizer>
                     <ChartResizer>
@@ -474,8 +474,8 @@ export default function ViewComponents() {
                             dependentAxis
                         />
                         <VictoryStack>
-                            <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} padding="0" data={data6} />
-                            <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} padding="0" data={data7} />
+                            <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} data={data6} />
+                            <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} data={data7} />
                         </VictoryStack>
                     </ChartResizer>
                 </Container>

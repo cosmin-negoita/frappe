@@ -52,6 +52,12 @@ const StyledDiv = styled.div.attrs(props => ({
             margin-bottom: var(--su-${props.size});
         }
     `}
+    ${props => props.alignSelf && `
+        align-self: ${props.alignSelf}
+    `}
+    ${props => props.justifySelf && `
+        justify-self: ${props.justifySelf}
+    `}
 `;
 
 // Container (inherited from Spacing.js) sizes: 10, 20, 30, 50, 100
@@ -60,5 +66,5 @@ const StyledDiv = styled.div.attrs(props => ({
 // Container utilities: limitHeight, noTopPadding
 
 export default function Container(props) {
-    return <StyledDiv className={props.className} spaceBottom={props.spaceBottom} noHorizontalPadding={props.noHorizontalPadding} noBottomPadding={props.noBottomPadding} justifyItems={props.justifyItems} alignItems={props.alignItems} layout={props.layout} cols={props.cols} spacing={props.spacing} size={props.size} noVerticalPadding={props.noVerticalPadding} noTopPadding={props.noTopPadding} limitHeight={props.limitHeight} height={props.height}>{props.children}</StyledDiv>
+    return <StyledDiv className={props.className} spaceBottom={props.spaceBottom} noHorizontalPadding={props.noHorizontalPadding} noBottomPadding={props.noBottomPadding} justifySelf={props.justifySelf} alignSelf={props.alignSelf} justifyItems={props.justifyItems} alignItems={props.alignItems} layout={props.layout} cols={props.cols} spacing={props.spacing} size={props.size} noVerticalPadding={props.noVerticalPadding} noTopPadding={props.noTopPadding} limitHeight={props.limitHeight} height={props.height}>{props.children}</StyledDiv>
 }

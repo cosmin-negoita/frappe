@@ -131,6 +131,12 @@ export default function Icon(props) {
                     <path vectorEffect="non-scaling-stroke" d="M8.18643 11.9091C9.79308 11.9091 11.0955 10.6066 11.0955 9C11.0955 7.39336 9.79308 6.09091 8.18643 6.09091C6.57979 6.09091 5.27734 7.39336 5.27734 9C5.27734 10.6066 6.57979 11.9091 8.18643 11.9091Z" stroke={selectedColor} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>                                                                                                        
             }
+            {props.type === "reset" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.46699 4.66666C2.68033 2.29332 5.14699 0.666656 8.00033 0.666656C12.0537 0.666656 15.3337 3.94666 15.3337 7.99999C15.3337 12.0533 12.0537 15.3333 8.00033 15.3333C3.94699 15.3333 0.666992 12.0533 0.666992 7.99999" stroke={selectedColor} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1.33301 0.666656V4.66666H5.33301" stroke={selectedColor} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>                
+            }
         </StyledDiv>
     )
 }
