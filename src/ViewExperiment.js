@@ -230,16 +230,16 @@ export default function ViewExperiment() {
                 </Container>
             </Card>
             <Container spacing="30">
-                <Card type="box" layout="1fr 1px 1fr" alignItems="center" limitHeight>
+                <Card type="box" layout="1fr 1px 2fr" alignItems="center" limitHeight>
                     <Container size="30" spacing="20" alignSelf="start">
                         <Container layout="1fr max-content">
                             <SubHeadingText>Pie Customizer</SubHeadingText>
                             <Button type="secondary" size="small" leftIcon="reset" onClick={handleCustomizerReset}>Reset</Button>
                         </Container>
-                        <Container cols="3" spacing="10">
-                            <InputNumber min="0" label={chartData[0].x} value={chartData[0].y} onChange={(e) => onNumberChange(0, e)} onMinusClick={() => handleNumberClick(0, "minus")} onPlusClick={() => handleNumberClick(0, "plus")}/>
-                            <InputNumber min="0" label={chartData[1].x} value={chartData[1].y} onChange={(e) => onNumberChange(1, e)} onMinusClick={() => handleNumberClick(1, "minus")} onPlusClick={() => handleNumberClick(1, "plus")} />
-                            <InputNumber min="0" label={chartData[2].x} value={chartData[2].y} onChange={(e) => onNumberChange(2, e)} onMinusClick={() => handleNumberClick(2, "minus")} onPlusClick={() => handleNumberClick(2, "plus")} />
+                        <Container spacing="10">
+                            <InputNumber size="small" min="0" label={chartData[0].x} value={chartData[0].y} onChange={(e) => onNumberChange(0, e)} onMinusClick={() => handleNumberClick(0, "minus")} onPlusClick={() => handleNumberClick(0, "plus")}/>
+                            <InputNumber size="small" min="0" label={chartData[1].x} value={chartData[1].y} onChange={(e) => onNumberChange(1, e)} onMinusClick={() => handleNumberClick(1, "minus")} onPlusClick={() => handleNumberClick(1, "plus")} />
+                            <InputNumber size="small" min="0" label={chartData[2].x} value={chartData[2].y} onChange={(e) => onNumberChange(2, e)} onMinusClick={() => handleNumberClick(2, "minus")} onPlusClick={() => handleNumberClick(2, "plus")} />
                         </Container>
                         <InputNumber min="0" max="90" size="small" label="Inner Radius" value={innerRadius} onMinusClick={() => handleInnerRadiusClick("minus")} onPlusClick={() => handleInnerRadiusClick("plus")} />
                         {innerRadius > 0 &&
