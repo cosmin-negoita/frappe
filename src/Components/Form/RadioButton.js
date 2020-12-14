@@ -42,6 +42,7 @@ const StyledCheckmark = styled.div.attrs(props =>({
     cursor: pointer;
     border-radius: 10px;
     pointer-events: none;
+    transition: all 0.2s ease-in;
 
     ${StyledInputRadio}:hover ~ & {
         border-color: var(--brand);

@@ -20,6 +20,7 @@ import {VictoryBar, VictoryChart, VictoryAxis, VictoryStack, VictoryPie, Victory
 import DataVizTheme from "./Components/DataVizTheme.js";
 import Divider from "./Components/Divider.js";
 import ChartResizer from "./Components/Charts/ChartResizer.js";
+import { getColor, colors } from "./Components/Colors.js";
 
 export default function ViewComponents() {
 
@@ -55,7 +56,10 @@ export default function ViewComponents() {
     const data3 = [
         {x: "label", y: 5000},
         {x: "another", y: 3000},
-        {x: "final", y: 1500}
+        {x: "final", y: 1500},
+        {x: "second final", y: 1200},
+        {x: "final", y: 2400},
+        {x: "second final", y: 1800}
     ];
     const data4 = [
         { x: 1, y: 3, y0: 0 },
@@ -72,83 +76,178 @@ export default function ViewComponents() {
         { x: 5, y: 4, y0: 0 }
     ];
     const data6 = [
-        { x: 2, y: 2, amount: 1 },
-        { x: 3, y: 3, amount: 3 },
-        { x: 4, y: 5, amount: 6 },
-        { x: 5, y: 3, amount: 4 },
-        { x: 6, y: 4, amount: 2 }
+        { x: 1, y: 2, amount: 1 },
+        { x: 2, y: 3, amount: 3 },
+        { x: 3, y: 5, amount: 6 },
+        { x: 4, y: 3, amount: 4 },
+        { x: 5, y: 4, amount: 2 }
     ];
     const data7 = [
-        { x: 2, y: 3, amount: 3 },
-        { x: 3, y: 2, amount: 1 },
-        { x: 4, y: 3, amount: 4 },
-        { x: 5, y: 4, amount: 2 },
-        { x: 6, y: 5, amount: 6 }
+        { x: 1, y: 3, amount: 3 },
+        { x: 2, y: 2, amount: 1 },
+        { x: 3, y: 3, amount: 4 },
+        { x: 4, y: 4, amount: 2 },
+        { x: 5, y: 5, amount: 6 }
+    ];
+    const data8 = [
+        { x: 1, y: 4, amount: 2 },
+        { x: 2, y: 3, amount: 4 },
+        { x: 3, y: 4, amount: 1 },
+        { x: 4, y: 5, amount: 6 },
+        { x: 5, y: 6, amount: 2 }
     ];
 
     return (<>
-        <TopNav />
         <Container size="50">
             <TitleText>Components</TitleText>
         </Container>
-        <Container size="50" cols="5" spacing="50" noTopPadding>
-            <Container spacing="30">
-                <SubHeadingText>Card Box</SubHeadingText>
-                <Card size="10" type="box">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card size="30" type="box">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card size="50" type="box">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-            </Container>
-            <Container spacing="30">
-                <SubHeadingText>Card Box with Header</SubHeadingText>
-                <Card headerLabel="Card Heading" size="10" type="box">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card headerLabel="Card Heading" size="30" type="box">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card headerLabel="Card Heading" size="50" type="box">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-            </Container>
-            <Container spacing="30">
-                <SubHeadingText>Card Border</SubHeadingText>
-                <Card size="10" type="border">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card size="30" type="border">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card size="50" type="border">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-            </Container>
-            <Container spacing="30">
-                <SubHeadingText>Card Border</SubHeadingText>
-                <Card size="10" type="border" headerLabel="Header Label">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card size="30" type="border" headerLabel="Header Label">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-                <Card size="50" type="border" headerLabel="Header Label">
-                    <BodyText>Content goes right here</BodyText>
-                </Card>
-            </Container>
-            <Container spacing="30">
-                <SubHeadingText>Card Popout</SubHeadingText>
-                <Card type="popout" size="50" spacing="30">
-                    <BodyText>This is a pop out used for modals, sidebars, etc.</BodyText>
-                </Card>
+        <Container size="50" spacing="50" noTopPadding>
+            <Card headerLabel="Color Variables" type="box" size="30" spacing="30" cols="4">
+                <Container spacing="10">
+                    <SubHeadingText>Gray</SubHeadingText>
+                    <div style={{background: getColor("--gray-0"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--gray-0</BodyText>
+                        <LabelText>{getColor("--gray-0")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--gray-1"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--gray-1</BodyText>
+                        <LabelText>{getColor("--gray-1")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--gray-2"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--gray-2</BodyText>
+                        <LabelText>{getColor("--gray-2")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--gray-3"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--gray-3</BodyText>
+                        <LabelText>{getColor("--gray-3")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--gray-4"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--gray-4</BodyText>
+                        <LabelText>{getColor("--gray-4")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--gray-5"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--gray-5</BodyText>
+                        <LabelText>{getColor("--gray-5")}</LabelText>
+                    </div>
+                </Container>
+                <Container spacing="10">
+                    <SubHeadingText>Brand</SubHeadingText>
+                    <div style={{background: getColor("--brand-light"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--brand-light</BodyText>
+                        <LabelText>{getColor("--brand-light")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--brand"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--brand</BodyText>
+                        <LabelText>{getColor("--brand")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--brand-dark"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--brand-dark</BodyText>
+                        <LabelText>{getColor("--brand-dark")}</LabelText>
+                    </div>
+                </Container>
+                <Container spacing="10">
+                    <SubHeadingText>Error</SubHeadingText>
+                    <div style={{background: getColor("--error-bg"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--error-bg</BodyText>
+                        <LabelText>{getColor("--error-bg")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--error"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--error</BodyText>
+                        <LabelText>{getColor("--error")}</LabelText>
+                    </div>
+                </Container>
+                <Container spacing="10">
+                    <SubHeadingText>Graph Colors</SubHeadingText>
+                    <div style={{background: getColor("--blue"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--blue</BodyText>
+                        <LabelText>{getColor("--blue")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--cyan"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--cyan</BodyText>
+                        <LabelText>{getColor("--cyan")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--teal"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--teal</BodyText>
+                        <LabelText>{getColor("--teal")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--green"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--green</BodyText>
+                        <LabelText>{getColor("--green")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--yellow"), padding: "20px", borderRadius: "5px"}}>
+                        <BodyText>--yellow</BodyText>
+                        <LabelText>{getColor("--yellow")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--orange"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--orange</BodyText>
+                        <LabelText>{getColor("--orange")}</LabelText>
+                    </div>
+                    <div style={{background: getColor("--pink"), padding: "20px", borderRadius: "5px", color: "#fff"}}>
+                        <BodyText>--pink</BodyText>
+                        <LabelText>{getColor("--pink")}</LabelText>
+                    </div>
+                </Container>
+            </Card>
+            <Container cols="5" spacing="50">
+                <Container spacing="30">
+                    <SubHeadingText>Card Box</SubHeadingText>
+                    <Card size="10" type="box">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card size="30" type="box">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card size="50" type="box">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                </Container>
+                <Container spacing="30">
+                    <SubHeadingText>Card Box with Header</SubHeadingText>
+                    <Card headerLabel="Card Heading" size="10" type="box">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card headerLabel="Card Heading" size="30" type="box">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card headerLabel="Card Heading" size="50" type="box">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                </Container>
+                <Container spacing="30">
+                    <SubHeadingText>Card Border</SubHeadingText>
+                    <Card size="10" type="border">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card size="30" type="border">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card size="50" type="border">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                </Container>
+                <Container spacing="30">
+                    <SubHeadingText>Card Border</SubHeadingText>
+                    <Card size="10" type="border" headerLabel="Header Label">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card size="30" type="border" headerLabel="Header Label">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                    <Card size="50" type="border" headerLabel="Header Label">
+                        <BodyText>Content goes right here</BodyText>
+                    </Card>
+                </Container>
+                <Container spacing="30">
+                    <SubHeadingText>Card Popout</SubHeadingText>
+                    <Card type="popout" size="50" spacing="30">
+                        <BodyText>This is a pop out used for modals, sidebars, etc.</BodyText>
+                    </Card>
+                </Container>
             </Container>
         </Container>
         <Container size="50" spacing="30" noTopPadding >
             <Card headerLabel="Icons" type="box" size="30" spacing="30">
+                <SubHeadingText>Icon Types</SubHeadingText>
                 <Container spacing="30" cols="max-content">
                     <Icon type="heart" color="--gray-5"/>
                     <Icon type="plus" color="--gray-5"/>
@@ -165,23 +264,14 @@ export default function ViewComponents() {
                     <Icon type="users" color="--gray-5"/>
                     <Icon type="comment" color="--gray-5"/>
                     <Icon type="eye" color="--gray-5"/>
+                    <Icon type="reset" color="--gray-5"/>
                 </Container>
+                <SubHeadingText>Container Options</SubHeadingText>
                 <Container spacing="30" cols="max-content">
                     <Icon isContained={true} containerSize="48px" type="heart" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="plus" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="minus" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="arrow-left" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="arrow-right" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="chevron-up" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="chevron-down" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="chevron-left" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="chevron-right" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="checkmark" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="home" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="globe" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="users" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="comment" color="--gray-5"/>
-                    <Icon isContained={true} containerSize="48px" type="eye" color="--gray-5"/>
+                    <Icon isContained={true} background="gray-1" borderColor="gray-3" containerSize="48px" type="globe" color="--gray-5"/>
+                    <Icon isContained={true} borderColor="brand" containerSize="48px" type="home" color="--gray-5"/>
+                    <Icon isContained={true} background="brand" borderColor="transparent" containerSize="48px" type="users" color="--gray-0"/>
                 </Container>
             </Card>
             <Card headerLabel="Typography" type="box" spacing="30" size="30" cols="2">
@@ -415,6 +505,7 @@ export default function ViewComponents() {
                                 x="quarter"
                                 // data accessor for y values
                                 y="earnings"
+                                cornerRadius = {{top: 0, bottom: 5}}
                             />
                             <VictoryBar
                                 data={data2}
@@ -422,11 +513,11 @@ export default function ViewComponents() {
                                 x="quarter"
                                 // data accessor for y values
                                 y="earnings"
-                                padding="0"
+                                cornerRadius = {{top: 5, bottom: 0}}
                             />
                         </VictoryStack>
                     </ChartResizer>
-                    <VictoryPie labels={[]} cornerRadius="5" padAngle={1} theme={DataVizTheme} innerRadius={100} data={data3} />
+                    <VictoryPie labels={[]} cornerRadius="5" padAngle={2} theme={DataVizTheme} innerRadius={100} data={data3} />
                     <ChartResizer>
                         <VictoryAxis
                             tickValues={[1, 2, 3, 4, 5]}
@@ -452,10 +543,10 @@ export default function ViewComponents() {
                             <VictoryLine style={{data: {strokeWidth: 4}}} interpolation="cardinal" data={data5} />
                         </VictoryStack>
                     </ChartResizer>
-                    <ChartResizer>
+                    <ChartResizer domainPadding={{x: 30}}>
                         <VictoryAxis
-                            tickValues={[1, 2, 3, 4, 5, 6]}
-                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5", "Quarter 6"]}
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
                         />
                         <VictoryAxis
                             dependentAxis
@@ -465,10 +556,10 @@ export default function ViewComponents() {
                             <VictoryScatter data={data7} />
                         </VictoryStack>
                     </ChartResizer>
-                    <ChartResizer>
+                    <ChartResizer domainPadding={{x: 30}}>
                         <VictoryAxis
-                            tickValues={[1, 2, 3, 4, 5, 6]}
-                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5", "Quarter 6"]}
+                            tickValues={[1, 2, 3, 4, 5]}
+                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4", "Quarter 5"]}
                         />
                         <VictoryAxis
                             dependentAxis
@@ -476,6 +567,7 @@ export default function ViewComponents() {
                         <VictoryStack>
                             <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} data={data6} />
                             <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} data={data7} />
+                            <VictoryScatter bubbleProperty="amount" maxBubbleSize={25} minBubbleSize={5} data={data8} />
                         </VictoryStack>
                     </ChartResizer>
                 </Container>

@@ -1,11 +1,11 @@
 
 import { assign } from "lodash";
-import {getColor} from "./Colors.js";
+import { getColor } from "./Colors.js";
 
 // *
 // * Colors
 // *
-const colors = [getColor("--brand"), getColor("--gray-5"), getColor("--gray-4"), getColor("--gray-3"), getColor("--gray-2"), getColor("--gray-1"), getColor("--gray-0")];
+const colors = [getColor("--blue"), getColor("--cyan"), getColor("--teal"), getColor("--green"), getColor("--yellow"), getColor("--orange"), getColor("--pink")];
 
 const charcoal = getColor("--gray-5");
 const grey = getColor("--gray-3");
@@ -198,7 +198,7 @@ export default {
         stroke: "transparent",
         strokeWidth: 1
       },
-      labels: assign({}, baseLabelStyles, { padding: 20 })
+      labels: assign({}, baseLabelStyles, { fontSize: 12, padding: 20 })
     },
     colorScale: colors,
     width: 400,

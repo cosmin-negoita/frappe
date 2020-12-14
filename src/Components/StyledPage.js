@@ -10,7 +10,7 @@ const StyledPage = styled.div`
     }
 
     .scrollable {
-        height: calc(100vh - 76px);
+        height: 100vh;
         overflow: auto;
     }
 `;

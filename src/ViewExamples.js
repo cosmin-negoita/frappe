@@ -20,9 +20,8 @@ export default function ViewExamples() {
     });
 
     return (<>
-        <TopNav />
         <Container size="50">
-            <TitleText>Examples</TitleText>
+            <TitleText>Card Examples</TitleText>
         </Container>
         <Container size="50" spacing="30" cols="3" noTopPadding>
             <Container spacing="30">
@@ -130,6 +129,17 @@ export default function ViewExamples() {
                             <Button>Create Account</Button>
                         </Container>
                     </form>
+                </Card>
+                <Card type="box" size="30" spacing="20">
+                    <Container layout="32px 1fr" spacing="10" alignItems="center">
+                        <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSskkzHf6voJSeDyPjH2MKa3CNaqYF6PHLdg&usqp=CAU" />
+                        <Container>
+                            <BodyText><strong>Maryam Fraser</strong> posted a new photo</BodyText>
+                            <SmallBodyText>1 hour ago</SmallBodyText>
+                        </Container>
+                    </Container>
+                    <BodyText>I'm truly thankful for having the amazing opportunity to visit such a place. Enjoyed it to the fullest and I can't wait to go back!</BodyText>
+                    <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
                 </Card>
             </Container>
         </Container>

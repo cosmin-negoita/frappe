@@ -208,9 +208,8 @@ export default function ViewExperiment() {
     }
 
     return (<>
-        <TopNav />
         <Container size="50">
-            <TitleText>Experiment</TitleText>
+            <TitleText>Experiments</TitleText>
         </Container>
         <Container size="50" layout="1fr 2fr" spacing="30" noTopPadding>
             <Card type="box">

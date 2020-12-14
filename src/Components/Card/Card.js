@@ -30,13 +30,13 @@ export default function Card(props) {
         return (
             <StyledContainer className={props.className} type={props.type} limitHeight={props.limitHeight} radius={props.radius} spaceBottom={props.spaceBottom}>
                 <StyledHeader size={props.size}>{props.headerLabel}</StyledHeader>
-                <Container size={props.size} spacing={props.spacing} layout={props.layout} alignItems={props.alignItems} cols={props.cols} >
+                <Container size={props.size} spacing={props.spacing} layout={props.layout} alignItems={props.alignItems} justifyItems={props.justifyItems} cols={props.cols} >
                     {props.children}
                 </Container>
             </StyledContainer>
         );
     }
     else {
-        return <StyledContainer className={props.className} type={props.type} size={props.size} spaceBottom={props.spaceBottom} radius={props.radius} spacing={props.spacing} layout={props.layout} alignItems={props.alignItems} cols={props.cols} limitHeight={props.limitHeight}>{props.children}</StyledContainer>;
+        return <StyledContainer className={props.className} type={props.type} size={props.size} spaceBottom={props.spaceBottom} radius={props.radius} spacing={props.spacing} layout={props.layout} alignItems={props.alignItems} justifyItems={props.justifyItems} cols={props.cols} limitHeight={props.limitHeight}>{props.children}</StyledContainer>;
     }
 }

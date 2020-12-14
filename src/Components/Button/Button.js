@@ -15,7 +15,7 @@ const StyledButton = styled.button.attrs(props => ({
     border-radius: var(--radius-inner);
     transition: all 0.2s ease-in, border-color 0.2s ease-in;
     background: ${props => props.disabled ? "var(--gray-1)" : (props.type === "primary" ? "var(--brand)" : "transparent")};
-    border: 1px solid ${props => props.disabled ? "var(--gray-2)" : (props.type === "primary" ? "var(--brand)" : (props.type === "secondary" ? "var(--gray-3)" : "transparent"))};
+    border: 1px solid ${props => props.isValid === false ? "var(--error)" : (props.disabled ? "var(--gray-2)" : (props.type === "primary" ? "var(--brand)" : (props.type === "secondary" ? "var(--gray-3)" : "transparent")))};
     color: ${props => props.disabled ? "var(--gray-4)" : (props.type === "primary" ? "var(--gray-0)" : (props.type === "secondary" ? "var(--gray-5)" : "transparent"))};
     font-weight: ${props => props.type === "primary" ? "700" : "500"};
     font-size: ${props => props.size === "large" ? "var(--scale2)" : (props.size === "small" ? "var(--scale-1)" : "var(--scale1)")};
@@ -37,7 +37,7 @@ export default function Button(props) {
     const size = props.size || "normal";
     const iconColor = props.disabled ? "--gray-4" : (type === "primary" ? "--gray-0" : "--gray-5");
     return (
-        <StyledButton className={props.className} type={type} size={size} onClick={props.onClick} leftIcon={props.leftIcon} rightIcon={props.rightIcon} disabled={props.disabled}>
+        <StyledButton isValid={props.isValid} className={props.className} type={type} size={size} onClick={props.onClick} leftIcon={props.leftIcon} rightIcon={props.rightIcon} disabled={props.disabled}>
             {props.leftIcon && <Icon type={props.leftIcon} color={iconColor} /> }
             {props.children}
             {props.rightIcon && <Icon type={props.rightIcon} color={iconColor} /> }
