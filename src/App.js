@@ -11,6 +11,7 @@ import ViewButtons from "./ViewButtons.js";
 import ViewForms from "./ViewForms.js";
 import ViewTabNav from "./ViewTabNav.js";
 import ViewDataViz from "./ViewDataViz.js";
+import ViewTable from "./ViewTable.js";
 
 import Container from "./Components/Container/Container.js";
 import StyledPage from "./Components/StyledPage.js";
@@ -48,6 +49,9 @@ function App() {
                     </Route>
                     <Route exact path="/form-elements">
                         <ViewForms />
+                    </Route>
+                    <Route exact path="/table">
+                        <ViewTable />
                     </Route>
                     <Route exact path="/tabnav">
                         <ViewTabNav />

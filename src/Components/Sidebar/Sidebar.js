@@ -27,6 +27,7 @@ export default function Sidebar(props) {
                 <SidebarMenuItem path="/buttons" size="30" icon="button" iconSize="20"><BodyText>Buttons</BodyText></SidebarMenuItem>
                 <SidebarMenuItem path="/form-elements" size="30" icon="list" iconSize="20"><BodyText>Form Elements</BodyText></SidebarMenuItem>
                 <SidebarMenuItem path="/tabnav" size="30" icon="tabs" iconSize="20"><BodyText>Tabbed Navigation</BodyText></SidebarMenuItem>
+                <SidebarMenuItem path="/table" size="30" icon="table" iconSize="20"><BodyText>Data Tables</BodyText></SidebarMenuItem>
                 <SidebarMenuItem path="/data-visualization" size="30" icon="pie-chart" iconSize="20"><BodyText>Data Visualization</BodyText></SidebarMenuItem>
             </Container>
         </Card>

@@ -12,6 +12,7 @@ import Avatar from "./Components/Avatar/Avatar.js";
 import InputText from "./Components/Form/InputText.js";
 import InputPassword from "./Components/Form/InputPassword.js";
 import Select from "./Components/Form/Select.js";
+import {Table, TableRow, TableCell, TableHeader, TableHead} from "./Components/Table/Table.js";
 
 export default function ViewExamples() {
 
@@ -142,6 +143,47 @@ export default function ViewExamples() {
                     <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
                 </Card>
             </Container>
+        </Container>
+        <Container size="50" noTopPadding>
+            <Card type="box">
+                <Container size="30">
+                    <SubHeadingText>Table in Card</SubHeadingText>
+                </Container>
+                <Container>
+                    <Table isFullWidth cellSize="30">
+                        <TableHead>
+                            <TableRow>
+                                <TableHeader>Name</TableHeader>
+                                <TableHeader>Email</TableHeader>
+                                <TableHeader>Location</TableHeader>
+                                <TableHeader>Industry</TableHeader>
+                                <TableHeader>Role</TableHeader>
+                            </TableRow>
+                        </TableHead>
+                        <TableRow>
+                            <TableCell>Cosmin Negoita</TableCell>
+                            <TableCell>fabcos94@gmail.com</TableCell>
+                            <TableCell>Craiova, RO</TableCell>
+                            <TableCell>Technology</TableCell>
+                            <TableCell>Designer</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>Cosmin Negoita</TableCell>
+                            <TableCell>fabcos94@gmail.com</TableCell>
+                            <TableCell>Craiova, RO</TableCell>
+                            <TableCell>Technology</TableCell>
+                            <TableCell>Designer</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>Cosmin Negoita</TableCell>
+                            <TableCell>fabcos94@gmail.com</TableCell>
+                            <TableCell>Craiova, RO</TableCell>
+                            <TableCell>Technology</TableCell>
+                            <TableCell>Designer</TableCell>
+                        </TableRow>
+                    </Table>
+                </Container>
+            </Card>
         </Container>
     </>);
 }

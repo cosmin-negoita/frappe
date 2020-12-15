@@ -202,6 +202,17 @@ export default function Icon(props) {
                     </g>
                 </svg>                             
             }
+            {props.type === "table" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="M14.0003 14.6667H2.00033C1.26699 14.6667 0.666992 14.0667 0.666992 13.3333V2.66668C0.666992 1.93334 1.26699 1.33334 2.00033 1.33334H14.0003C14.7337 1.33334 15.3337 1.93334 15.3337 2.66668V13.3333C15.3337 14.0667 14.7337 14.6667 14.0003 14.6667Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M0.666992 4.66666H15.3337" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M0.666992 8H15.3337" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M0.666992 11.3333H15.3337" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M6 14.6667V1.33334" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    </g>
+                </svg>                                            
+            }
         </StyledDiv>
     )
 }

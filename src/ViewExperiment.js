@@ -212,7 +212,7 @@ export default function ViewExperiment() {
             <TitleText>Experiments</TitleText>
         </Container>
         <Container size="50" layout="1fr 2fr" spacing="30" noTopPadding>
-            <Card type="box">
+            <Card type="box" limitHeight>
                 <Container size="5" noBottomPadding>
                     <ProgressBar height="8px" progress={progressBar} radius="4px" />
                 </Container>
