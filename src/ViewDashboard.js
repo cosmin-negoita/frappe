@@ -55,21 +55,21 @@ export default function ViewDashboard() {
             </Container>
             <Container spacing="30" cols="3">
                 <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
-                    <Icon type="globe" background="blue" borderColor="transparent" color="--gray-0" isContained={true} containerSize="48px" size="24px" />
+                    <Icon type="globe" isContained={true} containerSize="48px" size="24px" />
                     <Container spacing="5">
                         <LabelText>Total Visits</LabelText>
                         <SubHeadingText>25,489</SubHeadingText>
                     </Container>
                 </Card>
                 <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
-                    <Icon type="eye" background="cyan" borderColor="transparent" color="--gray-0" isContained={true} containerSize="48px" size="24px" />
+                    <Icon type="eye" isContained={true} containerSize="48px" size="24px" />
                     <Container spacing="5">
                         <LabelText>Total Reads</LabelText>
                         <SubHeadingText>17,829</SubHeadingText>
                     </Container>
                 </Card>
                 <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
-                    <Icon type="users" background="teal" borderColor="transparent" color="--gray-0" isContained={true} containerSize="48px" size="24px" />
+                    <Icon type="users" isContained={true} containerSize="48px" size="24px" />
                     <Container spacing="5">
                         <LabelText>Total Readers</LabelText>
                         <SubHeadingText>754</SubHeadingText>

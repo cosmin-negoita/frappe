@@ -12,6 +12,11 @@ const StyledPage = styled.div`
     .scrollable {
         height: 100vh;
         overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollable::-webkit-scrollbar {
+        display: none;
     }
 `;
 export default StyledPage

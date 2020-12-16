@@ -17,7 +17,7 @@ export const StyledTable = styled.table`
         }`
     }
     & ${TableHead} ${TableRow} {
-        background: var(--gray-2);
+        background: var(--gray-1);
     }
     & ${TableCell}, & ${TableHeader} {
         background: transparent;
