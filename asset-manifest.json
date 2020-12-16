@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/frappe/static/css/main.fe3d8f08.chunk.css",
-    "main.js": "/frappe/static/js/main.80a9e1a6.chunk.js",
-    "main.js.map": "/frappe/static/js/main.80a9e1a6.chunk.js.map",
+    "main.js": "/frappe/static/js/main.98f412f8.chunk.js",
+    "main.js.map": "/frappe/static/js/main.98f412f8.chunk.js.map",
     "runtime-main.js": "/frappe/static/js/runtime-main.38e0ea81.js",
     "runtime-main.js.map": "/frappe/static/js/runtime-main.38e0ea81.js.map",
     "static/js/2.637e9193.chunk.js": "/frappe/static/js/2.637e9193.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.38e0ea81.js",
     "static/js/2.637e9193.chunk.js",
     "static/css/main.fe3d8f08.chunk.css",
-    "static/js/main.80a9e1a6.chunk.js"
+    "static/js/main.98f412f8.chunk.js"
   ]
 }
