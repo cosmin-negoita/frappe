@@ -35,9 +35,6 @@ export const StyledTable = styled.table`
               border-left: 1px solid var(--gray-3);`
             : `border-bottom: 1px solid var(--gray-3);`
         }
-        ${props => !props.hasBorders && props.alternate &&
-            `border-bottom: 0;`
-        }
         text-align: ${props => props.textAlign};
     }
     & ${TableHeader} {
@@ -61,9 +58,12 @@ export const StyledTable = styled.table`
         }`
     }
     ${props => !props.hasBorders && 
-    `& ${TableRow}:last-child ${TableCell}, & ${TableHead} ${TableRow} ${TableHeader} {
-        border: 0;
-    }`
+        `& ${TableRow}:last-child ${TableCell} {
+            border: 0;
+        }
+        & ${TableHead} ${TableRow} ${TableHeader} {
+            border-top: 1px solid var(--gray-3);
+        }`
     }
 `;
 export function Table(props) {

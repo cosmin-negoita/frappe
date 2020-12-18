@@ -42,6 +42,10 @@ export default function ViewIconography(props) {
                         <Icon type="tabs" color="--gray-5"/>
                         <Icon type="pie-chart" color="--gray-5"/>
                         <Icon type="articles" color="--gray-5"/>
+                        <Icon type="search" color="--gray-5"/>
+                        <Icon type="link" color="--gray-5"/>
+                        <Icon type="plus-circle" color="--gray-5"/>
+                        <Icon type="minus-circle" color="--gray-5"/>
                     </Container>
                 </Card>
                 <Card type="box" size="30" spacing="30">

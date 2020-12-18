@@ -15,6 +15,8 @@ export const colors = [
     {"--cyan": "#5ECFFF"},
     {"--teal": "#37F0CF"},
     {"--green": "#B8E017"},
+    {"--green-dark": "#90B300"},
+    {"--green-light": "#F0F8CC"},
     {"--yellow": "#FFB800"},
     {"--orange": "#FF814C"},
     {"--pink": "#F25EFF"}

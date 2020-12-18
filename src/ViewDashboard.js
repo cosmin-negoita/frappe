@@ -17,6 +17,7 @@ import {VictoryBar, VictoryChart, VictoryAxis, VictoryStack, VictoryPie, Victory
 import DataVizTheme from "./Components/DataVizTheme.js";
 import ChartResizer from "./Components/Charts/ChartResizer.js";
 import PieResizer from "./Components/Charts/PieResizer.js";
+import LabelTag from "./Components/LabelTag/LabelTag.js";
 
 export default function ViewDashboard() {
 
@@ -50,29 +51,39 @@ export default function ViewDashboard() {
 
     return (
         <Container size="50" spacing="30">
-            <Container>
+            <Container layout="1fr max-content" alignItems="center">
                 <TitleText>Dashboard</TitleText>
+                <Button leftIcon="plus">New post</Button>
             </Container>
             <Container spacing="30" cols="3">
                 <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
                     <Icon type="globe" isContained={true} containerSize="48px" size="24px" />
                     <Container spacing="5">
-                        <LabelText>Total Visits</LabelText>
-                        <SubHeadingText>25,489</SubHeadingText>
+                        <LabelText>Visits</LabelText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <SubHeadingText>25,489</SubHeadingText>
+                            <LabelTag>25%</LabelTag>
+                        </Container>
                     </Container>
                 </Card>
                 <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
                     <Icon type="eye" isContained={true} containerSize="48px" size="24px" />
                     <Container spacing="5">
-                        <LabelText>Total Reads</LabelText>
-                        <SubHeadingText>17,829</SubHeadingText>
+                        <LabelText>Reads</LabelText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <SubHeadingText>17,829</SubHeadingText>
+                            <LabelTag type="negative">25%</LabelTag>
+                        </Container>
                     </Container>
                 </Card>
                 <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">
                     <Icon type="users" isContained={true} containerSize="48px" size="24px" />
                     <Container spacing="5">
-                        <LabelText>Total Readers</LabelText>
-                        <SubHeadingText>754</SubHeadingText>
+                        <LabelText>Readers</LabelText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <SubHeadingText>754</SubHeadingText>
+                            <LabelTag>25%</LabelTag>
+                        </Container>
                     </Container>
                 </Card>
             </Container>
@@ -195,49 +206,73 @@ export default function ViewDashboard() {
                     </Container>
                 </Card>
             </Container>
-            <Card type="box" size="30" spacing="20">
-                <Container layout="1fr max-content">
+            <Card type="box">
+                <Container layout="1fr max-content" size="30">
                     <SubHeadingText>Most Read This Week</SubHeadingText>
                     <Button type="secondary" size="small" rightIcon="chevron-right">View all</Button>
                 </Container>
-                <Container spacing="20">
-                    <Container layout="100px 1fr" alignItems="center" spacing="20">
-                        <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
-                        <Container spacing="10">
-                            <BigBodyText><strong>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam</strong></BigBodyText>
-                            <BodyText>165 Reads</BodyText>
+                <Divider />
+                <Container layout="120px 1fr" alignItems="center" spacing="20" size="30">
+                    <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
+                    <Container spacing="10">
+                        <BigBodyText><strong>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam</strong></BigBodyText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <Button size="small">Category</Button>
+                            <Button type="secondary" size="small" leftIcon="link">Preview</Button>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="eye" /><BodyText>245 Reads</BodyText></Container>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="heart" /><BodyText>54 Likes</BodyText></Container>
                         </Container>
                     </Container>
-                    <Divider />
-                    <Container layout="100px 1fr" alignItems="center" spacing="20">
-                        <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
-                        <Container spacing="10">
-                            <BigBodyText><strong>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</strong></BigBodyText>
-                            <BodyText>98 Reads</BodyText>
+                </Container>
+                <Divider />
+                <Container layout="120px 1fr" alignItems="center" spacing="20" size="30">
+                    <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
+                    <Container spacing="10">
+                        <BigBodyText><strong>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</strong></BigBodyText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <Button size="small">Category</Button>
+                            <Button type="secondary" size="small" leftIcon="link">Preview</Button>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="eye" /><BodyText>245 Reads</BodyText></Container>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="heart" /><BodyText>54 Likes</BodyText></Container>
                         </Container>
                     </Container>
-                    <Divider />
-                    <Container layout="100px 1fr" alignItems="center" spacing="20">
-                        <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
-                        <Container spacing="10">
-                            <BigBodyText><strong>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</strong></BigBodyText>
-                            <BodyText>76 Reads</BodyText>
+                </Container>
+                <Divider />
+                <Container layout="120px 1fr" alignItems="center" spacing="20" size="30">
+                    <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
+                    <Container spacing="10">
+                        <BigBodyText><strong>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</strong></BigBodyText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <Button size="small">Category</Button>
+                            <Button type="secondary" size="small" leftIcon="link">Preview</Button>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="eye" /><BodyText>245 Reads</BodyText></Container>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="heart" /><BodyText>54 Likes</BodyText></Container>
                         </Container>
                     </Container>
-                    <Divider />
-                    <Container layout="100px 1fr" alignItems="center" spacing="20">
-                        <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
-                        <Container spacing="10">
-                            <BigBodyText><strong>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime</strong></BigBodyText>
-                            <BodyText>54 Reads</BodyText>
+                </Container>
+                <Divider />
+                <Container layout="120px 1fr" alignItems="center" spacing="20" size="30">
+                    <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
+                    <Container spacing="10">
+                        <BigBodyText><strong>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime</strong></BigBodyText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <Button size="small">Category</Button>
+                            <Button type="secondary" size="small" leftIcon="link">Preview</Button>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="eye" /><BodyText>245 Reads</BodyText></Container>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="heart" /><BodyText>54 Likes</BodyText></Container>
                         </Container>
                     </Container>
-                    <Divider />
-                    <Container layout="100px 1fr" alignItems="center" spacing="20">
-                        <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
-                        <Container spacing="10">
-                            <BigBodyText><strong>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam</strong></BigBodyText>
-                            <BodyText>43 Reads</BodyText>
+                </Container>
+                <Divider />
+                <Container layout="120px 1fr" alignItems="center" spacing="20" size="30">
+                    <Image src="https://images.unsplash.com/photo-1601758064955-a4a16da74a86?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" />
+                    <Container spacing="10">
+                        <BigBodyText><strong>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam</strong></BigBodyText>
+                        <Container cols="max-content" spacing="10" alignItems="center">
+                            <Button size="small">Category</Button>
+                            <Button type="secondary" size="small" leftIcon="link">Preview</Button>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="eye" /><BodyText>245 Reads</BodyText></Container>
+                            <Container layout="16px max-content" alignItems="center" spacing="5"><Icon type="heart" /><BodyText>54 Likes</BodyText></Container>
                         </Container>
                     </Container>
                 </Container>

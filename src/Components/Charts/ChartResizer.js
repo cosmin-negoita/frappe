@@ -2,16 +2,16 @@ import React, {useState, useEffect, useRef} from "react";
 import {VictoryChart, VictoryContainer} from "victory";
 import DataVizTheme from "../DataVizTheme.js";
 
-function debounce(fn, ms) {
+{/*function debounce(fn, ms) {
     let timer;
     return () => {
         clearTimeout(timer);
         timer = setTimeout(_ => {
             timer = null;
-            fn.apply(this, arguments)
+            fn.apply(this, arguments);
         }, ms)
     };
-}
+}*/}
 
 export default function ChartResizer(props) {
     const [width, setWidth] = useState(null);
@@ -23,9 +23,9 @@ export default function ChartResizer(props) {
             setWidth(offsetWidth);
             console.log(width);
         }
-        debounce(handleResize(), 500);
-        window.addEventListener("resize", debounce(handleResize, 500));
-        return () => window.removeEventListener("resize", debounce(handleResize, 500));
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, [containerRef]);
 
     return (
