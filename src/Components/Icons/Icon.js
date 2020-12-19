@@ -214,29 +214,60 @@ export default function Icon(props) {
                 </svg>                                            
             }
             {props.type === "search" &&
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.5 12C9.53757 12 12 9.53757 12 6.5C12 3.46243 9.53757 1 6.5 1C3.46243 1 1 3.46243 1 6.5C1 9.53757 3.46243 12 6.5 12Z" stroke={selectedColor} strokeMiterlimit="10"/>
                     <path d="M15 15L11 11" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>                
             }
             {props.type === "link" &&
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.53314 2.79999L8.46647 1.86666C10.0665 0.266656 12.5998 0.266656 14.1331 1.86666C14.9331 2.59999 15.3331 3.66666 15.3331 4.66666C15.3331 5.66666 14.9331 6.73332 14.1331 7.53332L13.1998 8.46666L12.2665 9.39999C11.7331 9.93332 11.1331 10.2667 10.4665 10.4667C9.53314 10.7333 8.53314 10.6 7.66647 10.2C7.26647 9.99999 6.86647 9.73332 6.5998 9.39999C6.26647 9.06666 5.9998 8.73332 5.7998 8.33332" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M8.46654 13.2L7.53321 14.1333C5.93321 15.7333 3.39987 15.7333 1.86654 14.1333C0.333206 12.5333 0.266539 9.99999 1.86654 8.46666L2.79987 7.53332L3.73321 6.59999C4.99987 5.33332 6.79987 5.13332 8.33321 5.79999C8.73321 5.99999 9.13321 6.26666 9.39987 6.59999C9.73321 6.93332 9.99987 7.26666 10.1999 7.66666" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>                                          
             }
             {props.type === "plus-circle" &&
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                     <line x1="4" y1="8" x2="12" y2="8" stroke={selectedColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
                     <line x1="8" y1="12" x2="8" y2="4" stroke={selectedColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>                
             }
             {props.type === "minus-circle" &&
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                     <line x1="4" y1="8" x2="12" y2="8" stroke={selectedColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>                            
+            }
+            {props.type === "lock" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.75 7H4.25C3.5625 7 3 7.6 3 8.33333V13.6667C3 14.4 3.5625 15 4.25 15H11.75C12.4375 15 13 14.4 13 13.6667V8.33333C13 7.6 12.4375 7 11.75 7Z" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M11 7H5V4C5 2.32 6.32 1 8 1C9.68 1 11 2.32 11 4V7Z" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 11V13" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>                                            
+            }
+            {props.type === "email" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.7278 13.7266H2.27454C1.57462 13.7266 1.00195 13.154 1.00195 12.4541V3.54594C1.00195 2.84601 1.57462 2.27335 2.27454 2.27335H13.7278C14.4278 2.27335 15.0004 2.84601 15.0004 3.54594V12.4541C15.0004 13.154 14.4278 13.7266 13.7278 13.7266Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10"/>
+                    <path d="M1.37598 2.64877L6.65086 7.92366C7.39532 8.66812 8.60428 8.66812 9.34875 7.92366L14.6236 2.64877" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10"/>
+                </svg>                                                          
+            }
+            {props.type === "user" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10"/>
+                    <path d="M8 10C9.65685 10 11 8.65685 11 7C11 5.34315 9.65685 4 8 4C6.34315 4 5 5.34315 5 7C5 8.65685 6.34315 10 8 10Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10"/>
+                    <path d="M4 14V11.9355C4 10.8387 4.86667 10 6 10H8H10C11.1333 10 12 10.8387 12 11.9355V14" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10"/>
+                </svg>                                                           
+            }
+            {props.type === "trash" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M11.333 15.3333H4.66634C3.93301 15.3333 3.33301 14.7333 3.33301 14V2.66666H12.6663V14C12.6663 14.7333 12.0663 15.3333 11.333 15.3333Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 2.66666H14" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9.33333 0.666656H6.66667C6.26667 0.666656 6 0.933323 6 1.33332V2.66666H10V1.33332C10 0.933323 9.73333 0.666656 9.33333 0.666656Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6.66699 12.6667V5.33334" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9.33301 12.6667V5.33334" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </g>
+                </svg>                                                                          
             }
         </StyledDiv>
     )

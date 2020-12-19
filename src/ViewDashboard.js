@@ -62,7 +62,7 @@ export default function ViewDashboard() {
                         <LabelText>Visits</LabelText>
                         <Container cols="max-content" spacing="10" alignItems="center">
                             <SubHeadingText>25,489</SubHeadingText>
-                            <LabelTag>25%</LabelTag>
+                            <LabelTag>8.7%</LabelTag>
                         </Container>
                     </Container>
                 </Card>
@@ -72,7 +72,7 @@ export default function ViewDashboard() {
                         <LabelText>Reads</LabelText>
                         <Container cols="max-content" spacing="10" alignItems="center">
                             <SubHeadingText>17,829</SubHeadingText>
-                            <LabelTag type="negative">25%</LabelTag>
+                            <LabelTag type="negative">11.3%</LabelTag>
                         </Container>
                     </Container>
                 </Card>
@@ -82,7 +82,7 @@ export default function ViewDashboard() {
                         <LabelText>Readers</LabelText>
                         <Container cols="max-content" spacing="10" alignItems="center">
                             <SubHeadingText>754</SubHeadingText>
-                            <LabelTag>25%</LabelTag>
+                            <LabelTag>5.6%</LabelTag>
                         </Container>
                     </Container>
                 </Card>

@@ -320,14 +320,14 @@ export default function ViewExperiment() {
                 </Card>
             </Container>
         </Container>
-        <Container size="50" spacing="30" cols="3" noTopPadding>
+        <Container size="50" spacing="30" cols="2" noTopPadding>
             <Card type="box" headerLabel="Simple Form" size="30" spacing="30" cols="1">
                 { subscribed === false &&
                 <form onSubmit={onFormSubmit}>
                     <Container spacing="30">
                         <HeadingText>Subscribe to our newsletter!</HeadingText>
-                        <InputText label="Your Name" placeholder="Type your name..." value={name} isValid={nameValidation} errorMessage="Please tell us your name" onChange={handleNameChange} />
-                        <InputText label="Your Email Address" placeholder="Type your email address..." value={email} isValid={emailValidation} errorMessage="Please use a valid email address" onChange={handleEmailChange} />
+                        <InputText icon="user" label="Your Name" placeholder="Type your name..." value={name} isValid={nameValidation} errorMessage="Please tell us your name" onChange={handleNameChange} />
+                        <InputText icon="email" label="Your Email Address" placeholder="Type your email address..." value={email} isValid={emailValidation} errorMessage="Please use a valid email address" onChange={handleEmailChange} />
                         <Checkbox checked={checked} onClick={onCheckChange} value="nothing" isValid={checkValidation}>I have read and agree with the Privacy Policy and Terms of Service</Checkbox>
                         <Button>Subscribe</Button>
                     </Container>

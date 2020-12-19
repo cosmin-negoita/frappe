@@ -55,6 +55,62 @@ export default function ViewForms(props) {
                     <InputText label="Error Text Input" isValid={false} placeholder="Type here..." errorMessage="Please type something" />
                     <InputText label="Error Text Input" isValid={false} placeholder="Type here..." size="large" errorMessage="Please type something" />
                 </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Text With Icon Default</SubHeadingText>
+                    <InputText icon="home" label="Default Text Input" placeholder="Type here..." size="small" />
+                    <InputText icon="home" label="Default Text Input" placeholder="Type here..." />
+                    <InputText icon="home" label="Default Text Input" placeholder="Type here..." size="large" />
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Text With Icon Disabled</SubHeadingText>
+                    <InputText icon="home" label="Disabled Text Input" placeholder="Type here..." size="small" disabled={true} />
+                    <InputText icon="home" label="Disabled Text Input" placeholder="Type here..." disabled={true} />
+                    <InputText icon="home" label="Disabled Text Input" placeholder="Type here..." size="large" disabled={true} />
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Text With Icon Error</SubHeadingText>
+                    <InputText icon="home" label="Error Text Input" isValid={false} placeholder="Type here..." size="small" errorMessage="Please type something" />
+                    <InputText icon="home" label="Error Text Input" isValid={false} placeholder="Type here..." errorMessage="Please type something" />
+                    <InputText icon="home" label="Error Text Input" isValid={false} placeholder="Type here..." size="large" errorMessage="Please type something" />
+                </Container>
+            </Card>
+            <Card type="box" size="30" spacing="30" cols="3">
+                <Container spacing="20">
+                    <SubHeadingText>Input Password Default</SubHeadingText>
+                    <InputPassword label="Default Password Input" placeholder="Type here..." size="small" />
+                    <InputPassword label="Default Password Input" placeholder="Type here..." />
+                    <InputPassword label="Default Password Input" placeholder="Type here..." size="large" />
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Password Disabled</SubHeadingText>
+                    <InputPassword label="Disabled Password Input" placeholder="Type here..." size="small" disabled={true} />
+                    <InputPassword label="Disabled Password Input" placeholder="Type here..." disabled={true} />
+                    <InputPassword label="Disabled Password Input" placeholder="Type here..." size="large" disabled={true} />
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Password Error</SubHeadingText>
+                    <InputPassword label="Error Password Input" isValid={false} placeholder="Type here..." size="small" errorMessage="Please type something" />
+                    <InputPassword label="Error Password Input" isValid={false} placeholder="Type here..." errorMessage="Please type something" />
+                    <InputPassword label="Error Password Input" isValid={false} placeholder="Type here..." size="large" errorMessage="Please type something" />
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Password With Icon Default</SubHeadingText>
+                    <InputPassword icon={true} label="Default Password Input" placeholder="Type here..." size="small" />
+                    <InputPassword icon={true} label="Default Password Input" placeholder="Type here..." />
+                    <InputPassword icon={true} label="Default Password Input" placeholder="Type here..." size="large" />
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Password With Icon Disabled</SubHeadingText>
+                    <InputPassword icon={true} label="Disabled Password Input" placeholder="Type here..." size="small" disabled={true} />
+                    <InputPassword icon={true} label="Disabled Password Input" placeholder="Type here..." disabled={true} />
+                    <InputPassword icon={true} label="Disabled Password Input" placeholder="Type here..." size="large" disabled={true} />
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Input Password With Icon Error</SubHeadingText>
+                    <InputPassword icon={true} label="Error Password Input" isValid={false} placeholder="Type here..." size="small" errorMessage="Please type something" />
+                    <InputPassword icon={true} label="Error Password Input" isValid={false} placeholder="Type here..." errorMessage="Please type something" />
+                    <InputPassword icon={true} label="Error Password Input" isValid={false} placeholder="Type here..." size="large" errorMessage="Please type something" />
+                </Container>
             </Card>
             <Card type="box" size="30" spacing="30" cols="3">
                 <Container spacing="20">
@@ -126,6 +182,60 @@ export default function ViewForms(props) {
                         <option value="3">Option 3</option>
                     </Select>
                     <Select label="Large Select" isValid={false} errorMessage="Please choose an option" size="large">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Select With Icon Default</SubHeadingText>
+                    <Select icon="home" label="Small Select" size="small">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                    <Select icon="home" label="Medium Select">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                    <Select icon="home" label="Large Select" size="large">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Select With Icon Disabled</SubHeadingText>
+                    <Select icon="home" label="Small Select" size="small" disabled>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                    <Select icon="home" label="Medium Select" disabled>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                    <Select icon="home" label="Large Select" size="large" disabled>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                </Container>
+                <Container spacing="20">
+                    <SubHeadingText>Select With Icon Error</SubHeadingText>
+                    <Select icon="home" label="Small Select" isValid={false} errorMessage="Please choose an option" size="small">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                    <Select icon="home" label="Medium Select" isValid={false} errorMessage="Please choose an option">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </Select>
+                    <Select icon="home" label="Large Select" isValid={false} errorMessage="Please choose an option" size="large">
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>

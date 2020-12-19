@@ -36,6 +36,7 @@ export const StyledTable = styled.table`
             : `border-bottom: 1px solid var(--gray-3);`
         }
         text-align: ${props => props.textAlign};
+        vertical-align: middle;
     }
     & ${TableHeader} {
         font-weight: 700;

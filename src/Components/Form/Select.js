@@ -6,6 +6,7 @@ import {SmallBodyText} from "../Typography/Typography.js";
 import Icon from "../Icons/Icon.js";
 
 const StyledSelectDiv = styled.div`
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 40px;
     align-items: center;
@@ -18,11 +19,18 @@ const StyledSelectDiv = styled.div`
         pointer-events: none;
     }
 `;
-
+const StyledIcon = styled(Icon)`
+    position: absolute;
+    top: calc(50% - 8px);
+    left: ${props => props.fieldSize === "small" ? "7px" : (props.fieldSize === "large" ? "17px" : "12px")};
+`;
 const StyledSelect = styled.select.attrs(props => ({
     size: props.size || "normal"
 }))`
     ${FormElementAppearance}
+    ${props => props.icon && 
+        `padding-left: ${props.size === "small" ? "30px" : (props.size === "large" ? "50px" : "40px")};`
+    }
     overflow: visible;
     line-height: 22px;
     appearance: none;
@@ -42,14 +50,17 @@ const StyledSelect = styled.select.attrs(props => ({
 `;
 
 export default function Select(props) {
-    const chevronColor = props.disabled ? "--gray-4" : "--gray-5";
+    const iconColor = props.disabled ? "--gray-4" : "--gray-5";
 
     return (
         <StyledFormField>
             {props.label && <label className="text--label">{props.label}</label>}
             <StyledSelectDiv>
-                <Icon type="chevron-down" color={chevronColor} />
-                <StyledSelect size={props.size} name={props.name} className={props.className} value={props.value} onChange={props.onChange} isValid={props.isValid} disabled={props.disabled}>
+                {props.icon &&
+                    <StyledIcon fieldSize={props.size} type={props.icon} color={iconColor} />
+                }
+                <Icon type="chevron-down" color={iconColor} />
+                <StyledSelect icon={props.icon} size={props.size} name={props.name} className={props.className} value={props.value} onChange={props.onChange} isValid={props.isValid} disabled={props.disabled}>
                     {props.children}
                 </StyledSelect>
             </StyledSelectDiv>

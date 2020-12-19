@@ -4,13 +4,12 @@ import {LabelText} from "../Typography/Typography.js";
 
 const StyledDiv = styled.div`
     ${props => props.type === "positive" &&
-        `background: var(--green-light);
-        color: var(--green-dark);`
+        `background: var(--green-dark);`
     }
     ${props => props.type === "negative" &&
-        `background: var(--error-bg);
-        color: var(--error);`
+        `background: var(--error);`
     }
+    color: var(--gray-0);
     padding: 4px;
     border-radius: var(--radius-inner);
     height: max-content;

@@ -105,8 +105,8 @@ export default function ViewExamples() {
                     <BodyText align="center">Subscribe to our newsletter to get the latest updates about our work.</BodyText>
                     <form>
                         <Container spacing="10">
-                            <InputText placeholder="Your name..." />
-                            <InputText placeholder="Your email..." />
+                            <InputText icon="user" placeholder="Your name..." />
+                            <InputText icon="email" placeholder="Your email..." />
                             <Button>Subscribe</Button>
                         </Container>
                     </form>
@@ -116,17 +116,15 @@ export default function ViewExamples() {
                     <BigBodyText>Let us know who you are!</BigBodyText>
                     <form>
                         <Container spacing="20">
-                            <InputText label="Email Address" placeholder="Your email..." />
-                            <Container spacing="20" cols="2">
-                                <InputText label="Full Name" placeholder="Your name..." />
-                                <Select type="text" label="Country" placeholder="Your email...">
-                                    <option value="Romania">Romania</option>
-                                    <option value="United States">United States</option>
-                                    <option value="Canada">Canada</option>
-                                </Select>
-                            </Container>
-                            <InputPassword label="Your Password" placeholder="Your email..." />
-                            <InputPassword label="Confirm Password" placeholder="Your email..." />
+                            <InputText icon="email" label="Email Address" name="email" placeholder="Your email..." />
+                            <InputText icon="user" label="Full Name" name="name" placeholder="Your name..." />
+                            <Select type="text" label="Country" placeholder="Your email...">
+                                <option value="Romania">Romania</option>
+                                <option value="United States">United States</option>
+                                <option value="Canada">Canada</option>
+                            </Select>
+                            <InputPassword icon label="Your Password" placeholder="Type here..." />
+                            <InputPassword icon label="Confirm Password" placeholder="Re-type here..." />
                             <Button>Create Account</Button>
                         </Container>
                     </form>
@@ -157,29 +155,32 @@ export default function ViewExamples() {
                                 <TableHeader>Email</TableHeader>
                                 <TableHeader>Location</TableHeader>
                                 <TableHeader>Industry</TableHeader>
-                                <TableHeader>Role</TableHeader>
+                                <TableHeader colSpan="2">Role</TableHeader>
                             </TableRow>
                         </TableHead>
                         <TableRow>
-                            <TableCell>Cosmin Negoita</TableCell>
+                            <TableCell><Container layout="24px 1fr" spacing="10" alignItems="center"><Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_.jpg" size="24" /> Cosmin Negoita</Container></TableCell>
                             <TableCell>fabcos94@gmail.com</TableCell>
                             <TableCell>Craiova, RO</TableCell>
                             <TableCell>Technology</TableCell>
                             <TableCell>Designer</TableCell>
+                            <TableCell><Button size="small" type="secondary" leftIcon="trash">Remove</Button></TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell>Cosmin Negoita</TableCell>
+                            <TableCell><Container layout="24px 1fr" spacing="10" alignItems="center"><Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_.jpg" size="24" /> Cosmin Negoita</Container></TableCell>
                             <TableCell>fabcos94@gmail.com</TableCell>
                             <TableCell>Craiova, RO</TableCell>
                             <TableCell>Technology</TableCell>
                             <TableCell>Designer</TableCell>
+                            <TableCell><Button size="small" type="secondary" leftIcon="trash">Remove</Button></TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell>Cosmin Negoita</TableCell>
+                            <TableCell><Container layout="24px 1fr" spacing="10" alignItems="center"><Avatar src="https://www.crn.com/resources/025c-0f1e563cf778-3d75867d447f-1000/twitter_jack_dorsey_.jpg" size="24" /> Cosmin Negoita</Container></TableCell>
                             <TableCell>fabcos94@gmail.com</TableCell>
                             <TableCell>Craiova, RO</TableCell>
                             <TableCell>Technology</TableCell>
                             <TableCell>Designer</TableCell>
+                            <TableCell><Button size="small" type="secondary" leftIcon="trash">Remove</Button></TableCell>
                         </TableRow>
                     </Table>
                 </Container>
