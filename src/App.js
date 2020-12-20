@@ -1,5 +1,7 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
+import {SwitchTransition, TransitionGroup, CSSTransition} from "react-transition-group";
+import styled, {createGlobalStyle} from "styled-components";
 
 import ViewExamples from "./ViewExamples.js";
 import ViewExperiment from "./ViewExperiment.js";
@@ -18,52 +20,62 @@ import Container from "./Components/Container/Container.js";
 import StyledPage from "./Components/StyledPage.js";
 import Sidebar from "./Components/Sidebar/Sidebar.js";
 
+const GlobalPageStyles = createGlobalStyle`
+    .fade-enter {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    .fade-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .fade-exit {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .fade-exit-active {
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+`;
+
 function App() {
-    return (
+    return (<>
+        <GlobalPageStyles />
         <StyledPage>
             <Container className="scrollableParent" layout="300px 1fr">
                 <Sidebar />
-                <Container className="scrollable">
-                        <Route exact path="/">
-                            <ViewExamples />
-                        </Route>
-                        <Route exact path="/experiments">
-                            <ViewExperiment />
-                        </Route>
-                        <Route exact path="/dashboard">
-                            <ViewDashboard />
-                        </Route>
-                        <Route exact path="/colors">
-                            <ViewColors />
-                        </Route>
-                        <Route exact path="/typography">
-                            <ViewTypography />
-                        </Route>
-                        <Route exact path="/iconography">
-                            <ViewIconography />
-                        </Route>
-                        <Route exact path="/containers">
-                            <ViewContainers />
-                        </Route>
-                        <Route exact path="/buttons">
-                            <ViewButtons />
-                        </Route>
-                        <Route exact path="/form-elements">
-                            <ViewForms />
-                        </Route>
-                        <Route exact path="/table">
-                            <ViewTable />
-                        </Route>
-                        <Route exact path="/tabnav">
-                            <ViewTabNav />
-                        </Route>
-                        <Route exact path="/data-visualization">
-                            <ViewDataViz />
-                        </Route>
-                </Container>
+                <Route render={({location}) => (
+                    <SwitchTransition>
+                        <CSSTransition
+                            key={location.key}
+                            timeout={300}
+                            classNames="fade"
+                        >
+                            <Container className="scrollable">
+                                <Switch location={location}>
+                                    <Route exact path="/" component={ViewExamples} />
+                                    <Route exact path="/experiments" component={ViewExperiment} />
+                                    <Route exact path="/dashboard" component={ViewDashboard} />
+                                    <Route exact path="/colors" component={ViewColors} />
+                                    <Route exact path="/typography" component={ViewTypography} />
+                                    <Route exact path="/iconography" component={ViewIconography} />
+                                    <Route exact path="/containers" component={ViewContainers} />
+                                    <Route exact path="/buttons" component={ViewButtons} />
+                                    <Route exact path="/form-elements" component={ViewForms} />
+                                    <Route exact path="/table" component={ViewTable} />
+                                    <Route exact path="/tabnav" component={ViewTabNav} />
+                                    <Route exact path="/data-visualization" component={ViewDataViz} />
+                                </Switch>
+                            </Container>
+                        </CSSTransition>
+                    </SwitchTransition>
+                )} />
             </Container>
         </StyledPage>
-    );
+    </>);
 }
 
 export default App;

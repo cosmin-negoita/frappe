@@ -222,9 +222,24 @@ export default function ViewExperiment() {
     }
 
     return (<>
-        <Modal in={isModalOpen} size="50" spacing="30" justifyItems="center" isOpen={isModalOpen} onClose={handleModalVisibility}>
+        <Modal size="50" spacing="30" justifyItems="center" isOpen={isModalOpen} onClose={handleModalVisibility} maxWidth="600">
             <Icon isContained type="home" size="24" containerSize="64px" background="brand" borderColor="transparent" color="--gray-0" />
             <HeadingText>This is a modal!</HeadingText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
             <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
             <Button onClick={handleModalVisibility}>Close Modal</Button>
         </Modal>

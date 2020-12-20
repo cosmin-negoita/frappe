@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import {TransitionGroup, CSSTransition} from "react-transition-group";
+
 import Container from "../Container/Container.js";
 import Card from "../Card/Card.js";
 import clsx from "clsx";
-import {CSSTransition} from "react-transition-group";
 import Icon from "../Icons/Icon.js";
 
 const StyledIcon = styled.div`
@@ -23,7 +24,21 @@ const StyledCard = styled(Card)`
     width: 100%;
     max-width: ${props => props.maxWidth}px;
     transition: all 0.5s ease-in;
+    overflow: hidden;
+    max-height: calc(100% - var(--su-${props => props.contentSize}));
+`;
 
+const ScrollableArea = styled(Container)`
+    box-sizing: border-box;
+    overflow-y: scroll;
+    max-height: calc(100vh - var(--su-${props => props.size}));
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: calc(var(--su-${props => props.size}) - var(--su-${props => props.spacing}));
+    }
 `;
 
 const StyledDiv = styled.div`
@@ -40,51 +55,37 @@ const StyledDiv = styled.div`
 
     &.modal-enter {
         opacity: 0;
-
-        ${StyledCard} {
-            opacity: 0;
-            transform: scale(0.5);
-        }
     }
     &.modal-enter-active {
         opacity: 1;
         transition: opacity 0.3s ease-in;
-
-        ${StyledCard} {
-            opacity: 1
-            transform: scale(1);
-        }
     }
     &.modal-exit {
         opacity: 1;
-
-        ${StyledCard} {
-            opacity: 1;
-            transform: scale(1);
-        }
     }
     &.modal-exit-active {
         opacity: 0;
         transition: opacity 0.3s ease-in;
-
-        ${StyledCard} {
-            opacity: 0;
-            transform: scale(0.5);
-        }
     }
-
 `;
 
 export default function Modal(props) {
 
     return (
-        <CSSTransition in={props.in} timeout={300} classNames="modal" unmountOnExit>
+        <CSSTransition
+            in={props.isOpen}
+            classNames="modal"
+            timeout={300}
+            unmountOnExit
+        >
             <StyledDiv key="1" isOpen={props.isOpen}>
-                <StyledCard key="2" maxWidth={props.maxWidth || "800"} type="box" {...props}>
+                <StyledCard maxWidth={props.maxWidth || "800"} type="box" contentSize={props.size}>
                     <StyledIcon onClick={props.onClose}>
                         <Icon type="cross" isContained containerSize="32px" />
                     </StyledIcon>
-                    {props.children}
+                    <ScrollableArea justifyItems={props.justifyItems} size={props.size} spacing={props.spacing} cols={props.cols} layout={props.layout}>
+                        {props.children}
+                    </ScrollableArea>
                 </StyledCard>
             </StyledDiv>
         </CSSTransition>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {CSSTransition} from "react-transition-group";
 
 const StyledPage = styled.div`
     height: 100vh;
@@ -11,6 +10,7 @@ const StyledPage = styled.div`
     }
 
     .scrollable {
+        top: 0;
         height: 100vh;
         overflow: auto;
         -ms-overflow-style: none;
