@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {CSSTransition} from "react-transition-group";
 
 const StyledPage = styled.div`
     height: 100vh;
@@ -19,4 +20,5 @@ const StyledPage = styled.div`
         display: none;
     }
 `;
+
 export default StyledPage

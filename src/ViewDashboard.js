@@ -53,7 +53,7 @@ export default function ViewDashboard() {
         <Container size="50" spacing="30">
             <Container layout="1fr max-content" alignItems="center">
                 <TitleText>Dashboard</TitleText>
-                <Button leftIcon="plus">New post</Button>
+                <Button leftIcon="plus-circle">New post</Button>
             </Container>
             <Container spacing="30" cols="3">
                 <Card type="box" layout="48px 1fr" alignItems="center" size="30" spacing="10">

@@ -20,6 +20,8 @@ import ProgressBar from "./Components/ProgressBar/ProgressBar.js";
 import Image from "./Components/Image/Image.js";
 import {VictoryPie} from "victory";
 import DataVizTheme from "./Components/DataVizTheme.js";
+import Modal from "./Components/Modal/Modal.js";
+import Icon from "./Components/Icons/Icon.js";
 
 const CustomizedElement = styled.div`
     display: grid;
@@ -44,7 +46,8 @@ export default function ViewExperiment() {
         document.title = "Frappe - Experiments";
     });
 
-    /* Subscribe Form Functionality */
+    // Subscribe Form Functionality
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
@@ -84,7 +87,8 @@ export default function ViewExperiment() {
         setChecked(false);
     }
 
-    /* Quiz Settings */
+    // Quiz Settings
+
     const [device, setDevice] = useState("");
     const [deviceSize, setDeviceSize] = useState("");
     const [submitted, setSubmitted] = useState(false);
@@ -185,6 +189,7 @@ export default function ViewExperiment() {
     }
 
     // Onboarding Experiment
+
     const slides = [
         {title: "Welcome, friend!", description: "This is an amazing slide. The following are even more amazing, tho.", image: "https://cdn.dribbble.com/users/77765/screenshots/10951401/media/5c956f65919694b130dab49791a9cbaf.png?compress=1&resize=1600x1200"},
         {title: "Your workspace", description: "Your workspace is the place where you can see everything related to your work.", image: "https://cdn.dribbble.com/users/77765/screenshots/9638890/media/ee89368c5359ed1445bfd8edc60fbb57.png?compress=1&resize=1600x1200"},
@@ -207,9 +212,25 @@ export default function ViewExperiment() {
         }
     }
 
+    // Modal Launch
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    function handleModalVisibility() {
+        if (!isModalOpen) setIsModalOpen(true);
+        else setIsModalOpen(false);
+    }
+
     return (<>
-        <Container size="50">
+        <Modal in={isModalOpen} size="50" spacing="30" justifyItems="center" isOpen={isModalOpen} onClose={handleModalVisibility}>
+            <Icon isContained type="home" size="24" containerSize="64px" background="brand" borderColor="transparent" color="--gray-0" />
+            <HeadingText>This is a modal!</HeadingText>
+            <BigBodyText>This is a simple modal component. You can close it or...not. That's about it for now.</BigBodyText>
+            <Button onClick={handleModalVisibility}>Close Modal</Button>
+        </Modal>
+        <Container layout="1fr max-content" alignItems="center" size="50">
             <TitleText>Experiments</TitleText>
+            <Button leftIcon="plus-circle" onClick={handleModalVisibility}>Try clicking me</Button>
         </Container>
         <Container size="50" layout="1fr 2fr" spacing="30" noTopPadding>
             <Card type="box" limitHeight>

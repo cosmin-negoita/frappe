@@ -46,15 +46,27 @@ export default function ViewIconography(props) {
                         <Icon type="link" color="--gray-5"/>
                         <Icon type="plus-circle" color="--gray-5"/>
                         <Icon type="minus-circle" color="--gray-5"/>
+                        <Icon type="email" color="--gray-5"/>
+                        <Icon type="user" color="--gray-5"/>
+                        <Icon type="trash" color="--gray-5"/>
+                        <Icon type="lock" color="--gray-5"/>
                     </Container>
                 </Card>
                 <Card type="box" size="30" spacing="30">
-                    <SubHeadingText>Container Options</SubHeadingText>
+                    <SubHeadingText>Styling Options</SubHeadingText>
                     <Container spacing="30" cols="max-content">
                         <Icon isContained={true} containerSize="48px" type="heart" color="--gray-5"/>
                         <Icon isContained={true} background="gray-1" borderColor="gray-3" containerSize="48px" type="globe" color="--gray-5"/>
                         <Icon isContained={true} borderColor="brand" containerSize="48px" type="home" color="--gray-5"/>
                         <Icon isContained={true} background="brand" borderColor="transparent" containerSize="48px" type="users" color="--gray-0"/>
+                    </Container>
+                    <SubHeadingText>Flexible Radius</SubHeadingText>
+                    <Container spacing="30" cols="max-content">
+                        <Icon isContained={true} background="brand" borderColor="transparent" containerSize="32px" type="users" color="--gray-0"/>
+                        <Icon isContained={true} background="brand" borderColor="transparent" containerSize="48px" type="users" color="--gray-0"/>
+                        <Icon isContained={true} background="brand" borderColor="transparent" containerSize="64px" type="users" color="--gray-0"/>
+                        <Icon isContained={true} background="brand" borderColor="transparent" containerSize="80px" type="users" color="--gray-0"/>
+                        <Icon isContained={true} background="brand" borderColor="transparent" containerSize="160px" type="users" color="--gray-0"/>
                     </Container>
                 </Card>
             </Container>

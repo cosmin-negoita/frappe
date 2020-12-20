@@ -225,19 +225,6 @@ export default function Icon(props) {
                     <path d="M8.46654 13.2L7.53321 14.1333C5.93321 15.7333 3.39987 15.7333 1.86654 14.1333C0.333206 12.5333 0.266539 9.99999 1.86654 8.46666L2.79987 7.53332L3.73321 6.59999C4.99987 5.33332 6.79987 5.13332 8.33321 5.79999C8.73321 5.99999 9.13321 6.26666 9.39987 6.59999C9.73321 6.93332 9.99987 7.26666 10.1999 7.66666" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>                                          
             }
-            {props.type === "plus-circle" &&
-                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                    <line x1="4" y1="8" x2="12" y2="8" stroke={selectedColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-                    <line x1="8" y1="12" x2="8" y2="4" stroke={selectedColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>                
-            }
-            {props.type === "minus-circle" &&
-                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                    <line x1="4" y1="8" x2="12" y2="8" stroke={selectedColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>                            
-            }
             {props.type === "lock" &&
                 <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.75 7H4.25C3.5625 7 3 7.6 3 8.33333V13.6667C3 14.4 3.5625 15 4.25 15H11.75C12.4375 15 13 14.4 13 13.6667V8.33333C13 7.6 12.4375 7 11.75 7Z" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -268,6 +255,36 @@ export default function Icon(props) {
                     <path d="M9.33301 12.6667V5.33334" stroke={selectedColor} strokeWidth="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                 </g>
                 </svg>                                                                          
+            }
+            {props.type === "plus-circle" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke={selectedColor} stroke-width="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5 8H11" stroke={selectedColor} stroke-width="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 5V11" stroke={selectedColor} stroke-width="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>                                                                        
+            }
+            {props.type === "minus-circle" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke={selectedColor} stroke-width="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5 8H11" stroke={selectedColor} stroke-width="1" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>                                      
+            }
+            {props.type === "increase-arrow" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.76953 0.692322H8.30799V6.23078" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8.30777 0.692322L0.692383 8.30771" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>                                                                     
+            }
+            {props.type === "decrease-arrow" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.30762 2.76923L8.30762 8.30769L2.76916 8.30769" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8.30762 8.30771L0.692233 0.692321" stroke={selectedColor} strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>                                                                  
+            }
+            {props.type === "cross" &&
+                <svg className={props.className} width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4L12 12M12 4L4 12" stroke={selectedColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>                                                                                
             }
         </StyledDiv>
     )

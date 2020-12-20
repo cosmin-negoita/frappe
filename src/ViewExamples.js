@@ -118,7 +118,7 @@ export default function ViewExamples() {
                         <Container spacing="20">
                             <InputText icon="email" label="Email Address" name="email" placeholder="Your email..." />
                             <InputText icon="user" label="Full Name" name="name" placeholder="Your name..." />
-                            <Select type="text" label="Country" placeholder="Your email...">
+                            <Select icon="globe" type="text" label="Country" placeholder="Your email...">
                                 <option value="Romania">Romania</option>
                                 <option value="United States">United States</option>
                                 <option value="Canada">Canada</option>

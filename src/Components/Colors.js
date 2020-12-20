@@ -15,10 +15,11 @@ export const colors = [
     {"--cyan": "#5ECFFF"},
     {"--teal": "#37F0CF"},
     {"--green": "#B8E017"},
-    {"--green-dark": "#AAD400"},
+    {"--green-dark": "#72CB00"},
     {"--yellow": "#FFB800"},
     {"--orange": "#FF814C"},
-    {"--pink": "#F25EFF"}
+    {"--pink": "#F25EFF"},
+    {"--overlay": "rgba(45, 56, 78, 0.6)"}
 ];
 
 colors.map(color => {
